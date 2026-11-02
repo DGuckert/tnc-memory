@@ -1,4 +1,4 @@
-import json, re, math
+import json, re, math, time
 from collections import defaultdict
 import numpy as np
 import torch
@@ -24,14 +24,29 @@ def canonical_from_note(note):
         return None
     return f"what is the {m.group(1)} for project {m.group(2)}?"
 
+def osa(a, b):
+    prev2 = None
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i] + [0] * len(b)
+        for j, cb in enumerate(b, 1):
+            cost = 0 if ca == cb else 1
+            cur[j] = min(prev[j] + 1, cur[j-1] + 1, prev[j-1] + cost)
+            if prev2 is not None and i > 1 and j > 1 and ca == b[j-2] and a[i-2] == cb:
+                cur[j] = min(cur[j], prev2[j-2] + 1)
+        prev2, prev = prev, cur
+    return prev[-1]
+
 class MemoryGateway:
     def __init__(self, docs, middleman=DEFAULT_MIDDLEMAN, reranker=DEFAULT_RERANKER,
-                 top_k=5, max_new_tokens=64):
+                 top_k=5, max_new_tokens=48):
         self.docs = docs
         self.top_k = top_k
         self.max_new_tokens = max_new_tokens
         self._build_word()
         self._build_char()
+        self.entity_map = {x.lower(): x for d in docs for x in re.findall(r"project ([A-Za-z0-9]+) is", d)}
+        self.entities = sorted(self.entity_map)
         self.mtok = AutoTokenizer.from_pretrained(middleman)
         base = AutoModelForCausalLM.from_pretrained(BASE_LLM, torch_dtype=torch.float16).to("cuda")
         self.llm = PeftModel.from_pretrained(base, middleman).eval()
@@ -65,9 +80,29 @@ class MemoryGateway:
         idx = np.argpartition(-scores, k - 1)[:k]
         return idx[np.argsort(-scores[idx])]
 
+    def _correct_query(self, query):
+        out = []
+        changed = False
+        for t in tokenize(query):
+            if t in self.postings or len(t) < 4:
+                out.append(t)
+                continue
+            cands = sorted((osa(t, e), e) for e in self.entities)[:3]
+            if cands and cands[0][0] <= 2:
+                out.append(cands[0][1])
+                changed = True
+            else:
+                out.append(t)
+        return " ".join(out), changed
+
     def search(self, query, project=None, mode=None, k=50):
         if mode is None:
-            mode = "word" if project and project.lower() in self.postings else "char"
+            corrected, changed = self._correct_query(query)
+            if changed:
+                query = corrected
+                mode = "word"
+            else:
+                mode = "word" if project and project.lower() in self.postings else "char"
         if mode == "word":
             s = np.zeros(len(self.docs), dtype=np.float32)
             for t in set(tokenize(query)):
@@ -115,22 +150,68 @@ class MemoryGateway:
         prompt = self.mtok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
         enc = self.mtok(prompt, return_tensors="pt").to("cuda")
         with torch.inference_mode():
-            out = self.llm.generate(**enc, max_new_tokens=16, do_sample=False,
+            out = self.llm.generate(**enc, max_new_tokens=12, do_sample=False,
                                     pad_token_id=self.mtok.eos_token_id,
                                     eos_token_id=self.mtok.eos_token_id)
         return self.mtok.decode(out[0][enc["input_ids"].shape[1]:], skip_special_tokens=True).strip()
 
+    def find_explicit_project(self, messages):
+        text = messages[-1].get("content", "") if messages else ""
+        toks = tokenize(text)
+        for t in toks:
+            if t in self.entity_map:
+                return self.entity_map[t]
+        for t in toks:
+            if t in self.postings or len(t) < 4:
+                continue
+            cands = sorted((osa(t, e), e) for e in self.entities)[:3]
+            if cands and cands[0][0] <= 2:
+                return self.entity_map[cands[0][1]]
+        return None
+
+    def find_context_project(self, messages):
+        text = messages[-1].get("content", "") if messages else ""
+        if not re.search(r"\b(it|its|that project|the project)\b", text, re.I):
+            return None
+        found = {}
+        for m in messages[:-1]:
+            for t in tokenize(m.get("content", "")):
+                if t in self.entity_map:
+                    found[self.entity_map[t]] = True
+        if len(found) == 1:
+            return next(iter(found))
+        return None
+
     def handle(self, messages):
-        tool, raw = self.tool_call(messages)
+        t0 = time.perf_counter()
+        project = self.find_explicit_project(messages) or self.find_context_project(messages)
+        if project:
+            query = messages[-1].get("content", "")
+            if project.lower() not in tokenize(query):
+                query = f"{query} project {project}"
+            tool = {"tool": "search_memory",
+                    "args": {"project": project, "query": query}}
+            raw = "project shortcut"
+        else:
+            tool, raw = self.tool_call(messages)
+        t1 = time.perf_counter()
         if not isinstance(tool, dict) or tool.get("tool") != "search_memory":
-            return {"tool": tool, "raw": raw, "answer": None, "notes": []}
+            return {"tool": tool, "raw": raw, "answer": None, "notes": [],
+                    "timings": {"tool": t1 - t0, "total": t1 - t0}}
         args = tool.get("args", {})
         query = args.get("query", "")
         project = args.get("project", "")
         ids, mode = self.search(query, project)
-        ids = self.rerank(query, ids, self.top_k)
+        t2 = time.perf_counter()
+        canon0 = canonical_from_note(extract_note(self.docs[int(ids[0])])) or query
+        ids = self.rerank(canon0, ids, self.top_k)
+        t3 = time.perf_counter()
         notes = [extract_note(self.docs[int(i)]) for i in ids]
-        canon = canonical_from_note(notes[0]) or query
+        canon = canonical_from_note(notes[0]) or canon0
         answer = self.answer(canon, ids)
+        t4 = time.perf_counter()
         return {"tool": tool, "raw": raw, "mode": mode, "query": canon,
-                "answer": answer, "notes": notes}
+                "answer": answer, "notes": notes,
+                "timings": {"tool": t1 - t0, "search": t2 - t1,
+                            "rerank": t3 - t2, "reader": t4 - t3,
+                            "total": t4 - t0}}

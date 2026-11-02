@@ -22,7 +22,7 @@ conversation
 | One-char typo | 1.00 | 0.96 | **0.94** |
 | **Overall** | 1.00 | — | **0.955** |
 
-- The explicit-project shortcut bypasses the middleman when the user names a known project. This fixed the zero-context explicit case and removed one model call.
+- The explicit-project shortcut bypasses the middleman when the user names a known project. A context shortcut also resolves a pronoun when the conversation contains exactly one known project.
 - Pronoun resolution is strong: **99%** correct project, **97%** correct answer.
 - Typo correction is strong: **96%** correct project, **94%** correct answer.
 - The remaining errors are reader mistakes, not retrieval failures.
@@ -31,17 +31,17 @@ conversation
 
 | Stage | Median | p95 |
 |---|---:|---:|
-| Middleman tool call | 2.23 s | 16.24 s |
-| Retrieval | 0.25 s | 0.56 s |
-| Rerank | 0.10 s | 0.13 s |
-| Reader | 1.70 s | 4.24 s |
-| **Total** | **4.35 s** | **20.75 s** |
+| Middleman tool call | 1.91 s | 15.64 s |
+| Retrieval | 0.12 s | 0.54 s |
+| Rerank | 0.08 s | 0.13 s |
+| Reader | 0.60 s | 4.04 s |
+| **Total** | **2.62 s** | **20.07 s** |
 
-The tool-call and reader times are slow on the shared 6GB GPU. The shortcut removes the tool call for explicit and typo queries. The reader is still the main cost after retrieval.
+Previous latency was **4.35 s** total and **1.70 s** reader. The shortcuts and shorter generation cut the median total by about **40%** and the reader by about **65%**. The tool-call median mixes one-project pronoun cases that still use the model with shortcut cases that do not.
 
 ## Memory and build
 
-- Index build: **117 s** (word + character indexes).
+- Index build: **51 s** (warm run; cold build was ~117 s).
 - GPU peak: **1.04 GB**.
 - Process RSS: **2.89 GB**.
 - Store: 76,145 chunks / 9,746,560 content tokens.
