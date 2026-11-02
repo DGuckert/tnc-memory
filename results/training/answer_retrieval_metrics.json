@@ -1,0 +1,83 @@
+{
+  "n_docs": 551541,
+  "code": {
+    "n": 500,
+    "mrr": 0.003943925961317265,
+    "recall@1": 0.0,
+    "recall@10": 0.008,
+    "recall@50": 0.018,
+    "elapsed_s": 135.6,
+    "examples": [
+      {
+        "query": "I'm a complete newbie to LocalLLM. How to run llm on my Android phone GPU? Phone: Google Pixel 5 GPU: Qualcomm Adreno 620 RAM: 8GB Here's screenshot where I did test command, but I think my setup is n",
+        "target": "There's an app called pocket pal you can try if you didn't want to go the termux route",
+        "rank": 0,
+        "top1": "I'm a complete newbie to LocalLLM. How to run llm on my Android phone GPU? Phone: Google Pixel 5 GPU: Qualcomm Adreno 620 RAM: 8GB Here's screenshot where I did test command, but I think my setup is n"
+      },
+      {
+        "query": "Yeah I'm wondering if control characters from those commands help or hurt performance and if it's worth the extra prefill time/context \ud83e\udd37",
+        "target": "I was one of the first people to find this model yet I'm still impressed by it",
+        "rank": 0,
+        "top1": "Yeah I'm wondering if control characters from those commands help or hurt performance and if it's worth the extra prefill time/context \ud83e\udd37"
+      },
+      {
+        "query": "also MiniCPM 35B should in theory be better than qwen 3.6",
+        "target": "It's like going to the next quant for almost free",
+        "rank": 0,
+        "top1": "also MiniCPM 35B should in theory be better than qwen 3.6"
+      },
+      {
+        "query": "My political platform is giving the SEC a designation as a branch of the military so they can use AH-64s and hellfires to paint these guys onto concrete https://www.lazarusllm.com/",
+        "target": "yeah. needed custom kernels but they are GEMM so its very lightweight. the model itself is 12 gigabytes as opposed to 13 of the official int8 convrot",
+        "rank": 0,
+        "top1": "My political platform is giving the SEC a designation as a branch of the military so they can use AH-64s and hellfires to paint these guys onto concrete https://www.lazarusllm.com/"
+      },
+      {
+        "query": "are you saying america is a bottom?",
+        "target": "China hasn\u2019t even matched a model that is almost 5 months old",
+        "rank": 0,
+        "top1": "are you saying america is a bottom?"
+      }
+    ]
+  },
+  "chat": {
+    "n": 500,
+    "mrr": 0.005564516129032258,
+    "recall@1": 0.0,
+    "recall@10": 0.016,
+    "recall@50": 0.024,
+    "elapsed_s": 118.2,
+    "examples": [
+      {
+        "query": "most businesses which is a large part of revenue are on api",
+        "target": "except for ai pro i suppose which is 4 bucks a month",
+        "rank": 0,
+        "top1": "most businesses which is a large part of revenue are on api"
+      },
+      {
+        "query": "Like best os model?",
+        "target": "<:Yanqing_Broke:1084670079851036672>",
+        "rank": 0,
+        "top1": "Like best os model?"
+      },
+      {
+        "query": "Is that what makes openclaw special?",
+        "target": "This is the best search to use",
+        "rank": 0,
+        "top1": "Is that what makes openclaw special?"
+      },
+      {
+        "query": "new glm model is pretty cool, had a coding issue and asked deepseek, gemini, claude, and a ton of other LLMs, but couldnt fix the bug, GLM fixed it instantly in one try",
+        "target": "<:rabiribu:1060213708342710302>",
+        "rank": 0,
+        "top1": "new glm model is pretty cool, had a coding issue and asked deepseek, gemini, claude, and a ton of other LLMs, but couldnt fix the bug, GLM fixed it instantly in one try"
+      },
+      {
+        "query": "Can it generate 1000 cheese",
+        "target": "preliminary testing showed gpt image 1.5 level quality",
+        "rank": 0,
+        "top1": "Can it generate 1000 cheese"
+      }
+    ]
+  }
+}

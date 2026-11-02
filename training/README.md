@@ -86,6 +86,8 @@ Full gateway on 100 noisy conversations: **0.86** tool-call and **0.88** end-to-
 
 Full gateway on the 9.75M store: structured facts **1.000** (direct lookup); model fallback **0.950**, median **2.42 s**, p95 **3.61 s**; noisy conversations **0.94**. The tool router is a 135M LoRA; the reader is 360M. Details: `results/training/gateway_975m_report.md`.
 
+Coding/chat pilot: 11,553 real-Discord context→next-message rows; 360M adapter reaches **29.43** held-out perplexity. Global exact-message BM25 retrieval is near zero. Details: `results/training/chat_coding_report.md`.
+
 Adapter: `v0.1-middleman` release. Reranker: `v0.1-reranker` release.
 
 ## Recommended use

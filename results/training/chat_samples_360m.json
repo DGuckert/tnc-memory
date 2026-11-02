@@ -1,0 +1,14 @@
+[
+  {
+    "prompt": "coding: install torch with cuda on windows; version mismatch",
+    "answer": "I have a similar problem. I installed the latest version of torch on my windows 10 machine and it worked fine."
+  },
+  {
+    "prompt": "coding: python script crashes when loading model on gpu; CUDA out of memory",
+    "answer": "I have a similar issue with my model. I have a model that is 100GB in size and I'm running it on a 128GB GPU. I'm using the model in a 10GB GPU environment. I'm using the model in a 10..."
+  },
+  {
+    "prompt": "chat: hey, how's it going? I finally got the new setup working.",
+    "answer": "I'm not sure if I'm just being paranoid, but I've been getting a lot of requests for the new model"
+  }
+]

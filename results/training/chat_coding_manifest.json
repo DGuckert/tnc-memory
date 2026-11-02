@@ -1,0 +1,41 @@
+{
+  "answer_chat.jsonl": {
+    "rows": 500
+  },
+  "answer_code.jsonl": {
+    "rows": 500
+  },
+  "retrieval_chat.jsonl": {
+    "rows": 500
+  },
+  "retrieval_coding.jsonl": {
+    "rows": 500
+  },
+  "test_chat.jsonl": {
+    "rows": 38
+  },
+  "test_chat_coding.jsonl": {
+    "rows": 78
+  },
+  "test_coding.jsonl": {
+    "rows": 40
+  },
+  "train_chat.jsonl": {
+    "rows": 5910
+  },
+  "train_chat_coding.jsonl": {
+    "rows": 11553
+  },
+  "train_coding.jsonl": {
+    "rows": 5643
+  },
+  "val_chat.jsonl": {
+    "rows": 52
+  },
+  "val_chat_coding.jsonl": {
+    "rows": 369
+  },
+  "val_coding.jsonl": {
+    "rows": 317
+  }
+}

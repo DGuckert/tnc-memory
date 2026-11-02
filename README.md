@@ -69,6 +69,18 @@ On the 9.75M store, the structured-fact fast path answers **200/200** benchmark 
 
 Adapters: `v0.1-middleman` and `v0.1-reranker` releases. Details: `results/training/`.
 
+## Coding and chat track
+
+A first real-Discord adapter was trained on 11,553 context→next-message rows:
+
+| Model | Val loss | Perplexity |
+|---|---:|---:|
+| SmolLM2-135M | 3.541 | 34.51 |
+| SmolLM2-360M | **3.382** | **29.43** |
+| 360M base | 3.765 | 43.17 |
+
+The 360M adapter can produce coherent short coding/chat replies, but it is a next-message model, not a full assistant. Global exact-answer retrieval over 551K real messages is near zero with BM25; open-domain chat/code needs a semantic index. Raw Discord text is not committed.
+
 ## Data note
 
 The raw Discord corpus, chunk text, embeddings, and large arrays are **not** committed. Only curated results, scripts, and synthetic training data are included. The facts, project names, and codes are synthetic. This repository is private.
@@ -88,4 +100,5 @@ The scripts expect a Linux/WSL workspace at `/home/daniel/tnc` with the prepared
 - The gateway is integrated; noisy-conversation end-to-end answer accuracy is **0.88**.
 - Structured facts: **1.000** on the 200-conversation 9.75M benchmark; model fallback **0.950**.
 - Noisy conversations with real chatter: **0.94** end-to-end.
-- Next: human-labeled conversations; the 100% is structured-fact lookup, not general reasoning.
+- Coding/chat: 360M adapter reaches **29.43** held-out perplexity; global real-message BM25 retrieval is near zero.
+- Next: human-labeled conversations and a semantic message index.

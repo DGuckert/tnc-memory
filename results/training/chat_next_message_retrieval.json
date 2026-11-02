@@ -1,0 +1,83 @@
+{
+  "n_docs": 551541,
+  "coding": {
+    "n": 450,
+    "mrr": 0.005543185111072219,
+    "recall@1": 0.0,
+    "recall@10": 0.011111111111111112,
+    "recall@50": 0.02666666666666667,
+    "elapsed_s": 172.0,
+    "examples": [
+      {
+        "query": "its just dependent on topology of how the model is split. like expert parallelism vs tensor parallelism. splitting an expert into shards across all gpus vs having the entire expert on one gpu or whate",
+        "target": "RoCM just doesn't load at all even at 16k context",
+        "rank": 0,
+        "top1": "its just dependent on topology of how the model is split. like expert parallelism vs tensor parallelism. splitting an expert into shards across all gpus vs having the entire expert on one gpu or whate"
+      },
+      {
+        "query": "it's more useful to talk about how much of US farming happens in the desert and is heavily subsidized by the government setting low water prices, and how this farming uses two orders of magnitude more",
+        "target": "THERE IS NO STEALING OF HUMAN CREATIVITY AND I DOUBT THE MODEL REQUIRES 1200 B100'S TO RUN",
+        "rank": 0,
+        "top1": "it's more useful to talk about how much of US farming happens in the desert and is heavily subsidized by the government setting low water prices, and how this farming uses two orders of magnitude more"
+      },
+      {
+        "query": "every update i gotta fix it",
+        "target": "Are there gooner game benchmarks?",
+        "rank": 0,
+        "top1": "every update i gotta fix it"
+      },
+      {
+        "query": "honestly my main issue with it, yeah. Not oneshotting *specifically*, just that it doesn't go nearly far enough in its actions in general",
+        "target": "it's still a worthwhile model",
+        "rank": 0,
+        "top1": "honestly my main issue with it, yeah. Not oneshotting *specifically*, just that it doesn't go nearly far enough in its actions in general"
+      },
+      {
+        "query": "why do a whole finetune when a simple lora has already demonstrated it retains better capability while lowering thinking massively",
+        "target": "the thinkingcap lora? or something else?",
+        "rank": 0,
+        "top1": "why do a whole finetune when a simple lora has already demonstrated it retains better capability while lowering thinking massively"
+      }
+    ]
+  },
+  "chat": {
+    "n": 425,
+    "mrr": 0.0055580807751854965,
+    "recall@1": 0.0,
+    "recall@10": 0.011764705882352941,
+    "recall@50": 0.023529411764705882,
+    "elapsed_s": 117.9,
+    "examples": [
+      {
+        "query": "waaaaaaaaaah. if i am not completely wrong, then the weights form a manifold in a higher order space, not a space itself. and the attention mechanism massively constrains what the manifold can look li",
+        "target": "i feel like i forgot how llms work. again",
+        "rank": 0,
+        "top1": "waaaaaaaaaah. if i am not completely wrong, then the weights form a manifold in a higher order space, not a space itself. and the attention mechanism massively constrains what the manifold can look li"
+      },
+      {
+        "query": "If you have space, just run those. They are usually cheapest.",
+        "target": "The Dell Alienware is a sleeper 3090. Very good. Smallest footprint. Seems to keep cooler than the XC3",
+        "rank": 0,
+        "top1": "If you have space, just run those. They are usually cheapest."
+      },
+      {
+        "query": "to help general questions and to take your guys abuse",
+        "target": "so rather generic. just name it robot",
+        "rank": 0,
+        "top1": "to help general questions and to take your guys abuse"
+      },
+      {
+        "query": "bro what",
+        "target": "https://en.wikipedia.org/wiki/Israeli_disengagement_from_the_Gaza_Strip",
+        "rank": 0,
+        "top1": "BRO WHAT"
+      },
+      {
+        "query": "'sallgood. you?",
+        "target": "yeah i know, i mean i tested needle2 on the web",
+        "rank": 0,
+        "top1": "'sallgood. you?"
+      }
+    ]
+  }
+}
