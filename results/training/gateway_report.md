@@ -25,6 +25,19 @@ conversation
 
 End-to-end is slightly higher than tool-call full accuracy because some tool calls differ only in query wording while still returning the correct code. The score that matters is the answer.
 
+## 9.75M store
+
+200 conversations against the full 9.75M-token store:
+
+| Case | Correct answer |
+|---|---:|
+| Pronoun (“it”) | **0.97** |
+| Explicit name | **0.94** |
+| One-char typo | **0.94** |
+| **Overall** | **0.955** |
+
+Median total latency is **4.35 s**; GPU peak **1.04 GB**, RSS **2.89 GB**, index build **117 s**. Details: `gateway_975m_report.md`.
+
 ## What it demonstrates
 
 - The middleman resolves pronouns and references from real-looking conversation noise.

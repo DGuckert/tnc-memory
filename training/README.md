@@ -84,6 +84,8 @@ End-to-end retrieval + rerank + reader: exact **1.000**, typo **0.890** with ent
 
 Full gateway on 100 noisy conversations: **0.86** tool-call and **0.88** end-to-end answer accuracy. Details: `results/training/gateway_report.md`.
 
+Full gateway on the 9.75M store: **0.955** answer accuracy; median latency **4.35 s**. Details: `results/training/gateway_975m_report.md`.
+
 Adapter: `v0.1-middleman` release. Reranker: `v0.1-reranker` release.
 
 ## Recommended use

@@ -1,0 +1,170 @@
+{
+  "N": 10485760,
+  "n": 200,
+  "build_s": 117.1,
+  "gpu_max_gb": 1.04,
+  "rss_gb": 2.89,
+  "by_case": {
+    "pronoun": {
+      "n": 100,
+      "search": 100,
+      "project": 99,
+      "answer": 97,
+      "search_rate": 1.0,
+      "project_rate": 0.99,
+      "answer_rate": 0.97
+    },
+    "explicit": {
+      "n": 50,
+      "search": 50,
+      "project": 50,
+      "answer": 47,
+      "search_rate": 1.0,
+      "project_rate": 1.0,
+      "answer_rate": 0.94
+    },
+    "typo": {
+      "n": 50,
+      "search": 50,
+      "project": 48,
+      "answer": 47,
+      "search_rate": 1.0,
+      "project_rate": 0.96,
+      "answer_rate": 0.94
+    }
+  },
+  "overall_answer": 0.955,
+  "latency_ms": {
+    "tool": {
+      "median": 2227.8,
+      "p95": 16239.2,
+      "n": 200
+    },
+    "search": {
+      "median": 252.9,
+      "p95": 558.8,
+      "n": 200
+    },
+    "rerank": {
+      "median": 102.4,
+      "p95": 130.6,
+      "n": 200
+    },
+    "reader": {
+      "median": 1699.8,
+      "p95": 4236.8,
+      "n": 200
+    },
+    "total": {
+      "median": 4352.3,
+      "p95": 20749.2,
+      "n": 200
+    }
+  },
+  "examples": [
+    {
+      "kind": "pronoun",
+      "project": "Groth",
+      "gold": "8HU-CM6H",
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Groth",
+          "query": "what is the access code for project Groth?"
+        }
+      },
+      "answer": "8HU-CM6H"
+    },
+    {
+      "kind": "pronoun",
+      "project": "Pathkiath",
+      "gold": "N2S-3G48",
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Pathkiath",
+          "query": "what is the invoice number for project Pathkiath?"
+        }
+      },
+      "answer": "N2S-3G48"
+    },
+    {
+      "kind": "pronoun",
+      "project": "Voulzhux",
+      "gold": "ZGR-ULCT",
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Voulzhux",
+          "query": "what is the serial number for project Voulzhux?"
+        }
+      },
+      "answer": "ZGR-ULCT"
+    },
+    {
+      "kind": "pronoun",
+      "project": "Bourk",
+      "gold": "66B-7RNV",
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Bourk",
+          "query": "what is the passphrase for project Bourk?"
+        }
+      },
+      "answer": "66B-7RNV"
+    },
+    {
+      "kind": "pronoun",
+      "project": "Giastvirk",
+      "gold": "P6F-NAR3",
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Giastvirk",
+          "query": "what is the license key for project Giastvirk?"
+        }
+      },
+      "answer": "P6F-NAR3"
+    },
+    {
+      "kind": "pronoun",
+      "project": "Droulzhark",
+      "gold": "U74-LYKA",
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Droulzhark",
+          "query": "what is the tracking ID for project Droulzhark?"
+        }
+      },
+      "answer": "U74-LYKA"
+    },
+    {
+      "kind": "pronoun",
+      "project": "Zhov",
+      "gold": "KKK-K3N5",
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Zhov",
+          "query": "what is the access code for project Zhov?"
+        }
+      },
+      "answer": "KKK-K3N5"
+    },
+    {
+      "kind": "pronoun",
+      "project": "Konddaerk",
+      "gold": "Z94-SVVG",
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Konddaerk",
+          "query": "what is the invoice number for project Konddaerk?"
+        }
+      },
+      "answer": "Z94-SVVG"
+    }
+  ]
+}
