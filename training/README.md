@@ -80,6 +80,8 @@ Harder stress test, 100 conversations with real chatter noise and paraphrases: f
 
 The cross-encoder reranker is also trained. At 9.75M tokens it improves exact top-1 from **0.980** to **0.995** and typo top-1 from **0.430** to **0.680**. Details: `results/training/reranker_report.md`.
 
+End-to-end retrieval + rerank + reader: exact **1.000**, typo **0.595**. Details: `results/training/end_to_end_report.md`.
+
 Adapter: `v0.1-middleman` release. Reranker: `v0.1-reranker` release.
 
 ## Recommended use

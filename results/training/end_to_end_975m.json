@@ -1,0 +1,21 @@
+{
+  "N": 10485760,
+  "n_queries": 200,
+  "topk": 5,
+  "reranker": "/home/daniel/tnc/training_runs/reranker-mini",
+  "middleman": "/home/daniel/tnc/training_runs/middleman-lora",
+  "exact": {
+    "n": 200,
+    "gold_in_top5": 1.0,
+    "reader_given_gold": 1.0,
+    "end_to_end_exact": 1.0,
+    "elapsed_s": 180.4
+  },
+  "typo": {
+    "n": 200,
+    "gold_in_top5": 0.755,
+    "reader_given_gold": 0.7880794701986755,
+    "end_to_end_exact": 0.595,
+    "elapsed_s": 223.1
+  }
+}

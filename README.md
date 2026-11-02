@@ -61,6 +61,8 @@ Harder stress test, 100 conversations with real chatter noise and paraphrases: f
 
 A cross-encoder reranker is also trained. At 9.75M tokens it improves exact top-1 from **0.980** to **0.995** and typo top-1 from **0.430** to **0.680**.
 
+End-to-end at 9.75M: exact-name questions are **1.000** correct; one-character typos are **0.595** correct.
+
 Adapters: `v0.1-middleman` and `v0.1-reranker` releases. Details: `results/training/`.
 
 ## Data note
@@ -78,4 +80,5 @@ The scripts expect a Linux/WSL workspace at `/home/daniel/tnc` with the prepared
 - The next step is a memory gateway (middleman) that resolves “it/that project,” rewrites the query, retrieves, and hands notes to any host model.
 - A middleman LoRA is trained and released; held-out test is 0.97 full tool-call and 0.99 reader.
 - A cross-encoder reranker is trained; exact top-1 is 0.995 and typo top-1 is 0.680 on the 9.75M benchmark.
-- Next: human-labeled conversation tests and the memory gateway integration.
+- End-to-end retrieval + rerank + reader: exact **1.000**, typo **0.595**.
+- Next: fix typo query canonicalization, then human-labeled conversation tests and the gateway service.
