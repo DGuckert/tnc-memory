@@ -82,6 +82,8 @@ The cross-encoder reranker is also trained. At 9.75M tokens it improves exact to
 
 End-to-end retrieval + rerank + reader: exact **1.000**, typo **0.595**, or **0.675** after query canonicalization. Details: `results/training/end_to_end_report.md`.
 
+Full gateway on 100 noisy conversations: **0.86** tool-call and **0.88** end-to-end answer accuracy. Details: `results/training/gateway_report.md`.
+
 Adapter: `v0.1-middleman` release. Reranker: `v0.1-reranker` release.
 
 ## Recommended use

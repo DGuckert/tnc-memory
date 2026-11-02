@@ -63,6 +63,8 @@ A cross-encoder reranker is also trained. At 9.75M tokens it improves exact top-
 
 End-to-end at 9.75M: exact-name questions are **1.000** correct; one-character typos are **0.595**, or **0.675** after canonicalizing the query from the top note.
 
+The first full gateway (`scripts/gateway.py`) is integrated. On 100 noisy conversations with real chatter, paraphrases, typos, and pronouns: **0.86** tool-call accuracy and **0.88** end-to-end answer accuracy.
+
 Adapters: `v0.1-middleman` and `v0.1-reranker` releases. Details: `results/training/`.
 
 ## Data note
@@ -80,5 +82,6 @@ The scripts expect a Linux/WSL workspace at `/home/daniel/tnc` with the prepared
 - The next step is a memory gateway (middleman) that resolves “it/that project,” rewrites the query, retrieves, and hands notes to any host model.
 - A middleman LoRA is trained and released; held-out test is 0.97 full tool-call and 0.99 reader.
 - A cross-encoder reranker is trained; exact top-1 is 0.995 and typo top-1 is 0.680 on the 9.75M benchmark.
-- End-to-end retrieval + rerank + reader: exact **1.000**, typo **0.595**.
-- Next: fix typo query canonicalization, then human-labeled conversation tests and the gateway service.
+- End-to-end retrieval + rerank + reader: exact **1.000**, typo **0.675** with query canonicalization.
+- The gateway is integrated; noisy-conversation end-to-end answer accuracy is **0.88**.
+- Next: human-labeled conversations, 9.75M gateway test, and latency/memory hardening.

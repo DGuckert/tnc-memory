@@ -1,0 +1,163 @@
+{
+  "n": 100,
+  "tool_full_acc": 0.86,
+  "end_to_end_acc": 0.88,
+  "search_n": 91,
+  "search_answer_acc": 0.8681318681318682,
+  "other_n": 9,
+  "other_action_acc": 1.0,
+  "examples": [
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Grost",
+          "query": "what is the invoice number for project Grost?"
+        }
+      },
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Grost",
+          "query": "what is the invoice number for project Grost?"
+        }
+      },
+      "answer": "6QN-WC67",
+      "mode": "word",
+      "query": "what is the invoice number for project Grost?"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Skevdraerk",
+          "query": "what is the tracking ID for project Skevdraerk?"
+        }
+      },
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Skevdraerk",
+          "query": "what is the tracking ID for project Skevdraerk?"
+        }
+      },
+      "answer": "2D8-DYG5",
+      "mode": "word",
+      "query": "what is the tracking ID for project Skevdraerk?"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Tous",
+          "query": "what is the passphrase for project Tous?"
+        }
+      },
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Tous",
+          "query": "what is the passphrase for project Tous?"
+        }
+      },
+      "answer": "W89-Z7RM",
+      "mode": "word",
+      "query": "what is the passphrase for project Tous?"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Stes",
+          "query": "what is the passphrase for project Stes?"
+        }
+      },
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Stes",
+          "query": "what is the passphrase for project Stes?"
+        }
+      },
+      "answer": "UET-8UVE",
+      "mode": "word",
+      "query": "what is the passphrase for project Stes?"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Tous",
+          "query": "what is the passphrase for project Tous?"
+        }
+      },
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Tous",
+          "query": "what is the passphrase for project Tous?"
+        }
+      },
+      "answer": "W89-Z7RM",
+      "mode": "word",
+      "query": "what is the passphrase for project Tous?"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Zhou",
+          "query": "what is the access code for project Zhou?"
+        }
+      },
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Zhou",
+          "query": "what is the access code for project Zhou?"
+        }
+      },
+      "answer": "8NF-R65H",
+      "mode": "word",
+      "query": "what is the access code for project Zhou?"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Troquist",
+          "query": "what is the serial number for project Troquist?"
+        }
+      },
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Troquist",
+          "query": "what is the serial number for project Troquist?"
+        }
+      },
+      "answer": "NHZ-M7YF",
+      "mode": "word",
+      "query": "what is the serial number for project Troquist?"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Vrouszel",
+          "query": "what is the license key for project Vrouszel?"
+        }
+      },
+      "pred": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Vrouszel",
+          "query": "what is the license key for project Vrouszel?"
+        }
+      },
+      "answer": "VUZ-AZ93",
+      "mode": "word",
+      "query": "what is the license key for project Vrouszel?"
+    }
+  ]
+}
