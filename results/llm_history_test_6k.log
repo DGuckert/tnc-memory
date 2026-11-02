@@ -1,0 +1,15 @@
+model HuggingFaceTB/SmolLM2-360M-Instruct
+chat template ok True
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  82%|████████▏ | 237/290 [00:00<00:00, 2351.08it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 2317.22it/s]
+loaded max_ctx 8192 mem_gb 0.74
+filler lines 20865
+=== 6000 plain fact_needles 60 questions 10
+history tokens 5940 fact tokens 5097
+0 correct False | Groth is the access code for project Groth.
+1 correct True | The invoice number for project Pathkiath is N2S-3G48.
+2 correct False | The serial number for project Voulzhux is 7L3-LS59.
+3 correct False | Bourk's passphrase is:  Bourk's passphrase is: 6
+4 correct False | The license key for project Giastvirk is 4PX-VU6L.
+5 correct False | The tracking ID for project Droulzhark is 2PD-654C.
+6 correct False | Zhov is 77T-7X4M

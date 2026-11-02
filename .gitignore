@@ -1,0 +1,11 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.cache/
+corpus.jsonl
+work/
+*.npy
+*.jsonl
+*.log
+!results/*.log

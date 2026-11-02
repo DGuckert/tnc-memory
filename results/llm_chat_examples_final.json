@@ -1,0 +1,37 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+ "examples": [
+  {
+   "prompt": "Hello! How are you?",
+   "answer": "I'm doing well, thanks for asking."
+  },
+  {
+   "prompt": "Explain in one sentence what a transformer is.",
+   "answer": "A transformer is a device that changes the voltage of an alternating current (AC) signal by using electromagnetic induction, allowing it to step up or step down the voltage while maintaining the same frequency."
+  },
+  {
+   "prompt": "Write a haiku about the ocean.",
+   "answer": "The waves below,\nA symphony of sound,\nNature's eternal song.\n\nThe sea's vast,\nA canvas of blue,\nA world of endless light.\n\nThe tides,\nA rhythm of life,"
+  },
+  {
+   "prompt": "What is 17 * 23?",
+   "answer": "17 * 23 = 391"
+  },
+  {
+   "prompt": "Give me three tips for better sleep.",
+   "answer": "1. Create a bedtime routine: Start your day with a relaxing activity like reading a book, taking a warm bath, or practicing gentle stretches. This helps signal to your brain that it's time to wind down.\n\n2. Limit screen"
+  },
+  {
+   "prompt": "Who are you?",
+   "answer": "I'm a chatbot designed to assist users with their language learning needs. I was trained on a vast amount of text data, including various languages, grammar rules, and vocabulary. I can help with language learning, grammar, and vocabulary exercises"
+  },
+  {
+   "prompt": "What is the capital of France?",
+   "answer": "The capital of France is Paris."
+  },
+  {
+   "prompt": "Tell me a short joke.",
+   "answer": "Why did the chicken cross the road? To get to the other side!"
+  }
+ ]
+}

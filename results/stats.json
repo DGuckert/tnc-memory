@@ -1,0 +1,199 @@
+{
+  "corpus": "/home/daniel/tnc/corpus.jsonl",
+  "messages": 603531,
+  "channels": 28,
+  "raw_tokens": 10569479,
+  "blank_tokens": 821115,
+  "content_tokens": 9748364,
+  "blank_fraction": 0.07768736756087978,
+  "leading_blanks_unassigned": 0,
+  "content_tokens_in_full_chunks": 9746560,
+  "content_tokens_dropped_in_partial_chunks": 1804,
+  "blank_flag_distribution_content_tokens": {
+    "0": 9037834,
+    "1": 661992,
+    "2": 33042,
+    "3": 13692
+  },
+  "chunk_size_content_tokens": 128,
+  "shuffle_seed": 20261030,
+  "n_chunks": 76145,
+  "tokenizer": "gpt2",
+  "tokenizer_vocab": 50257,
+  "offset_mode": "char",
+  "per_channel": {
+    "ai-safety": {
+      "raw": 2165,
+      "blank": 61,
+      "content": 2104,
+      "chunks": 16
+    },
+    "announcements": {
+      "raw": 897,
+      "blank": 38,
+      "content": 859,
+      "chunks": 6
+    },
+    "bots": {
+      "raw": 324681,
+      "blank": 24498,
+      "content": 300183,
+      "chunks": 2345
+    },
+    "consumer-tech": {
+      "raw": 1021,
+      "blank": 52,
+      "content": 969,
+      "chunks": 7
+    },
+    "garage": {
+      "raw": 9,
+      "blank": 1,
+      "content": 8,
+      "chunks": 0
+    },
+    "general": {
+      "raw": 8244683,
+      "blank": 651322,
+      "content": 7593361,
+      "chunks": 59323
+    },
+    "llm-discussion": {
+      "raw": 1165090,
+      "blank": 84655,
+      "content": 1080435,
+      "chunks": 8440
+    },
+    "local-llm-help-livechat": {
+      "raw": 138999,
+      "blank": 10513,
+      "content": 128486,
+      "chunks": 1003
+    },
+    "makerspace-discussion": {
+      "raw": 436,
+      "blank": 28,
+      "content": 408,
+      "chunks": 3
+    },
+    "memes": {
+      "raw": 58073,
+      "blank": 2924,
+      "content": 55149,
+      "chunks": 430
+    },
+    "model-updates": {
+      "raw": 109602,
+      "blank": 6576,
+      "content": 103026,
+      "chunks": 804
+    },
+    "off-topic": {
+      "raw": 126909,
+      "blank": 8078,
+      "content": 118831,
+      "chunks": 928
+    },
+    "rules": {
+      "raw": 484,
+      "blank": 35,
+      "content": 449,
+      "chunks": 3
+    },
+    "self-promotion": {
+      "raw": 115942,
+      "blank": 8171,
+      "content": 107771,
+      "chunks": 841
+    },
+    "coding": {
+      "raw": 44,
+      "blank": 3,
+      "content": 41,
+      "chunks": 0
+    },
+    "llm-use-cases": {
+      "raw": 11920,
+      "blank": 905,
+      "content": 11015,
+      "chunks": 86
+    },
+    "local-llm-help": {
+      "raw": 226445,
+      "blank": 20055,
+      "content": 206390,
+      "chunks": 1612
+    },
+    "models": {
+      "raw": 16136,
+      "blank": 1053,
+      "content": 15083,
+      "chunks": 117
+    },
+    "new-in-ai": {
+      "raw": 73,
+      "blank": 6,
+      "content": 67,
+      "chunks": 0
+    },
+    "news": {
+      "raw": 330,
+      "blank": 21,
+      "content": 309,
+      "chunks": 2
+    },
+    "photography": {
+      "raw": 39,
+      "blank": 2,
+      "content": 37,
+      "chunks": 0
+    },
+    "setup-showcase": {
+      "raw": 14210,
+      "blank": 925,
+      "content": 13285,
+      "chunks": 103
+    },
+    "smart-home": {
+      "raw": 195,
+      "blank": 8,
+      "content": 187,
+      "chunks": 1
+    },
+    "tool-updates": {
+      "raw": 3493,
+      "blank": 117,
+      "content": 3376,
+      "chunks": 26
+    },
+    "welcome": {
+      "raw": 1130,
+      "blank": 132,
+      "content": 998,
+      "chunks": 7
+    },
+    "x-home-labbing": {
+      "raw": 144,
+      "blank": 12,
+      "content": 132,
+      "chunks": 1
+    },
+    "voice-chat": {
+      "raw": 4786,
+      "blank": 355,
+      "content": 4431,
+      "chunks": 34
+    },
+    "which-llama": {
+      "raw": 1543,
+      "blank": 569,
+      "content": 974,
+      "chunks": 7
+    }
+  },
+  "timing_s": {
+    "load": 3.577573299407959,
+    "tokenize_chunk": 43.35304665565491,
+    "total": 47.872883796691895
+  }
+}

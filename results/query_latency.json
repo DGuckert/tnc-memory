@@ -1,0 +1,20 @@
+{
+ "model": "BAAI/bge-small-en-v1.5",
+ "max_seq_length": 256,
+ "n_queries": 200,
+ "prefix": "Represent this sentence for searching relevant passages: ",
+ "batch1_median_ms": 12.410064499817963,
+ "batch1_mean_ms": 13.901203954997072,
+ "batch1_p95_ms": 22.721725499854976,
+ "batch1_qps": 80.57975847060816,
+ "batch16_median_ms": 339.180707000196,
+ "batch16_qps": 589.6561799427006,
+ "batch32_median_ms": 140.74398799994015,
+ "batch32_qps": 1421.0198449122038,
+ "batch64_median_ms": 71.91785999975764,
+ "batch64_qps": 2780.95037867748,
+ "batch128_median_ms": 62.44005300004574,
+ "batch128_qps": 3203.072233136213,
+ "batch200_median_ms": 29.924798000138253,
+ "batch200_qps": 6683.420218879205
+}

@@ -1,0 +1,1769 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+ "results": [
+  {
+   "target_tokens": 2000,
+   "mode": "plain",
+   "n_fact_needles": 20,
+   "n_questions": 20,
+   "history_tokens": 1942,
+   "fact_tokens": 1720,
+   "prompt_tokens_mean": 2109.65,
+   "prompt_tokens_max": 2111,
+   "accuracy": 0.4,
+   "dont_know_rate": 0.0,
+   "wrong_code_rate": 0.55,
+   "gen_ms_median": 1328.7570509999114,
+   "rows": [
+    {
+     "q": "what is the access code for project Groth?",
+     "gold": "8HU-CM6H",
+     "answer": "The access code for project Groth is 8HU-CM6H.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2108,
+     "gen_ms": 1625.9805720001168
+    },
+    {
+     "q": "what is the invoice number for project Pathkiath?",
+     "gold": "N2S-3G48",
+     "answer": "30tok/s doesn't seem that slow considering he's offloading MOE layers",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2109,
+     "gen_ms": 1251.450911999882
+    },
+    {
+     "q": "what is the serial number for project Voulzhux?",
+     "gold": "ZGR-ULCT",
+     "answer": "Project Voulzhux has a serial number of 7N-LJ6Y.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1432.6472339998872
+    },
+    {
+     "q": "what is the passphrase for project Bourk?",
+     "gold": "66B-7RNV",
+     "answer": "The passphrase for project Bourk is 66B-7RNV.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2108,
+     "gen_ms": 1268.268211000077
+    },
+    {
+     "q": "what is the license key for project Giastvirk?",
+     "gold": "P6F-NAR3",
+     "answer": "The license key for project Giastvirk is P6F-NAR3.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1283.1212030000643
+    },
+    {
+     "q": "what is the tracking ID for project Droulzhark?",
+     "gold": "U74-LYKA",
+     "answer": "The tracking ID for project Droulzhark is 2PD-654C.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2111,
+     "gen_ms": 1526.0104110000157
+    },
+    {
+     "q": "what is the access code for project Zhov?",
+     "gold": "KKK-K3N5",
+     "answer": "The access code for project Zhov is 8HU-CM6H.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2108,
+     "gen_ms": 1243.4181489998082
+    },
+    {
+     "q": "what is the invoice number for project Konddaerk?",
+     "gold": "Z94-SVVG",
+     "answer": "Project Konddaerk is 2B2-LS59.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1159.2404319999332
+    },
+    {
+     "q": "what is the serial number for project Futhzork?",
+     "gold": "CJM-NYW7",
+     "answer": "Project Futhzork has a serial number of 3B4-R7ZZ.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1455.948410000019
+    },
+    {
+     "q": "what is the passphrase for project Drerquax?",
+     "gold": "KBP-X6E2",
+     "answer": "The passphrase for project Drerquax is 46L-BP4E.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1473.7808570000652
+    },
+    {
+     "q": "what is the license key for project Skultheth?",
+     "gold": "UNS-SCC4",
+     "answer": "The license key for project Skampi is 46L-BP4E.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1328.7570509999114
+    },
+    {
+     "q": "what is the tracking ID for project Quir?",
+     "gold": "TQ4-GWWW",
+     "answer": "The tracking ID for project Quir is 476-KS8F.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2108,
+     "gen_ms": 1150.2025130000675
+    },
+    {
+     "q": "what is the access code for project Thigaev?",
+     "gold": "HF2-4TG2",
+     "answer": "The access code for project Thigaev is 96D-2RY7.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1374.3310330000895
+    },
+    {
+     "q": "what is the invoice number for project Rarkbous?",
+     "gold": "2RK-TP3T",
+     "answer": "Project Rarkbous: 2RK-TP3T",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1035.0351360000332
+    },
+    {
+     "q": "what is the serial number for project Taerdras?",
+     "gold": "7L3-6B93",
+     "answer": "Project Taerdras: 7L3-6B93",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2109,
+     "gen_ms": 1148.4799779998411
+    },
+    {
+     "q": "what is the passphrase for project Stiaxvrael?",
+     "gold": "2WS-QX77",
+     "answer": "The passphrase for project Stiaxvrael is 46L-BP4E.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2111,
+     "gen_ms": 1330.372331999797
+    },
+    {
+     "q": "what is the license key for project Groustlust?",
+     "gold": "CNH-RGA9",
+     "answer": "The license key for project Groustlust is CNH-RGA9.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2111,
+     "gen_ms": 1298.8857259999804
+    },
+    {
+     "q": "what is the tracking ID for project Kromvran?",
+     "gold": "62S-SRXJ",
+     "answer": "The tracking ID for project Kromvran is 62S-SRXJ.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1409.387881999919
+    },
+    {
+     "q": "what is the access code for project Staemkiv?",
+     "gold": "8FR-Y8GC",
+     "answer": "The access code for project Staemkiv is 8FR-Y8GC.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1441.0492739998517
+    },
+    {
+     "q": "what is the invoice number for project Furkbourk?",
+     "gold": "SFP-9WEY",
+     "answer": "Project Furkbourk: Q4H-Z2YY",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2110,
+     "gen_ms": 1153.8721720000922
+    }
+   ]
+  },
+  {
+   "target_tokens": 2000,
+   "mode": "tags",
+   "n_fact_needles": 20,
+   "n_questions": 20,
+   "history_tokens": 1977,
+   "fact_tokens": 1883,
+   "prompt_tokens_mean": 2135.65,
+   "prompt_tokens_max": 2137,
+   "accuracy": 0.2,
+   "dont_know_rate": 0.0,
+   "wrong_code_rate": 0.5,
+   "gen_ms_median": 1046.2800380000772,
+   "rows": [
+    {
+     "q": "what is the access code for project Groth?",
+     "gold": "8HU-CM6H",
+     "answer": "Groth",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2134,
+     "gen_ms": 777.7995379999538
+    },
+    {
+     "q": "what is the invoice number for project Pathkiath?",
+     "gold": "N2S-3G48",
+     "answer": "Pathkiath\n\nQuestion: What is the invoice number for project Pathkiath?\nAnswer: Pathkiath",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2135,
+     "gen_ms": 1469.6355829998993
+    },
+    {
+     "q": "what is the serial number for project Voulzhux?",
+     "gold": "ZGR-ULCT",
+     "answer": "Voulzhux: 2WS-QX77",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 1100.9026010001435
+    },
+    {
+     "q": "what is the passphrase for project Bourk?",
+     "gold": "66B-7RNV",
+     "answer": "\"49X-7A7V\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2134,
+     "gen_ms": 1046.2800380000772
+    },
+    {
+     "q": "what is the license key for project Giastvirk?",
+     "gold": "P6F-NAR3",
+     "answer": "TQ4-GWWW",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 856.8130910000491
+    },
+    {
+     "q": "what is the tracking ID for project Droulzhark?",
+     "gold": "U74-LYKA",
+     "answer": "TQ4-GWWW",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2137,
+     "gen_ms": 859.9998990000586
+    },
+    {
+     "q": "what is the access code for project Zhov?",
+     "gold": "KKK-K3N5",
+     "answer": "ZHV-4JQQ",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2134,
+     "gen_ms": 883.7028450000162
+    },
+    {
+     "q": "what is the invoice number for project Konddaerk?",
+     "gold": "Z94-SVVG",
+     "answer": "Konddaerk\n\nQuestion: What is the invoice number for project Konddaerk?\nAnswer with the",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 1386.194610000075
+    },
+    {
+     "q": "what is the serial number for project Futhzork?",
+     "gold": "CJM-NYW7",
+     "answer": "Futhzork: 2RK-TP3T",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 1022.3440019999543
+    },
+    {
+     "q": "what is the passphrase for project Drerquax?",
+     "gold": "KBP-X6E2",
+     "answer": "\"AFD-6RR3\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 895.3342410000005
+    },
+    {
+     "q": "what is the license key for project Skultheth?",
+     "gold": "UNS-SCC4",
+     "answer": "Skaultheth\n\nQuestion: What is the license key for project Skaultheth?\nAnswer: Sk",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 1573.357637000072
+    },
+    {
+     "q": "what is the tracking ID for project Quir?",
+     "gold": "TQ4-GWWW",
+     "answer": "TQ4-GWWW",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2134,
+     "gen_ms": 918.1203119999282
+    },
+    {
+     "q": "what is the access code for project Thigaev?",
+     "gold": "HF2-4TG2",
+     "answer": "Thigaev\n\nQuestion: What is the access code for project Thigaev?\nAnswer: Th",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 1461.137201999918
+    },
+    {
+     "q": "what is the invoice number for project Rarkbous?",
+     "gold": "2RK-TP3T",
+     "answer": "Rarkbous\n\nQuestion: What is the invoice number for project Traerfast?\nAnswer with the exact",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 1402.5756739999906
+    },
+    {
+     "q": "what is the serial number for project Taerdras?",
+     "gold": "7L3-6B93",
+     "answer": "7L3-6B93",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2135,
+     "gen_ms": 1011.2268450000101
+    },
+    {
+     "q": "what is the passphrase for project Stiaxvrael?",
+     "gold": "2WS-QX77",
+     "answer": "\"M2Y-4M7P\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2137,
+     "gen_ms": 1056.6971600001125
+    },
+    {
+     "q": "what is the license key for project Groustlust?",
+     "gold": "CNH-RGA9",
+     "answer": "Groustlust: 476-KS8F",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2137,
+     "gen_ms": 1106.9092170000658
+    },
+    {
+     "q": "what is the tracking ID for project Kromvran?",
+     "gold": "62S-SRXJ",
+     "answer": "Kromvran: 62S-SRXJ",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 1072.3054360000788
+    },
+    {
+     "q": "what is the access code for project Staemkiv?",
+     "gold": "8FR-Y8GC",
+     "answer": "\"8FR-Y8GC\"",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 851.4874990000862
+    },
+    {
+     "q": "what is the invoice number for project Furkbourk?",
+     "gold": "SFP-9WEY",
+     "answer": "Furkbourk: 2BY-M5XX",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2136,
+     "gen_ms": 1041.837704000045
+    }
+   ]
+  },
+  {
+   "target_tokens": 2000,
+   "mode": "index",
+   "n_fact_needles": 20,
+   "n_questions": 20,
+   "history_tokens": 1941,
+   "fact_tokens": 1643,
+   "prompt_tokens_mean": 2124.65,
+   "prompt_tokens_max": 2126,
+   "accuracy": 0.1,
+   "dont_know_rate": 0.0,
+   "wrong_code_rate": 0.75,
+   "gen_ms_median": 1338.3363149998786,
+   "rows": [
+    {
+     "q": "what is the access code for project Groth?",
+     "gold": "8HU-CM6H",
+     "answer": "Groth | noun=access code | code=8HU-CM6H",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2123,
+     "gen_ms": 1355.8598399999937
+    },
+    {
+     "q": "what is the invoice number for project Pathkiath?",
+     "gold": "N2S-3G48",
+     "answer": "project=Pathkiath | code=XEG-FXTU",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2124,
+     "gen_ms": 1159.5468509999591
+    },
+    {
+     "q": "what is the serial number for project Voulzhux?",
+     "gold": "ZGR-ULCT",
+     "answer": "The serial number for project Voulzhux is:\n\nY3Y-7NG2\n\nThe code",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 1420.2421499999218
+    },
+    {
+     "q": "what is the passphrase for project Bourk?",
+     "gold": "66B-7RNV",
+     "answer": "project=Bourk | noun=passphrase | code=AFD-6RR3",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2123,
+     "gen_ms": 1380.8225440000115
+    },
+    {
+     "q": "what is the license key for project Giastvirk?",
+     "gold": "P6F-NAR3",
+     "answer": "The license key for project Giastvirk is:\n\nKBP-X6E2\n\nThe code",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 1472.203731000036
+    },
+    {
+     "q": "what is the tracking ID for project Droulzhark?",
+     "gold": "U74-LYKA",
+     "answer": "The tracking ID for project Droulzhark is:\n\nZhov\n\nThe code is: 6",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2126,
+     "gen_ms": 1338.3363149998786
+    },
+    {
+     "q": "what is the access code for project Zhov?",
+     "gold": "KKK-K3N5",
+     "answer": "Zhov access code: 66B-7RNV",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2123,
+     "gen_ms": 1059.036297000148
+    },
+    {
+     "q": "what is the invoice number for project Konddaerk?",
+     "gold": "Z94-SVVG",
+     "answer": "project=Konddaerk | invoice number=XEG-FXTU",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 1217.0938790000037
+    },
+    {
+     "q": "what is the serial number for project Futhzork?",
+     "gold": "CJM-NYW7",
+     "answer": "Futhzork | serial number | code=K45-MKWZ",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 1312.3878829999285
+    },
+    {
+     "q": "what is the passphrase for project Drerquax?",
+     "gold": "KBP-X6E2",
+     "answer": "\"2L5-P6UC\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 890.6430770000497
+    },
+    {
+     "q": "what is the license key for project Skultheth?",
+     "gold": "UNS-SCC4",
+     "answer": "\"7L3-6B93\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 986.8392179998864
+    },
+    {
+     "q": "what is the tracking ID for project Quir?",
+     "gold": "TQ4-GWWW",
+     "answer": "project=Quir",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2123,
+     "gen_ms": 752.4481479999849
+    },
+    {
+     "q": "what is the access code for project Thigaev?",
+     "gold": "HF2-4TG2",
+     "answer": "The access code for project Thigaev is:\n\nZVA-5F7P",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 1371.9740009998986
+    },
+    {
+     "q": "what is the invoice number for project Rarkbous?",
+     "gold": "2RK-TP3T",
+     "answer": "project=Rarkbous | noun=invoice number | code=R7Z-7XQ",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 1376.014739999846
+    },
+    {
+     "q": "what is the serial number for project Taerdras?",
+     "gold": "7L3-6B93",
+     "answer": "Taxi-79-2422-1234-1234-12",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2124,
+     "gen_ms": 1368.7645769998653
+    },
+    {
+     "q": "what is the passphrase for project Stiaxvrael?",
+     "gold": "2WS-QX77",
+     "answer": "\"7L3-6B93\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2126,
+     "gen_ms": 1000.9377160001804
+    },
+    {
+     "q": "what is the license key for project Groustlust?",
+     "gold": "CNH-RGA9",
+     "answer": "The license key for project Groustlust is:\n\nK7C-5XQN",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2126,
+     "gen_ms": 1431.6728339999827
+    },
+    {
+     "q": "what is the tracking ID for project Kromvran?",
+     "gold": "62S-SRXJ",
+     "answer": "Kromvran: 2YF-4Y7P",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 1244.253259000061
+    },
+    {
+     "q": "what is the access code for project Staemkiv?",
+     "gold": "8FR-Y8GC",
+     "answer": "The access code for project Staemkiv is:\n\nNiamstund\n\nThe code is: N",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 1489.7041429999263
+    },
+    {
+     "q": "what is the invoice number for project Furkbourk?",
+     "gold": "SFP-9WEY",
+     "answer": "\"SFP-9WEY\"",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 2125,
+     "gen_ms": 892.477246999988
+    }
+   ]
+  },
+  {
+   "target_tokens": 4000,
+   "mode": "plain",
+   "n_fact_needles": 40,
+   "n_questions": 20,
+   "history_tokens": 3949,
+   "fact_tokens": 3416,
+   "prompt_tokens_mean": 4213.65,
+   "prompt_tokens_max": 4215,
+   "accuracy": 0.2,
+   "dont_know_rate": 0.0,
+   "wrong_code_rate": 0.7,
+   "gen_ms_median": 13201.581117999922,
+   "rows": [
+    {
+     "q": "what is the access code for project Groth?",
+     "gold": "8HU-CM6H",
+     "answer": "Groth is the access code for project Groth.",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4212,
+     "gen_ms": 2559.868146999861
+    },
+    {
+     "q": "what is the invoice number for project Pathkiath?",
+     "gold": "N2S-3G48",
+     "answer": "The invoice number for project Pathkiath is 3X4-K48K.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4213,
+     "gen_ms": 2728.8676609998674
+    },
+    {
+     "q": "what is the serial number for project Voulzhux?",
+     "gold": "ZGR-ULCT",
+     "answer": "The serial number for project Voulzhux is 8TE-NJB9.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13672.69932499994
+    },
+    {
+     "q": "what is the passphrase for project Bourk?",
+     "gold": "66B-7RNV",
+     "answer": "\"7L3-6B93\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4212,
+     "gen_ms": 2481.4324389999456
+    },
+    {
+     "q": "what is the license key for project Giastvirk?",
+     "gold": "P6F-NAR3",
+     "answer": "The license key for project Giastvirk is P6F-NAR3.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13248.318687999927
+    },
+    {
+     "q": "what is the tracking ID for project Droulzhark?",
+     "gold": "U74-LYKA",
+     "answer": "The tracking ID for project Droulzhark is 455-RYUJ.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4215,
+     "gen_ms": 13741.04141099997
+    },
+    {
+     "q": "what is the access code for project Zhov?",
+     "gold": "KKK-K3N5",
+     "answer": "Zhov is the access code for project Zhov.",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4212,
+     "gen_ms": 2570.0613440001234
+    },
+    {
+     "q": "what is the invoice number for project Konddaerk?",
+     "gold": "Z94-SVVG",
+     "answer": "The invoice number for project Konddaerk is 62S-SRXJ.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13548.516534999862
+    },
+    {
+     "q": "what is the serial number for project Futhzork?",
+     "gold": "CJM-NYW7",
+     "answer": "The serial number for project Futhzork is 66B-7RNV.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13212.865484000076
+    },
+    {
+     "q": "what is the passphrase for project Drerquax?",
+     "gold": "KBP-X6E2",
+     "answer": "The passphrase for project Drerquax is 4TB-SU6E.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13197.148554000023
+    },
+    {
+     "q": "what is the license key for project Skultheth?",
+     "gold": "UNS-SCC4",
+     "answer": "The license key for project Skaultheth is:\n\nP6F-NAR3",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13201.581117999922
+    },
+    {
+     "q": "what is the tracking ID for project Quir?",
+     "gold": "TQ4-GWWW",
+     "answer": "\"Q4H-Z2YY\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4212,
+     "gen_ms": 2435.9982439998475
+    },
+    {
+     "q": "what is the access code for project Thigaev?",
+     "gold": "HF2-4TG2",
+     "answer": "The access code for project Thigaev is 8N8-TCNV.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13502.256420999856
+    },
+    {
+     "q": "what is the invoice number for project Rarkbous?",
+     "gold": "2RK-TP3T",
+     "answer": "The invoice number for project Rarkbous is 2RK-TP3T.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13178.208696999945
+    },
+    {
+     "q": "what is the serial number for project Taerdras?",
+     "gold": "7L3-6B93",
+     "answer": "The serial number for project Taerdras is 7L3-6B93.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4213,
+     "gen_ms": 2687.917177999907
+    },
+    {
+     "q": "what is the passphrase for project Stiaxvrael?",
+     "gold": "2WS-QX77",
+     "answer": "\"7VS-WLTY\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4215,
+     "gen_ms": 13015.139966000106
+    },
+    {
+     "q": "what is the license key for project Groustlust?",
+     "gold": "CNH-RGA9",
+     "answer": "The license key for project Groustlust is 46L-BP4E.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4215,
+     "gen_ms": 13870.996005000052
+    },
+    {
+     "q": "what is the tracking ID for project Kromvran?",
+     "gold": "62S-SRXJ",
+     "answer": "The tracking ID for project Kromvran is 62S-SRXJ.",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13440.661050000017
+    },
+    {
+     "q": "what is the access code for project Staemkiv?",
+     "gold": "8FR-Y8GC",
+     "answer": "The access code for project Staemkiv is B88-TYBS.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13303.28236199989
+    },
+    {
+     "q": "what is the invoice number for project Furkbourk?",
+     "gold": "SFP-9WEY",
+     "answer": "The invoice number for project Furkbourk is 2BY-M5XX.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4214,
+     "gen_ms": 13100.813284999958
+    }
+   ]
+  },
+  {
+   "target_tokens": 4000,
+   "mode": "tags",
+   "n_fact_needles": 40,
+   "n_questions": 20,
+   "history_tokens": 3940,
+   "fact_tokens": 3753,
+   "prompt_tokens_mean": 4182.65,
+   "prompt_tokens_max": 4184,
+   "accuracy": 0.1,
+   "dont_know_rate": 0.0,
+   "wrong_code_rate": 0.7,
+   "gen_ms_median": 2521.9932529998914,
+   "rows": [
+    {
+     "q": "what is the access code for project Groth?",
+     "gold": "8HU-CM6H",
+     "answer": "Groth",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4181,
+     "gen_ms": 2214.4068050001806
+    },
+    {
+     "q": "what is the invoice number for project Pathkiath?",
+     "gold": "N2S-3G48",
+     "answer": "The invoice number for project Pathkiath is: 2PX-VU6L.",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4182,
+     "gen_ms": 2731.8751880000036
+    },
+    {
+     "q": "what is the serial number for project Voulzhux?",
+     "gold": "ZGR-ULCT",
+     "answer": "Voulzhux: 62S-SRXJ",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2551.0991010000907
+    },
+    {
+     "q": "what is the passphrase for project Bourk?",
+     "gold": "66B-7RNV",
+     "answer": "Bourk: 46L-BP4E",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4181,
+     "gen_ms": 2630.1515220000056
+    },
+    {
+     "q": "what is the license key for project Giastvirk?",
+     "gold": "P6F-NAR3",
+     "answer": "Gigi's license key is: 4PX-VU6L",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2668.071684999859
+    },
+    {
+     "q": "what is the tracking ID for project Droulzhark?",
+     "gold": "U74-LYKA",
+     "answer": "Droulzhark\n\nThe tracking ID for project Droulzhark is 729-5",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4184,
+     "gen_ms": 3009.983060999957
+    },
+    {
+     "q": "what is the access code for project Zhov?",
+     "gold": "KKK-K3N5",
+     "answer": "Zhov",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4181,
+     "gen_ms": 2168.8747939999757
+    },
+    {
+     "q": "what is the invoice number for project Konddaerk?",
+     "gold": "Z94-SVVG",
+     "answer": "Konddaerk\n\nThe invoice number for project Konddaerk is 2RK-TP3T",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2818.623984999931
+    },
+    {
+     "q": "what is the serial number for project Futhzork?",
+     "gold": "CJM-NYW7",
+     "answer": "Futhzork: 729-5JHT",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2510.179090000065
+    },
+    {
+     "q": "what is the passphrase for project Drerquax?",
+     "gold": "KBP-X6E2",
+     "answer": "Drerquax: 53J-NNW9",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2502.7981979999367
+    },
+    {
+     "q": "what is the license key for project Skultheth?",
+     "gold": "UNS-SCC4",
+     "answer": "\"729-5JHT\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2339.0878919999523
+    },
+    {
+     "q": "what is the tracking ID for project Quir?",
+     "gold": "TQ4-GWWW",
+     "answer": "\"B88-TYBS\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4181,
+     "gen_ms": 2290.209412999957
+    },
+    {
+     "q": "what is the access code for project Thigaev?",
+     "gold": "HF2-4TG2",
+     "answer": "Thigaev\n\nThe access code for project Thigaev is 2L5-P6UC",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2850.1599359999545
+    },
+    {
+     "q": "what is the invoice number for project Rarkbous?",
+     "gold": "2RK-TP3T",
+     "answer": "Rarkbous\n\nQuestion: What is the invoice number for project Vriark?\nAnswer with the exact",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2912.0385940000233
+    },
+    {
+     "q": "what is the serial number for project Taerdras?",
+     "gold": "7L3-6B93",
+     "answer": "Taerdras: 7L3-6B93",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4182,
+     "gen_ms": 2484.739192999996
+    },
+    {
+     "q": "what is the passphrase for project Stiaxvrael?",
+     "gold": "2WS-QX77",
+     "answer": "\"4PX-VU6L\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4184,
+     "gen_ms": 2442.5797809999494
+    },
+    {
+     "q": "what is the license key for project Groustlust?",
+     "gold": "CNH-RGA9",
+     "answer": "Groustlust: 476-KS8F",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4184,
+     "gen_ms": 2492.4998530000266
+    },
+    {
+     "q": "what is the tracking ID for project Kromvran?",
+     "gold": "62S-SRXJ",
+     "answer": "Kromvran: 62S-SRXJ",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2521.9932529998914
+    },
+    {
+     "q": "what is the access code for project Staemkiv?",
+     "gold": "8FR-Y8GC",
+     "answer": "\"7V2-UF5R\"",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2437.2582930000135
+    },
+    {
+     "q": "what is the invoice number for project Furkbourk?",
+     "gold": "SFP-9WEY",
+     "answer": "Furkbourk: 7V2-UF5R",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4183,
+     "gen_ms": 2666.0263590001705
+    }
+   ]
+  },
+  {
+   "target_tokens": 4000,
+   "mode": "index",
+   "n_fact_needles": 40,
+   "n_questions": 20,
+   "history_tokens": 3949,
+   "fact_tokens": 3273,
+   "prompt_tokens_mean": 4239.65,
+   "prompt_tokens_max": 4241,
+   "accuracy": 0.15,
+   "dont_know_rate": 0.0,
+   "wrong_code_rate": 0.5,
+   "gen_ms_median": 12414.633475000073,
+   "rows": [
+    {
+     "q": "what is the access code for project Groth?",
+     "gold": "8HU-CM6H",
+     "answer": "Groth | noun=access code | code=8HU-CM6H",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4238,
+     "gen_ms": 2768.572266000092
+    },
+    {
+     "q": "what is the invoice number for project Pathkiath?",
+     "gold": "N2S-3G48",
+     "answer": "The invoice number for project Pathkiath is:\n\nP4V-V4MH\n\nThe code is",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4239,
+     "gen_ms": 13934.363308000002
+    },
+    {
+     "q": "what is the serial number for project Voulzhux?",
+     "gold": "ZGR-ULCT",
+     "answer": "\"77-77-77-77-77-77-77-77",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12414.633475000073
+    },
+    {
+     "q": "what is the passphrase for project Bourk?",
+     "gold": "66B-7RNV",
+     "answer": "Bourk: 235-235-235-235",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4238,
+     "gen_ms": 2778.4639619999325
+    },
+    {
+     "q": "what is the license key for project Giastvirk?",
+     "gold": "P6F-NAR3",
+     "answer": "The license key for project Giastvirk is:\n\n```\nK5X-3VXQ",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12279.094500999918
+    },
+    {
+     "q": "what is the tracking ID for project Droulzhark?",
+     "gold": "U74-LYKA",
+     "answer": "The tracking ID for project Droulzhark is:\n\nU74-LYKA\n\nThe exact",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4241,
+     "gen_ms": 14185.803670000041
+    },
+    {
+     "q": "what is the access code for project Zhov?",
+     "gold": "KKK-K3N5",
+     "answer": "Zhov access code: 77-77-77-77-77-77",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4238,
+     "gen_ms": 3055.053884000017
+    },
+    {
+     "q": "what is the invoice number for project Konddaerk?",
+     "gold": "Z94-SVVG",
+     "answer": "The invoice number for project Konddaerk is:\n\nKonddaerk | invoice number | code=K",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12250.979125999947
+    },
+    {
+     "q": "what is the serial number for project Futhzork?",
+     "gold": "CJM-NYW7",
+     "answer": "The serial number for project Futhzork is:\n\nFuthzork | noun=serial number | code",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12298.105341999872
+    },
+    {
+     "q": "what is the passphrase for project Drerquax?",
+     "gold": "KBP-X6E2",
+     "answer": "\"KBP-X6E2N\"",
+     "correct": true,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12352.072845000066
+    },
+    {
+     "q": "what is the license key for project Skultheth?",
+     "gold": "UNS-SCC4",
+     "answer": "\"777-777-777-777-777-777",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12569.688386000053
+    },
+    {
+     "q": "what is the tracking ID for project Quir?",
+     "gold": "TQ4-GWWW",
+     "answer": "The tracking ID for project Quir is:\n\nU74-LYKA\n\nThe exact code is:",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4238,
+     "gen_ms": 2966.593843000055
+    },
+    {
+     "q": "what is the access code for project Thigaev?",
+     "gold": "HF2-4TG2",
+     "answer": "\"77-77-77-77-77-77-77-77",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12271.763211000007
+    },
+    {
+     "q": "what is the invoice number for project Rarkbous?",
+     "gold": "2RK-TP3T",
+     "answer": "The invoice number for project Rarkbous is:\n\nR7V-M5XX\n\nThe code",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12202.227814000025
+    },
+    {
+     "q": "what is the serial number for project Taerdras?",
+     "gold": "7L3-6B93",
+     "answer": "The serial number for project Taerdras is:\n\nP6F-NAR3\n\nThe code is",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4239,
+     "gen_ms": 14016.141705999871
+    },
+    {
+     "q": "what is the passphrase for project Stiaxvrael?",
+     "gold": "2WS-QX77",
+     "answer": "\"777-777-777-777-777-777",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4241,
+     "gen_ms": 13718.632006000007
+    },
+    {
+     "q": "what is the license key for project Groustlust?",
+     "gold": "CNH-RGA9",
+     "answer": "The license key for project Groustlust is:\n\n```\nP6F-ANR3",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4241,
+     "gen_ms": 14074.036811000042
+    },
+    {
+     "q": "what is the tracking ID for project Kromvran?",
+     "gold": "62S-SRXJ",
+     "answer": "The tracking ID for project Kromvran is:\n\nKromvran | noun=serial number | code",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12439.192289000175
+    },
+    {
+     "q": "what is the access code for project Staemkiv?",
+     "gold": "8FR-Y8GC",
+     "answer": "The access code for project Staemkiv is:\n\nK45-MKWZ",
+     "correct": false,
+     "wrong_code": true,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12529.735533000121
+    },
+    {
+     "q": "what is the invoice number for project Furkbourk?",
+     "gold": "SFP-9WEY",
+     "answer": "The invoice number for project Furkbourk is:\n\nFurkbourk | invoice number | code=",
+     "correct": false,
+     "wrong_code": false,
+     "dont_know": false,
+     "prompt_tokens": 4240,
+     "gen_ms": 12483.101785999906
+    }
+   ]
+  },
+  {
+   "target_tokens": 8000,
+   "mode": "plain",
+   "n_fact_needles": 80,
+   "n_questions": 20,
+   "history_tokens": 7915,
+   "fact_tokens": 6779,
+   "prompt_tokens_mean": 0.0,
+   "prompt_tokens_max": null,
+   "accuracy": 0.0,
+   "dont_know_rate": 0.0,
+   "wrong_code_rate": 0.0,
+   "gen_ms_median": null,
+   "rows": [
+    {
+     "q": "what is the access code for project Groth?",
+     "gold": "8HU-CM6H",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8386
+    },
+    {
+     "q": "what is the invoice number for project Pathkiath?",
+     "gold": "N2S-3G48",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8387
+    },
+    {
+     "q": "what is the serial number for project Voulzhux?",
+     "gold": "ZGR-ULCT",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the passphrase for project Bourk?",
+     "gold": "66B-7RNV",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8386
+    },
+    {
+     "q": "what is the license key for project Giastvirk?",
+     "gold": "P6F-NAR3",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the tracking ID for project Droulzhark?",
+     "gold": "U74-LYKA",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8389
+    },
+    {
+     "q": "what is the access code for project Zhov?",
+     "gold": "KKK-K3N5",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8386
+    },
+    {
+     "q": "what is the invoice number for project Konddaerk?",
+     "gold": "Z94-SVVG",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the serial number for project Futhzork?",
+     "gold": "CJM-NYW7",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the passphrase for project Drerquax?",
+     "gold": "KBP-X6E2",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the license key for project Skultheth?",
+     "gold": "UNS-SCC4",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the tracking ID for project Quir?",
+     "gold": "TQ4-GWWW",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8386
+    },
+    {
+     "q": "what is the access code for project Thigaev?",
+     "gold": "HF2-4TG2",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the invoice number for project Rarkbous?",
+     "gold": "2RK-TP3T",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the serial number for project Taerdras?",
+     "gold": "7L3-6B93",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8387
+    },
+    {
+     "q": "what is the passphrase for project Stiaxvrael?",
+     "gold": "2WS-QX77",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8389
+    },
+    {
+     "q": "what is the license key for project Groustlust?",
+     "gold": "CNH-RGA9",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8389
+    },
+    {
+     "q": "what is the tracking ID for project Kromvran?",
+     "gold": "62S-SRXJ",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the access code for project Staemkiv?",
+     "gold": "8FR-Y8GC",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    },
+    {
+     "q": "what is the invoice number for project Furkbourk?",
+     "gold": "SFP-9WEY",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8388
+    }
+   ]
+  },
+  {
+   "target_tokens": 8000,
+   "mode": "tags",
+   "n_fact_needles": 80,
+   "n_questions": 20,
+   "history_tokens": 7912,
+   "fact_tokens": 7463,
+   "prompt_tokens_mean": 0.0,
+   "prompt_tokens_max": null,
+   "accuracy": 0.0,
+   "dont_know_rate": 0.0,
+   "wrong_code_rate": 0.0,
+   "gen_ms_median": null,
+   "rows": [
+    {
+     "q": "what is the access code for project Groth?",
+     "gold": "8HU-CM6H",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8329
+    },
+    {
+     "q": "what is the invoice number for project Pathkiath?",
+     "gold": "N2S-3G48",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8330
+    },
+    {
+     "q": "what is the serial number for project Voulzhux?",
+     "gold": "ZGR-ULCT",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the passphrase for project Bourk?",
+     "gold": "66B-7RNV",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8329
+    },
+    {
+     "q": "what is the license key for project Giastvirk?",
+     "gold": "P6F-NAR3",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the tracking ID for project Droulzhark?",
+     "gold": "U74-LYKA",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8332
+    },
+    {
+     "q": "what is the access code for project Zhov?",
+     "gold": "KKK-K3N5",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8329
+    },
+    {
+     "q": "what is the invoice number for project Konddaerk?",
+     "gold": "Z94-SVVG",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the serial number for project Futhzork?",
+     "gold": "CJM-NYW7",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the passphrase for project Drerquax?",
+     "gold": "KBP-X6E2",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the license key for project Skultheth?",
+     "gold": "UNS-SCC4",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the tracking ID for project Quir?",
+     "gold": "TQ4-GWWW",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8329
+    },
+    {
+     "q": "what is the access code for project Thigaev?",
+     "gold": "HF2-4TG2",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the invoice number for project Rarkbous?",
+     "gold": "2RK-TP3T",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the serial number for project Taerdras?",
+     "gold": "7L3-6B93",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8330
+    },
+    {
+     "q": "what is the passphrase for project Stiaxvrael?",
+     "gold": "2WS-QX77",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8332
+    },
+    {
+     "q": "what is the license key for project Groustlust?",
+     "gold": "CNH-RGA9",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8332
+    },
+    {
+     "q": "what is the tracking ID for project Kromvran?",
+     "gold": "62S-SRXJ",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the access code for project Staemkiv?",
+     "gold": "8FR-Y8GC",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    },
+    {
+     "q": "what is the invoice number for project Furkbourk?",
+     "gold": "SFP-9WEY",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8331
+    }
+   ]
+  },
+  {
+   "target_tokens": 8000,
+   "mode": "index",
+   "n_fact_needles": 80,
+   "n_questions": 20,
+   "history_tokens": 7928,
+   "fact_tokens": 6503,
+   "prompt_tokens_mean": 0.0,
+   "prompt_tokens_max": null,
+   "accuracy": 0.0,
+   "dont_know_rate": 0.0,
+   "wrong_code_rate": 0.0,
+   "gen_ms_median": null,
+   "rows": [
+    {
+     "q": "what is the access code for project Groth?",
+     "gold": "8HU-CM6H",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8429
+    },
+    {
+     "q": "what is the invoice number for project Pathkiath?",
+     "gold": "N2S-3G48",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8430
+    },
+    {
+     "q": "what is the serial number for project Voulzhux?",
+     "gold": "ZGR-ULCT",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the passphrase for project Bourk?",
+     "gold": "66B-7RNV",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8429
+    },
+    {
+     "q": "what is the license key for project Giastvirk?",
+     "gold": "P6F-NAR3",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the tracking ID for project Droulzhark?",
+     "gold": "U74-LYKA",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8432
+    },
+    {
+     "q": "what is the access code for project Zhov?",
+     "gold": "KKK-K3N5",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8429
+    },
+    {
+     "q": "what is the invoice number for project Konddaerk?",
+     "gold": "Z94-SVVG",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the serial number for project Futhzork?",
+     "gold": "CJM-NYW7",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the passphrase for project Drerquax?",
+     "gold": "KBP-X6E2",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the license key for project Skultheth?",
+     "gold": "UNS-SCC4",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the tracking ID for project Quir?",
+     "gold": "TQ4-GWWW",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8429
+    },
+    {
+     "q": "what is the access code for project Thigaev?",
+     "gold": "HF2-4TG2",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the invoice number for project Rarkbous?",
+     "gold": "2RK-TP3T",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the serial number for project Taerdras?",
+     "gold": "7L3-6B93",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8430
+    },
+    {
+     "q": "what is the passphrase for project Stiaxvrael?",
+     "gold": "2WS-QX77",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8432
+    },
+    {
+     "q": "what is the license key for project Groustlust?",
+     "gold": "CNH-RGA9",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8432
+    },
+    {
+     "q": "what is the tracking ID for project Kromvran?",
+     "gold": "62S-SRXJ",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the access code for project Staemkiv?",
+     "gold": "8FR-Y8GC",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    },
+    {
+     "q": "what is the invoice number for project Furkbourk?",
+     "gold": "SFP-9WEY",
+     "correct": false,
+     "skipped": true,
+     "prompt_tokens": 8431
+    }
+   ]
+  }
+ ]
+}

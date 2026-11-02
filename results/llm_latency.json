@@ -1,0 +1,20 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+ "max_ctx": 8192,
+ "results": [
+  {
+   "target_tokens": 2000,
+   "mode": "plain",
+   "n_fact_needles": 20,
+   "n_questions": 20,
+   "history_tokens": 1942,
+   "fact_tokens": 1720,
+   "prompt_tokens": 2108,
+   "prefill_ms_median": 1786.1186549999957,
+   "prefill_ms_min": 1659.8788329999934,
+   "ttft_ms_median": 1761.5596199999572,
+   "prefill_tokens_per_s": 1180.2127446006689,
+   "mem_gb": 1.509858816
+  }
+ ]
+}

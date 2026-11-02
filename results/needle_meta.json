@@ -1,0 +1,32 @@
+{
+  "131072": {
+    "N_requested": 131072,
+    "n_chunks": 1024,
+    "content_tokens": 131072,
+    "n_needles": 200,
+    "n_distractors": 600,
+    "n_modified_chunks": 800,
+    "fact_token_mean": 20.455,
+    "fact_token_max": 24
+  },
+  "1048576": {
+    "N_requested": 1048576,
+    "n_chunks": 8192,
+    "content_tokens": 1048576,
+    "n_needles": 200,
+    "n_distractors": 600,
+    "n_modified_chunks": 800,
+    "fact_token_mean": 20.455,
+    "fact_token_max": 24
+  },
+  "10485760": {
+    "N_requested": 10485760,
+    "n_chunks": 76145,
+    "content_tokens": 9746560,
+    "n_needles": 200,
+    "n_distractors": 600,
+    "n_modified_chunks": 800,
+    "fact_token_mean": 20.455,
+    "fact_token_max": 24
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "model": "BAAI/bge-small-en-v1.5",
+  "n_chunks": 76145,
+  "dim": 384,
+  "dtype_compute": "torch.float16",
+  "batch_size": 128,
+  "max_seq_length": 256,
+  "normalized": true,
+  "encode_seconds": 52.563668966293335,
+  "chunks_per_second": 1448.6241447268128,
+  "gpu_max_memory_allocated_gb": 0.3620877265930176,
+  "norm_min": 0.9995101094245911,
+  "norm_max": 1.0005701780319214,
+  "norm_mean": 1.0001490116119385
+}

@@ -1,0 +1,8 @@
+numpy
+torch
+faiss-cpu
+sentence-transformers
+transformers
+scikit-learn
+matplotlib
+tokenizers
