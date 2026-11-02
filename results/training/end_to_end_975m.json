@@ -9,13 +9,18 @@
     "gold_in_top5": 1.0,
     "reader_given_gold": 1.0,
     "end_to_end_exact": 1.0,
-    "elapsed_s": 180.4
+    "elapsed_s": 232.3
   },
   "typo": {
     "n": 200,
     "gold_in_top5": 0.755,
     "reader_given_gold": 0.7880794701986755,
     "end_to_end_exact": 0.595,
-    "elapsed_s": 223.1
+    "elapsed_s": 352.1
+  },
+  "typo_canon": {
+    "n": 200,
+    "end_to_end_exact": 0.675,
+    "reader_given_gold": 0.8940397350993378
   }
 }

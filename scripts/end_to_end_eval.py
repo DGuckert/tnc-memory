@@ -98,6 +98,12 @@ def main():
         order = np.argsort(-scores)[:TOPK]
         return [int(ids[i]) for i in order]
 
+    def canonical_from_note(note):
+        m = re.search(r"the (.+?) for project ([A-Za-z0-9]+) is", note)
+        if not m:
+            return None
+        return f"what is the {m.group(1)} for project {m.group(2)}?"
+
     def answer(query, ids):
         notes = [extract_note(docs[int(i)]) for i in ids]
         user = "Memory notes:\n" + "\n".join(f"{i+1}. {n}" for i, n in enumerate(notes))
@@ -122,6 +128,7 @@ def main():
     for label, qs, mode in [("exact", exact_q, "word"), ("typo", typo_q, "char")]:
         t1 = time.time()
         gold_top5 = 0; reader_ok = 0; e2e_ok = 0
+        canon_ok = 0; canon_given_gold = 0
         examples = []
         for i, q in enumerate(qs):
             ids = topk(bm25_scores(q)) if mode == "word" else char_topk(q)
@@ -134,6 +141,14 @@ def main():
                 e2e_ok += 1
                 if gold_ok:
                     reader_ok += 1
+            if label == "typo":
+                cq = canonical_from_note(extract_note(docs[int(ids[0])]))
+                if cq:
+                    cans = answer(cq, ids)
+                    if cans == facts[i]["code"]:
+                        canon_ok += 1
+                        if gold_ok:
+                            canon_given_gold += 1
             if len(examples) < 6:
                 examples.append({"query": q, "gold": facts[i]["code"], "pred": ans,
                                  "gold_in_top5": gold_ok,
@@ -145,7 +160,14 @@ def main():
             "end_to_end_exact": e2e_ok / n,
             "elapsed_s": round(time.time() - t1, 1), "examples": examples,
         }
+        if label == "typo":
+            out["typo_canon"] = {
+                "n": n, "end_to_end_exact": canon_ok / n,
+                "reader_given_gold": canon_given_gold / max(1, gold_top5),
+            }
         print(label, {k: v for k, v in out[label].items() if k != "examples"}, flush=True)
+        if label == "typo":
+            print("typo_canon", out["typo_canon"], flush=True)
     json.dump(out, open(os.path.join(WORK, "end_to_end_975m.json"), "w"), indent=1)
     print("wrote", os.path.join(WORK, "end_to_end_975m.json"), flush=True)
 
