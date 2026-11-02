@@ -65,6 +65,19 @@ Each row has:
 
 Prior assistant turns are context. Train only on the final assistant message, or use a trainer that masks earlier assistant turns.
 
+## Trained baseline
+
+`SmolLM2-360M-Instruct` + LoRA, trained for 120 steps on 1,920 examples:
+
+| Test, 200 each | Base | Fine-tuned |
+|---|---:|---:|
+| Valid tool JSON | 0.00 | 1.00 |
+| Tool choice accuracy | 0.00 | 1.00 |
+| Full tool-call accuracy | 0.00 | 0.97 |
+| Reader accuracy | 0.21 | 0.99 |
+
+Adapter: `v0.1-middleman` release. Details: `results/training/middleman_report.md`.
+
 ## Recommended use
 
 1. Fine-tune a small model on `train_sft.jsonl` and evaluate on `val_sft.jsonl`.

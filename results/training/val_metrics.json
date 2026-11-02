@@ -1,0 +1,86 @@
+{
+  "tool_n": 100,
+  "tool_valid_json": 1.0,
+  "tool_tool_acc": 1.0,
+  "tool_project_acc": 0.86,
+  "tool_full_acc": 0.96,
+  "reader_n": 100,
+  "reader_acc": 0.99,
+  "tool_examples": [
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Kraest",
+          "query": "what is the invoice number for project Kraest?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Kraest\",\"query\":\"what is the invoice number for project Kraest?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Sast",
+          "query": "what is the access code for project Sast?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Sast\",\"query\":\"what is the access code for project Sast?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Gest",
+          "query": "what is the license key for project Gest?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Gest\",\"query\":\"what is the license key for project Gest?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Zhar",
+          "query": "what is the serial number for project Zhar?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Zhar\",\"query\":\"what is the serial number for project Zhar?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Dostkuv",
+          "query": "what is the serial number for project Dostkuv?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Dostkuv\",\"query\":\"what is the serial number for project Dostkuv?\"}}"
+    }
+  ],
+  "reader_examples": [
+    {
+      "target": "2GF-YEMP",
+      "pred": "2GF-YEMP"
+    },
+    {
+      "target": "PMM-YZD6",
+      "pred": "PMM-YZD6"
+    },
+    {
+      "target": "I don't know.",
+      "pred": "I don't know."
+    },
+    {
+      "target": "YZG-EQT3",
+      "pred": "YZG-EQT3"
+    },
+    {
+      "target": "HQE-YXX4",
+      "pred": "HQE-YXX4"
+    }
+  ],
+  "train_rows": 10000,
+  "steps": 120,
+  "elapsed_s": 1269.3
+}

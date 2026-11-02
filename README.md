@@ -47,6 +47,18 @@ The 100M store was built by repeating the 9.75M corpus to 781,250 chunks and inj
 
 Project names and codes are disjoint across splits, and the 200 benchmark facts are excluded. The data is synthetic; raw Discord text is not included.
 
+## Trained baseline
+
+A LoRA for `SmolLM2-360M-Instruct` was trained for 120 steps on 1,920 examples. On held-out projects (200 tool + 200 reader):
+
+| Metric | Base | Fine-tuned |
+|---|---:|---:|
+| Valid tool JSON | 0.00 | 1.00 |
+| Full tool-call accuracy | 0.00 | 0.97 |
+| Reader accuracy | 0.21 | 0.99 |
+
+Adapter release: `v0.1-middleman`. Details: `results/training/middleman_report.md`.
+
 ## Data note
 
 The raw Discord corpus, chunk text, embeddings, and large arrays are **not** committed. Only curated results, scripts, and synthetic training data are included. The facts, project names, and codes are synthetic. This repository is private.
@@ -60,5 +72,5 @@ The scripts expect a Linux/WSL workspace at `/home/daniel/tnc` with the prepared
 - Retrieval is strong for questions that name the entity.
 - Typos are handled but the character fallback is slow at 100M (~2.36 s/query).
 - The next step is a memory gateway (middleman) that resolves “it/that project,” rewrites the query, retrieves, and hands notes to any host model.
-- The training set for the middleman and reader is ready; the next step is a small SFT run and a cross-encoder reranker.
-- The 360M reader is too weak; use a 0.5B–1B reader or the host model after retrieval.
+- A middleman LoRA is trained and released; held-out test is 0.97 full tool-call and 0.99 reader.
+- Next: train the cross-encoder reranker, test on real conversations, and add the memory gateway.
