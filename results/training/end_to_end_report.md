@@ -12,16 +12,18 @@ question -> word BM25 / character n-gram -> top 50
 
 200 exact-name queries and 200 one-character-typo queries:
 
-| Query | Gold in top 5 | Reader correct when gold present | End-to-end correct |
+| Query path | Gold in top 5 | Reader correct when gold present | End-to-end correct |
 |---|---:|---:|---:|
 | Exact name | **1.000** | **1.000** | **1.000** |
-| One-character typo | 0.755 | 0.788 | **0.595** |
-| Typo + canonicalized query | 0.755 | 0.894 | **0.675** |
+| Typo, char search | 0.755 | 0.788 | **0.595** |
+| Typo, char + canonical query | 0.755 | 0.894 | **0.675** |
+| Typo, entity fuzzy + canonical rerank | **0.905** | **0.983** | **0.890** |
 
 - Exact-name questions are solved end-to-end: **200/200** correct.
-- Typo questions lose most of their accuracy at retrieval and reading: gold is in the top 5 only **75.5%** of the time, and the reader is correct **78.8%** of the time when it is present.
-- Canonicalizing the typo query from the top retrieved note improves the reader to **89.4%** when gold is present and end-to-end to **67.5%**. This is the value of the reranker plus a normalization step.
-- The remaining typo loss is retrieval: gold is in the top 5 only **75.5%** of the time.
+- The typo path was the weak point. Character search plus canonicalization reached **67.5%**.
+- Matching the misspelled token against the stored project-name list (Damerau-Levenshtein, distance ≤2) and then reranking with the canonical query raises typo end-to-end accuracy to **89.0%**.
+- The entity list is only **810 project names**; this is cheap and does not change the memory budget.
+- The remaining typo loss is mostly entity correction: 94.0% of gold facts are in the top 50 before reranking, and the corrected top-5 contains the gold **90.5%** of the time.
 
 ## What this proves
 
@@ -39,5 +41,7 @@ question -> word BM25 / character n-gram -> top 50
 
 ## Files
 
-- `end_to_end_975m.json` — metrics.
-- `scripts/end_to_end_eval.py` — evaluation code.
+- `end_to_end_975m.json` — char-path metrics.
+- `entity_typo_975m.json` — entity-fuzzy typo metrics.
+- `scripts/end_to_end_eval.py` — char-path evaluation.
+- `scripts/entity_end_to_end.py` — entity-fuzzy typo evaluation.

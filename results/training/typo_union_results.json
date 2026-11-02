@@ -1,0 +1,23 @@
+{
+  "n": 200,
+  "char_gold": 0.805,
+  "word_gold": 0.79,
+  "union_gold": 0.885,
+  "rerank1": 0.695,
+  "rerank5": 0.805,
+  "rerank10": 0.83,
+  "example": {
+    "query": "what is the access code for project Groht?",
+    "corrected": "what is the access code for project grout",
+    "gold": 47120,
+    "top": [
+      57665,
+      70497,
+      19339,
+      66762,
+      2962
+    ],
+    "in_char": false,
+    "in_word": false
+  }
+}

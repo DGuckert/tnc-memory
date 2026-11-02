@@ -5,9 +5,9 @@
 ```
 conversation
   -> middleman LoRA (tool call: search / clarify / no_tool)
-  -> word BM25 or character n-gram search
+  -> fuzzy entity correction, then word BM25 or character n-gram search
+  -> canonicalize query from the top candidate
   -> cross-encoder reranker (top 5)
-  -> canonicalize query from top note
   -> middleman LoRA reader
   -> answer + trace
 ```
