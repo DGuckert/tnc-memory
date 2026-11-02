@@ -1,0 +1,80 @@
+# Training set
+
+Synthetic multi-task data for a memory-aware middleman and a memory reader.
+
+## Files
+
+| File | Rows | Purpose |
+|---|---:|---|
+| `train_sft.jsonl` | 10,000 | 5,000 tool-call + 5,000 reader examples |
+| `val_sft.jsonl` | 1,500 | 750 tool-call + 750 reader examples |
+| `test_sft.jsonl` | 1,500 | 750 tool-call + 750 reader examples |
+| `train_reranker.jsonl` | 10,000 | query + positive + hard negatives |
+| `val_reranker.jsonl` | 1,500 | held-out reranker pairs |
+| `test_reranker.jsonl` | 1,500 | held-out reranker pairs |
+| `manifest.json` | — | counts, schema, seeds, excluded benchmark names/codes |
+
+## Splits
+
+- **Train:** 1,200 project names, 10,000 SFT rows, 10,000 reranker rows.
+- **Val:** 180 project names, 1,500 SFT rows, 1,500 reranker rows.
+- **Test:** 180 project names, 1,500 SFT rows, 1,500 reranker rows.
+- Project names and codes are disjoint across splits.
+- The 200 benchmark facts used in the retrieval experiments are **excluded** (exact names and codes checked).
+
+## Tasks
+
+### 1. `tool_call`
+
+Input: a multi-turn conversation. Output: JSON only.
+
+```json
+{"tool":"search_memory","args":{"project":"Groth","query":"what is the access code for project Groth?"}}
+{"tool":"ask_clarification","args":{"question":"Which project do you mean?"}}
+{"tool":"no_tool","args":{}}
+```
+
+The conversation may contain several projects, pronouns, “the other one,” “the new one,” or a misspelled project name. The target always uses the canonical project name.
+
+### 2. `answer_from_memory`
+
+Input: 5–7 memory notes plus a question. Output: the exact code, or `I don't know.` when the note is absent.
+
+The notes include same-noun distractors (same kind of secret, different project), so the model must read the right note rather than match the noun.
+
+### 3. Reranker pairs
+
+```json
+{"id":"rerank-train-000001","query":"what is the license key for project Fiaxgaest?","positive":"Note to self: the license key for project Fiaxgaest is S75-S9KM.","negatives":["Note to self: the license key for project Piar is WK9-J6XF.", "..."],"meta":{}}
+```
+
+Negatives are:
+- 3 facts with the same noun but a different project;
+- 1 fact with the same project but a different noun;
+- 1 random fact.
+
+## SFT format
+
+Each row has:
+
+- `id`
+- `task`
+- `messages` — standard chat messages; the final assistant message is the target
+- `target` — the string or object the final assistant should produce
+- `meta` — task metadata
+
+Prior assistant turns are context. Train only on the final assistant message, or use a trainer that masks earlier assistant turns.
+
+## Recommended use
+
+1. Fine-tune a small model on `train_sft.jsonl` and evaluate on `val_sft.jsonl`.
+2. Fine-tune a cross-encoder on the reranker files; convert listwise rows to pointwise pairs with labels 1/0.
+3. Test on `test_*` only after choosing hyperparameters.
+4. Mix in general chat data so the model does not become a pure JSON tool caller.
+
+## Caveats
+
+- The data is synthetic and template-based. It tests the format and reasoning pattern, not real-world language diversity.
+- Codes and project names are random; do not treat them as real secrets.
+- Real conversations, typos, aliases, and multi-turn references still need to be collected and added.
+- The tool-call target assumes the gateway exposes `search_memory`, `ask_clarification`, and `no_tool`.

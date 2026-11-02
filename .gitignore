@@ -8,4 +8,5 @@ work/
 *.npy
 *.jsonl
 *.log
+!training/*.jsonl
 !results/*.log

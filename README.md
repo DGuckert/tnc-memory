@@ -36,10 +36,20 @@ The 100M store was built by repeating the 9.75M corpus to 781,250 chunks and inj
 - `results/llm_report.md` — small-LLM reader study.
 - `results/hybrid_report.md` — 9.75M lexical/hybrid result.
 - `results/hybrid_100m_report.md` — 100M scale result.
+- `training/` — synthetic SFT and reranker data; see `training/README.md`.
+
+## Training data
+
+`training/` contains 10,000 train SFT rows, 1,500 validation rows, 1,500 test rows, and matching reranker pairs. The SFT set mixes two tasks:
+
+- **Tool call:** conversation → `search_memory`, `ask_clarification`, or `no_tool`.
+- **Answer from memory:** notes + question → exact code or `I don't know.`
+
+Project names and codes are disjoint across splits, and the 200 benchmark facts are excluded. The data is synthetic; raw Discord text is not included.
 
 ## Data note
 
-The raw Discord corpus, chunk text, embeddings, and large arrays are **not** committed. Only curated results and scripts are included. The facts, project names, and codes are synthetic. This repository is private.
+The raw Discord corpus, chunk text, embeddings, and large arrays are **not** committed. Only curated results, scripts, and synthetic training data are included. The facts, project names, and codes are synthetic. This repository is private.
 
 ## Reproduce
 
@@ -50,4 +60,5 @@ The scripts expect a Linux/WSL workspace at `/home/daniel/tnc` with the prepared
 - Retrieval is strong for questions that name the entity.
 - Typos are handled but the character fallback is slow at 100M (~2.36 s/query).
 - The next step is a memory gateway (middleman) that resolves “it/that project,” rewrites the query, retrieves, and hands notes to any host model.
-- A small trained entity resolver and reranker are the highest-value training targets; the 360M reader is too weak.
+- The training set for the middleman and reader is ready; the next step is a small SFT run and a cross-encoder reranker.
+- The 360M reader is too weak; use a 0.5B–1B reader or the host model after retrieval.
