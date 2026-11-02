@@ -77,9 +77,10 @@ def main():
     ap.add_argument("--out", default="/home/daniel/tnc/training_runs/middleman-lora/test_metrics.json")
     ap.add_argument("--limit", type=int, default=200)
     ap.add_argument("--base", action="store_true")
+    ap.add_argument("--model", default=MODEL)
     args = ap.parse_args()
     tok = AutoTokenizer.from_pretrained(args.adapter)
-    base = AutoModelForCausalLM.from_pretrained(MODEL, torch_dtype=torch.float16)
+    base = AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch.float16)
     base.to("cuda")
     if args.base:
         model = base

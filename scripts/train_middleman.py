@@ -57,11 +57,11 @@ def collate(batch, pad_id):
             torch.tensor(mask, dtype=torch.long),
             torch.tensor(labels, dtype=torch.long))
 
-def make_model():
-    tokenizer = AutoTokenizer.from_pretrained(MODEL)
+def make_model(model_name=MODEL):
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
-    model = AutoModelForCausalLM.from_pretrained(MODEL, torch_dtype=torch.float16)
+    model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16)
     model.to("cuda")
     model.config.use_cache = False
     model.gradient_checkpointing_enable()
@@ -143,6 +143,8 @@ def main():
     ap.add_argument("--train", default="/home/daniel/tnc-repo/training/train_sft.jsonl")
     ap.add_argument("--val", default="/home/daniel/tnc-repo/training/val_sft.jsonl")
     ap.add_argument("--out", default="/home/daniel/tnc/training_runs/middleman-lora")
+    ap.add_argument("--model", default=MODEL)
+    ap.add_argument("--task", default="")
     ap.add_argument("--max_steps", type=int, default=600)
     ap.add_argument("--batch_size", type=int, default=4)
     ap.add_argument("--grad_accum", type=int, default=4)
@@ -156,10 +158,10 @@ def main():
     os.makedirs(args.out, exist_ok=True)
     random.seed(args.seed); torch.manual_seed(args.seed)
 
-    rows = load_rows(args.train, limit=args.limit or None)
+    rows = load_rows(args.train, task=args.task or None, limit=args.limit or None)
     random.shuffle(rows)
-    print("train rows", len(rows), flush=True)
-    model, tokenizer = make_model()
+    print("train rows", len(rows), "model", args.model, "task", args.task or "all", flush=True)
+    model, tokenizer = make_model(args.model)
     ds = SFTDataset(rows, tokenizer, args.max_len)
     dl = DataLoader(ds, batch_size=args.batch_size, shuffle=True, collate_fn=lambda b: collate(b, tokenizer.eos_token_id))
     opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=args.lr)

@@ -1,17 +1,17 @@
 {
   "N": 10485760,
   "n": 200,
-  "build_s": 51.4,
-  "gpu_max_gb": 1.04,
-  "rss_gb": 2.9,
+  "build_s": 60.2,
+  "gpu_max_gb": 1.33,
+  "rss_gb": 2.99,
   "by_case": {
     "pronoun": {
       "n": 100,
       "search": 100,
-      "project": 99,
+      "project": 97,
       "answer": 97,
       "search_rate": 1.0,
-      "project_rate": 0.99,
+      "project_rate": 0.97,
       "answer_rate": 0.97
     },
     "explicit": {
@@ -26,38 +26,38 @@
     "typo": {
       "n": 50,
       "search": 50,
-      "project": 48,
-      "answer": 47,
+      "project": 47,
+      "answer": 46,
       "search_rate": 1.0,
-      "project_rate": 0.96,
-      "answer_rate": 0.94
+      "project_rate": 0.94,
+      "answer_rate": 0.92
     }
   },
-  "overall_answer": 0.955,
+  "overall_answer": 0.95,
   "latency_ms": {
     "tool": {
-      "median": 1911.2,
-      "p95": 15639.8,
+      "median": 1662.1,
+      "p95": 2695.1,
       "n": 200
     },
     "search": {
-      "median": 115.6,
-      "p95": 543.7,
+      "median": 120.9,
+      "p95": 158.1,
       "n": 200
     },
     "rerank": {
-      "median": 80.7,
-      "p95": 126.9,
+      "median": 84.3,
+      "p95": 107.0,
       "n": 200
     },
     "reader": {
-      "median": 602.8,
-      "p95": 4037.8,
+      "median": 618.9,
+      "p95": 749.3,
       "n": 200
     },
     "total": {
-      "median": 2616.6,
-      "p95": 20074.1,
+      "median": 2419.2,
+      "p95": 3614.9,
       "n": 200
     }
   },

@@ -1,0 +1,124 @@
+{
+  "tool_n": 200,
+  "tool_valid_json": 1.0,
+  "tool_tool_acc": 1.0,
+  "tool_full_acc": 0.975,
+  "search_n": 168,
+  "search_project_acc": 0.9702380952380952,
+  "search_full_acc": 0.9702380952380952,
+  "other_n": 32,
+  "other_full_acc": 1.0,
+  "reader_n": 200,
+  "reader_acc": 0.15,
+  "tool_examples": [
+    {
+      "target": {
+        "tool": "ask_clarification",
+        "args": {
+          "question": "Which project do you mean?"
+        }
+      },
+      "pred": "{\"tool\":\"ask_clarification\",\"args\":{\"question\":\"Which project do you mean?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Raesstil",
+          "query": "what is the passphrase for project Raesstil?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Raesstil\",\"query\":\"what is the passphrase for project Raesstil?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Zhialvrand",
+          "query": "what is the access code for project Zhialvrand?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Zhialvrand\",\"query\":\"what is the access code for project Zhialvrand?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Mial",
+          "query": "what is the serial number for project Mial?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Mial\",\"query\":\"what is the serial number for project Mial?\"}}"
+    },
+    {
+      "target": {
+        "tool": "ask_clarification",
+        "args": {
+          "question": "Which project do you mean?"
+        }
+      },
+      "pred": "{\"tool\":\"ask_clarification\",\"args\":{\"question\":\"Which project do you mean?\"}}"
+    },
+    {
+      "target": {
+        "tool": "no_tool",
+        "args": {}
+      },
+      "pred": "{\"tool\":\"no_tool\",\"args\":{}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Theltroum",
+          "query": "what is the passphrase for project Theltroum?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Theltroum\",\"query\":\"what is the passphrase for project Theltroum?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Moszork",
+          "query": "what is the passphrase for project Moszork?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Moszork\",\"query\":\"what is the passphrase for project Moszork?\"}}"
+    }
+  ],
+  "reader_examples": [
+    {
+      "target": "33S-WQ2W",
+      "pred": "33S-WQ2W"
+    },
+    {
+      "target": "I don't know.",
+      "pred": "{\"memory_notes\":{\"question\":\"Which tracking ID do you think corresponds to project Zoth?\"}}"
+    },
+    {
+      "target": "DEG-DVUN",
+      "pred": "{\"memory_notes\":{\"question\":\"Which project do you know has access code DEG-DVUN?\"}}"
+    },
+    {
+      "target": "KUF-H8PB",
+      "pred": "LMV-B893"
+    },
+    {
+      "target": "H76-SEJG",
+      "pred": "JZX-L9RS"
+    },
+    {
+      "target": "I don't know.",
+      "pred": "{\"memory\":\"Memory notes\",\"args\":{\"question\":\"Which project do you know?\"}}"
+    },
+    {
+      "target": "I don't know.",
+      "pred": "{\"memory_notes\":{\"question\":\"Which project do you think has access code JGM-Z4DY?\"}}"
+    },
+    {
+      "target": "MGG-Y7XD",
+      "pred": "{\"memory notes\":{\"question\":\"Which project do you know?\"}}"
+    }
+  ]
+}

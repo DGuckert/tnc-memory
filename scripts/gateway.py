@@ -4,10 +4,10 @@ import numpy as np
 import torch
 from sklearn.feature_extraction.text import HashingVectorizer, TfidfTransformer
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModelForCausalLM
-from peft import PeftModel
+from peft import PeftModel, PeftConfig
 
-BASE_LLM = "HuggingFaceTB/SmolLM2-360M-Instruct"
-DEFAULT_MIDDLEMAN = "/home/daniel/tnc/training_runs/middleman-lora"
+DEFAULT_MIDDLEMAN = "/home/daniel/tnc/training_runs/tool-135m-lora"
+DEFAULT_READER = "/home/daniel/tnc/training_runs/middleman-lora"
 DEFAULT_RERANKER = "/home/daniel/tnc/training_runs/reranker-mini"
 NF = 2 ** 20
 
@@ -24,6 +24,15 @@ def canonical_from_note(note):
         return None
     return f"what is the {m.group(1)} for project {m.group(2)}?"
 
+def load_adapter(path):
+    cfg = PeftConfig.from_pretrained(path)
+    tok = AutoTokenizer.from_pretrained(path)
+    base = AutoModelForCausalLM.from_pretrained(cfg.base_model_name_or_path, torch_dtype=torch.float16)
+    base.to("cuda")
+    model = PeftModel.from_pretrained(base, path).eval()
+    model.config.use_cache = True
+    return tok, model
+
 def osa(a, b):
     prev2 = None
     prev = list(range(len(b) + 1))
@@ -38,8 +47,8 @@ def osa(a, b):
     return prev[-1]
 
 class MemoryGateway:
-    def __init__(self, docs, middleman=DEFAULT_MIDDLEMAN, reranker=DEFAULT_RERANKER,
-                 top_k=5, max_new_tokens=48):
+    def __init__(self, docs, middleman=DEFAULT_MIDDLEMAN, reader=DEFAULT_READER,
+                 reranker=DEFAULT_RERANKER, top_k=5, max_new_tokens=48):
         self.docs = docs
         self.top_k = top_k
         self.max_new_tokens = max_new_tokens
@@ -47,10 +56,11 @@ class MemoryGateway:
         self._build_char()
         self.entity_map = {x.lower(): x for d in docs for x in re.findall(r"project ([A-Za-z0-9]+) is", d)}
         self.entities = sorted(self.entity_map)
-        self.mtok = AutoTokenizer.from_pretrained(middleman)
-        base = AutoModelForCausalLM.from_pretrained(BASE_LLM, torch_dtype=torch.float16).to("cuda")
-        self.llm = PeftModel.from_pretrained(base, middleman).eval()
-        self.llm.config.use_cache = True
+        self.mtok, self.llm = load_adapter(middleman)
+        if reader and reader != middleman:
+            self.reader_tok, self.reader_llm = load_adapter(reader)
+        else:
+            self.reader_tok, self.reader_llm = self.mtok, self.llm
         self.rtok = AutoTokenizer.from_pretrained(reranker)
         self.rmodel = AutoModelForSequenceClassification.from_pretrained(reranker, num_labels=1).to("cuda").eval()
 
@@ -147,13 +157,13 @@ class MemoryGateway:
         user += f"\nQuestion: {question}"
         msgs = [{"role": "system", "content": "You answer only from the memory notes. If the answer is not present, say exactly: I don't know."},
                 {"role": "user", "content": user}]
-        prompt = self.mtok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
-        enc = self.mtok(prompt, return_tensors="pt").to("cuda")
+        prompt = self.reader_tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+        enc = self.reader_tok(prompt, return_tensors="pt").to("cuda")
         with torch.inference_mode():
-            out = self.llm.generate(**enc, max_new_tokens=12, do_sample=False,
-                                    pad_token_id=self.mtok.eos_token_id,
-                                    eos_token_id=self.mtok.eos_token_id)
-        return self.mtok.decode(out[0][enc["input_ids"].shape[1]:], skip_special_tokens=True).strip()
+            out = self.reader_llm.generate(**enc, max_new_tokens=12, do_sample=False,
+                                           pad_token_id=self.reader_tok.eos_token_id,
+                                           eos_token_id=self.reader_tok.eos_token_id)
+        return self.reader_tok.decode(out[0][enc["input_ids"].shape[1]:], skip_special_tokens=True).strip()
 
     def find_explicit_project(self, messages):
         text = messages[-1].get("content", "") if messages else ""

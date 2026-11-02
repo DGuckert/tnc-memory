@@ -33,10 +33,10 @@ End-to-end is slightly higher than tool-call full accuracy because some tool cal
 |---|---:|
 | Pronoun (“it”) | **0.97** |
 | Explicit name | **0.94** |
-| One-char typo | **0.94** |
-| **Overall** | **0.955** |
+| One-char typo | **0.92** |
+| **Overall** | **0.950** |
 
-Median total latency is **2.62 s** after shortcut and generation optimizations; GPU peak **1.04 GB**, RSS **2.89 GB**. Details: `gateway_975m_report.md`.
+Median total latency is **2.42 s** (p95 **3.61 s**) with a 135M tool router and 360M reader; GPU peak **1.33 GB**, RSS **2.99 GB**. Details: `gateway_975m_report.md`.
 
 ## What it demonstrates
 

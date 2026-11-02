@@ -65,7 +65,7 @@ End-to-end at 9.75M: exact-name questions are **1.000** correct; one-character t
 
 The first full gateway (`scripts/gateway.py`) is integrated. On 100 noisy conversations with real chatter, paraphrases, typos, and pronouns: **0.86** tool-call accuracy and **0.88** end-to-end answer accuracy.
 
-On the 9.75M store, 200 conversations: **0.955** end-to-end answer accuracy (pronoun 0.97, explicit 0.94, typo 0.94). Median latency is **2.62 s** after shortcuts and shorter generation; indices use **1.04 GB GPU** and **2.89 GB RAM**.
+On the 9.75M store, 200 conversations: **0.950** end-to-end answer accuracy (pronoun 0.97, explicit 0.94, typo 0.92). A 135M tool router plus shortcuts cut median latency to **2.42 s** and p95 to **3.61 s**; GPU peak is **1.33 GB**, RSS **2.99 GB**.
 
 Adapters: `v0.1-middleman` and `v0.1-reranker` releases. Details: `results/training/`.
 
@@ -86,5 +86,5 @@ The scripts expect a Linux/WSL workspace at `/home/daniel/tnc` with the prepared
 - A cross-encoder reranker is trained; exact top-1 is 0.995 and typo top-1 is 0.680 on the 9.75M benchmark.
 - End-to-end retrieval + rerank + reader: exact **1.000**, typo **0.890** with entity correction.
 - The gateway is integrated; noisy-conversation end-to-end answer accuracy is **0.88**.
-- On 9.75M tokens, gateway answer accuracy is **0.955**; median latency is now **2.62 s** (down from 4.35 s).
-- Next: cut the remaining pronoun tool-call outliers, then human-labeled conversations.
+- On 9.75M tokens, gateway answer accuracy is **0.950**; median latency is **2.42 s**, p95 **3.61 s**.
+- The tool router is now 135M; the reader stays 360M. Next: human-labeled conversations.

@@ -1,0 +1,86 @@
+{
+  "tool_n": 100,
+  "tool_valid_json": 1.0,
+  "tool_tool_acc": 1.0,
+  "tool_project_acc": 0.88,
+  "tool_full_acc": 0.98,
+  "reader_n": 100,
+  "reader_acc": 0.13,
+  "tool_examples": [
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Kraest",
+          "query": "what is the invoice number for project Kraest?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Kraest\",\"query\":\"what is the invoice number for project Kraest?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Sast",
+          "query": "what is the access code for project Sast?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Sast\",\"query\":\"what is the access code for project Sast?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Gest",
+          "query": "what is the license key for project Gest?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Gest\",\"query\":\"what is the license key for project Gest?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Zhar",
+          "query": "what is the serial number for project Zhar?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Zhar\",\"query\":\"what is the serial number for project Zhar?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Dostkuv",
+          "query": "what is the serial number for project Dostkuv?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Dostkuv\",\"query\":\"what is the serial number for project Dostkuv?\"}}"
+    }
+  ],
+  "reader_examples": [
+    {
+      "target": "2GF-YEMP",
+      "pred": "{\"memory_notes\":{\"question\":\"Which project do you mean?\"}}"
+    },
+    {
+      "target": "PMM-YZD6",
+      "pred": "BZF-A55T"
+    },
+    {
+      "target": "I don't know.",
+      "pred": "{\"memory\":\"Memory notes\",\"args\":{\"question\":\"Which project do you know?\"}}"
+    },
+    {
+      "target": "YZG-EQT3",
+      "pred": "{\"memory\":\"Skiardth\",\"args\":{\"question\":\"Which project do you mean?\"}}"
+    },
+    {
+      "target": "HQE-YXX4",
+      "pred": "{\"memory_notes\":{\"question\":\"Which passphrase do you think corresponds to project Zhiarkgren?\"}}"
+    }
+  ],
+  "train_rows": 5000,
+  "steps": 300,
+  "elapsed_s": 661.8
+}
