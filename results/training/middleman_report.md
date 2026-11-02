@@ -41,6 +41,20 @@ Base model, 100 tool + 100 reader:
 | Full tool-call accuracy | 0.00 | 0.97 |
 | Reader accuracy | 0.21 | 0.99 |
 
+## Harder test
+
+100 conversations with real Discord chatter as noise, paraphrased questions, typos, and “the other one” references:
+
+| Metric | Base | Fine-tuned |
+|---|---:|---:|
+| Valid JSON | 0.00 | 1.00 |
+| Tool choice accuracy | 0.00 | 1.00 |
+| Full tool-call accuracy | 0.00 | 0.86 |
+| Search project accuracy | — | 0.857 |
+| Non-search accuracy | — | 1.00 |
+
+This is a stress test, not human-labeled real usage. The labels are still synthetic; only the filler chatter is real.
+
 ## What it learned
 
 - Emit strict JSON tool calls.

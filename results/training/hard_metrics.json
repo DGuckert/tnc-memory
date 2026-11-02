@@ -1,0 +1,96 @@
+{
+  "tool_n": 100,
+  "tool_valid_json": 1.0,
+  "tool_tool_acc": 1.0,
+  "tool_full_acc": 0.86,
+  "search_n": 91,
+  "search_project_acc": 0.8571428571428571,
+  "search_full_acc": 0.8461538461538461,
+  "other_n": 9,
+  "other_full_acc": 1.0,
+  "reader_n": 0,
+  "reader_acc": 0.0,
+  "tool_examples": [
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Grost",
+          "query": "what is the invoice number for project Grost?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Grost\",\"query\":\"what is the invoice number for project Grost?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Skevdraerk",
+          "query": "what is the tracking ID for project Skevdraerk?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Skevdraerk\",\"query\":\"what is the tracking ID for project Skevdraerk?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Tous",
+          "query": "what is the passphrase for project Tous?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Tous\",\"query\":\"what is the passphrase for project Tous?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Stes",
+          "query": "what is the passphrase for project Stes?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Stes\",\"query\":\"what is the passphrase for project Stes?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Tous",
+          "query": "what is the passphrase for project Tous?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Tous\",\"query\":\"what is the passphrase for project Tous?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Zhou",
+          "query": "what is the access code for project Zhou?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Zhou\",\"query\":\"what is the access code for project Zhou?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Troquist",
+          "query": "what is the serial number for project Troquist?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Troquist\",\"query\":\"what is the serial number for project Troquist?\"}}"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Vrouszel",
+          "query": "what is the license key for project Vrouszel?"
+        }
+      },
+      "pred": "{\"tool\":\"search_memory\",\"args\":{\"project\":\"Vrouszel\",\"query\":\"what is the license key for project Vrouszel?\"}}"
+    }
+  ],
+  "reader_examples": []
+}

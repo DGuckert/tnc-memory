@@ -1,0 +1,96 @@
+{
+  "tool_n": 100,
+  "tool_valid_json": 0.0,
+  "tool_tool_acc": 0.0,
+  "tool_full_acc": 0.0,
+  "search_n": 0,
+  "search_project_acc": 0.0,
+  "search_full_acc": 0.0,
+  "other_n": 0,
+  "other_full_acc": 0.0,
+  "reader_n": 0,
+  "reader_acc": 0.0,
+  "tool_examples": [
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Grost",
+          "query": "what is the invoice number for project Grost?"
+        }
+      },
+      "pred": "no"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Skevdraerk",
+          "query": "what is the tracking ID for project Skevdraerk?"
+        }
+      },
+      "pred": "lol"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Tous",
+          "query": "what is the passphrase for project Tous?"
+        }
+      },
+      "pred": "got it"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Stes",
+          "query": "what is the passphrase for project Stes?"
+        }
+      },
+      "pred": "lol"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Tous",
+          "query": "what is the passphrase for project Tous?"
+        }
+      },
+      "pred": "makes sense"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Zhou",
+          "query": "what is the access code for project Zhou?"
+        }
+      },
+      "pred": "lol"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Troquist",
+          "query": "what is the serial number for project Troquist?"
+        }
+      },
+      "pred": "ok"
+    },
+    {
+      "target": {
+        "tool": "search_memory",
+        "args": {
+          "project": "Vrouszel",
+          "query": "what is the license key for project Vrouszel?"
+        }
+      },
+      "pred": "lol"
+    }
+  ],
+  "reader_examples": []
+}

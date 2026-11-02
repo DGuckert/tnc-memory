@@ -76,7 +76,11 @@ Prior assistant turns are context. Train only on the final assistant message, or
 | Full tool-call accuracy | 0.00 | 0.97 |
 | Reader accuracy | 0.21 | 0.99 |
 
-Adapter: `v0.1-middleman` release. Details: `results/training/middleman_report.md`.
+Harder stress test, 100 conversations with real chatter noise and paraphrases: fine-tuned tool JSON **1.00**, full tool accuracy **0.86**; base **0.00**. Details: `results/training/middleman_report.md`.
+
+The cross-encoder reranker is also trained. At 9.75M tokens it improves exact top-1 from **0.980** to **0.995** and typo top-1 from **0.430** to **0.680**. Details: `results/training/reranker_report.md`.
+
+Adapter: `v0.1-middleman` release. Reranker: `v0.1-reranker` release.
 
 ## Recommended use
 
