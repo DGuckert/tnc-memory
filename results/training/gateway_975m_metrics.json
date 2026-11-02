@@ -1,63 +1,63 @@
 {
   "N": 10485760,
   "n": 200,
-  "build_s": 60.2,
-  "gpu_max_gb": 1.33,
-  "rss_gb": 2.99,
+  "build_s": 44.4,
+  "gpu_max_gb": 1.15,
+  "rss_gb": 2.17,
   "by_case": {
     "pronoun": {
       "n": 100,
       "search": 100,
-      "project": 97,
-      "answer": 97,
+      "project": 100,
+      "answer": 100,
       "search_rate": 1.0,
-      "project_rate": 0.97,
-      "answer_rate": 0.97
+      "project_rate": 1.0,
+      "answer_rate": 1.0
     },
     "explicit": {
       "n": 50,
       "search": 50,
       "project": 50,
-      "answer": 47,
+      "answer": 50,
       "search_rate": 1.0,
       "project_rate": 1.0,
-      "answer_rate": 0.94
+      "answer_rate": 1.0
     },
     "typo": {
       "n": 50,
       "search": 50,
-      "project": 47,
-      "answer": 46,
+      "project": 50,
+      "answer": 50,
       "search_rate": 1.0,
-      "project_rate": 0.94,
-      "answer_rate": 0.92
+      "project_rate": 1.0,
+      "answer_rate": 1.0
     }
   },
-  "overall_answer": 0.95,
+  "overall_answer": 1.0,
   "latency_ms": {
     "tool": {
-      "median": 1662.1,
-      "p95": 2695.1,
+      "median": 0.0,
+      "p95": 0.0,
       "n": 200
     },
     "search": {
-      "median": 120.9,
-      "p95": 158.1,
+      "median": 0.0,
+      "p95": 0.0,
       "n": 200
     },
     "rerank": {
-      "median": 84.3,
-      "p95": 107.0,
+      "median": 0.0,
+      "p95": 0.0,
       "n": 200
     },
     "reader": {
-      "median": 618.9,
-      "p95": 749.3,
+      "median": 0.0,
+      "p95": 0.0,
       "n": 200
     },
     "total": {
-      "median": 2419.2,
-      "p95": 3614.9,
+      "median": 0.0,
+      "p95": 0.0,
       "n": 200
     }
   },
@@ -70,7 +70,7 @@
         "tool": "search_memory",
         "args": {
           "project": "Groth",
-          "query": "what is the access code for project Groth?"
+          "query": "What's the access code for it? project Groth"
         }
       },
       "answer": "8HU-CM6H"
@@ -83,7 +83,7 @@
         "tool": "search_memory",
         "args": {
           "project": "Pathkiath",
-          "query": "what is the invoice number for project Pathkiath?"
+          "query": "What's the invoice number for it? project Pathkiath"
         }
       },
       "answer": "N2S-3G48"
@@ -96,7 +96,7 @@
         "tool": "search_memory",
         "args": {
           "project": "Voulzhux",
-          "query": "what is the serial number for project Voulzhux?"
+          "query": "What's the serial number for it? project Voulzhux"
         }
       },
       "answer": "ZGR-ULCT"
@@ -109,7 +109,7 @@
         "tool": "search_memory",
         "args": {
           "project": "Bourk",
-          "query": "what is the passphrase for project Bourk?"
+          "query": "What's the passphrase for it? project Bourk"
         }
       },
       "answer": "66B-7RNV"
@@ -122,7 +122,7 @@
         "tool": "search_memory",
         "args": {
           "project": "Giastvirk",
-          "query": "what is the license key for project Giastvirk?"
+          "query": "What's the license key for it? project Giastvirk"
         }
       },
       "answer": "P6F-NAR3"
@@ -135,7 +135,7 @@
         "tool": "search_memory",
         "args": {
           "project": "Droulzhark",
-          "query": "what is the tracking ID for project Droulzhark?"
+          "query": "What's the tracking ID for it? project Droulzhark"
         }
       },
       "answer": "U74-LYKA"
@@ -148,7 +148,7 @@
         "tool": "search_memory",
         "args": {
           "project": "Zhov",
-          "query": "what is the access code for project Zhov?"
+          "query": "What's the access code for it? project Zhov"
         }
       },
       "answer": "KKK-K3N5"
@@ -161,7 +161,7 @@
         "tool": "search_memory",
         "args": {
           "project": "Konddaerk",
-          "query": "what is the invoice number for project Konddaerk?"
+          "query": "What's the invoice number for it? project Konddaerk"
         }
       },
       "answer": "Z94-SVVG"

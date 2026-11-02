@@ -84,7 +84,7 @@ End-to-end retrieval + rerank + reader: exact **1.000**, typo **0.890** with ent
 
 Full gateway on 100 noisy conversations: **0.86** tool-call and **0.88** end-to-end answer accuracy. Details: `results/training/gateway_report.md`.
 
-Full gateway on the 9.75M store: **0.950** answer accuracy; median latency **2.42 s**, p95 **3.61 s**. The tool router is a 135M LoRA; the reader is 360M. Details: `results/training/gateway_975m_report.md`.
+Full gateway on the 9.75M store: structured facts **1.000** (direct lookup); model fallback **0.950**, median **2.42 s**, p95 **3.61 s**; noisy conversations **0.94**. The tool router is a 135M LoRA; the reader is 360M. Details: `results/training/gateway_975m_report.md`.
 
 Adapter: `v0.1-middleman` release. Reranker: `v0.1-reranker` release.
 

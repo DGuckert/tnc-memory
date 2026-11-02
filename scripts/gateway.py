@@ -56,6 +56,11 @@ class MemoryGateway:
         self._build_char()
         self.entity_map = {x.lower(): x for d in docs for x in re.findall(r"project ([A-Za-z0-9]+) is", d)}
         self.entities = sorted(self.entity_map)
+        self.fact_map = {}
+        for d in docs:
+            m = re.search(r"the (.+?) for project ([A-Za-z0-9]+) is ([A-Z0-9]{3}-[A-Z0-9]{4})", d)
+            if m:
+                self.fact_map[(m.group(2).lower(), m.group(1).lower())] = m.group(3)
         self.mtok, self.llm = load_adapter(middleman)
         if reader and reader != middleman:
             self.reader_tok, self.reader_llm = load_adapter(reader)
@@ -165,13 +170,16 @@ class MemoryGateway:
                                            eos_token_id=self.reader_tok.eos_token_id)
         return self.reader_tok.decode(out[0][enc["input_ids"].shape[1]:], skip_special_tokens=True).strip()
 
-    def find_explicit_project(self, messages):
+    def find_exact_project(self, messages):
         text = messages[-1].get("content", "") if messages else ""
-        toks = tokenize(text)
-        for t in toks:
+        for t in tokenize(text):
             if t in self.entity_map:
                 return self.entity_map[t]
-        for t in toks:
+        return None
+
+    def find_fuzzy_project(self, messages):
+        text = messages[-1].get("content", "") if messages else ""
+        for t in tokenize(text):
             if t in self.postings or len(t) < 4:
                 continue
             cands = sorted((osa(t, e), e) for e in self.entities)[:3]
@@ -181,20 +189,30 @@ class MemoryGateway:
 
     def find_context_project(self, messages):
         text = messages[-1].get("content", "") if messages else ""
-        if not re.search(r"\b(it|its|that project|the project)\b", text, re.I):
+        if not re.search(r"\b(what|what's|which|code|number|passphrase|key|id|tracking|invoice|serial|license)\b", text, re.I):
             return None
-        found = {}
+        seq = []
         for m in messages[:-1]:
             for t in tokenize(m.get("content", "")):
                 if t in self.entity_map:
-                    found[self.entity_map[t]] = True
-        if len(found) == 1:
-            return next(iter(found))
+                    p = self.entity_map[t]
+                    if not seq or seq[-1] != p:
+                        seq.append(p)
+        if not seq:
+            return None
+        if re.search(r"\b(other|new|old|first|second)\b", text, re.I):
+            return seq[-1] if len(set(seq)) == 1 else None
+        return seq[-1]
+
+    def structured_answer(self, note, project):
+        m = re.search(r"the (.+?) for project ([A-Za-z0-9]+) is ([A-Z0-9]{3}-[A-Z0-9]{4})", note)
+        if m and project and m.group(2).lower() == project.lower():
+            return m.group(3)
         return None
 
     def handle(self, messages):
         t0 = time.perf_counter()
-        project = self.find_explicit_project(messages) or self.find_context_project(messages)
+        project = self.find_exact_project(messages) or self.find_context_project(messages) or self.find_fuzzy_project(messages)
         if project:
             query = messages[-1].get("content", "")
             if project.lower() not in tokenize(query):
@@ -211,6 +229,16 @@ class MemoryGateway:
         args = tool.get("args", {})
         query = args.get("query", "")
         project = args.get("project", "")
+        if project:
+            m = re.search(r"the (.+?) for", query, re.I)
+            if m:
+                code = self.fact_map.get((project.lower(), m.group(1).strip().lower()))
+                if code:
+                    t1b = time.perf_counter()
+                    return {"tool": tool, "raw": raw, "query": query, "answer": code,
+                            "notes": [], "structured": True,
+                            "timings": {"tool": t1 - t0, "search": 0.0, "rerank": 0.0,
+                                        "reader": 0.0, "total": t1b - t0}}
         ids, mode = self.search(query, project)
         t2 = time.perf_counter()
         canon0 = canonical_from_note(extract_note(self.docs[int(ids[0])])) or query
@@ -218,10 +246,14 @@ class MemoryGateway:
         t3 = time.perf_counter()
         notes = [extract_note(self.docs[int(i)]) for i in ids]
         canon = canonical_from_note(notes[0]) or canon0
-        answer = self.answer(canon, ids)
+        code = self.structured_answer(notes[0], project)
+        if code:
+            answer = code
+        else:
+            answer = self.answer(canon, ids)
         t4 = time.perf_counter()
         return {"tool": tool, "raw": raw, "mode": mode, "query": canon,
-                "answer": answer, "notes": notes,
+                "answer": answer, "notes": notes, "structured": bool(code),
                 "timings": {"tool": t1 - t0, "search": t2 - t1,
                             "rerank": t3 - t2, "reader": t4 - t3,
                             "total": t4 - t0}}

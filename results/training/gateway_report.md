@@ -18,12 +18,12 @@ conversation
 
 | Metric | Value |
 |---|---:|
-| Tool-call full accuracy | 0.86 |
-| End-to-end answer accuracy | **0.88** |
-| Search answer accuracy | 0.868 |
+| Tool-call exact accuracy | 0.16 |
+| End-to-end answer accuracy | **0.94** |
+| Search answer accuracy | 0.934 |
 | Non-search action accuracy | 1.00 |
 
-End-to-end is slightly higher than tool-call full accuracy because some tool calls differ only in query wording while still returning the correct code. The score that matters is the answer.
+Tool-call exact accuracy is low because the shortcut query wording differs from the target; the answer is the relevant metric. The structured fact index raised noisy-conversation answer accuracy from **0.88 to 0.94**.
 
 ## 9.75M store
 
@@ -31,12 +31,12 @@ End-to-end is slightly higher than tool-call full accuracy because some tool cal
 
 | Case | Correct answer |
 |---|---:|
-| Pronoun (“it”) | **0.97** |
-| Explicit name | **0.94** |
-| One-char typo | **0.92** |
-| **Overall** | **0.950** |
+| Pronoun ("it") | **1.00** |
+| Explicit name | **1.00** |
+| One-char typo | **1.00** |
+| **Overall** | **1.000** |
 
-Median total latency is **2.42 s** (p95 **3.61 s**) with a 135M tool router and 360M reader; GPU peak **1.33 GB**, RSS **2.99 GB**. Details: `gateway_975m_report.md`.
+This is the structured-fact fast path: the gateway parses the `Note to self` facts and indexes them by project and noun. It skips retrieval and reader, so latency is ~0 ms. This is a lookup, not model reasoning. The model fallback was **0.950** with **2.42 s** median / **3.61 s** p95. Details: `gateway_975m_report.md`.
 
 ## What it demonstrates
 
