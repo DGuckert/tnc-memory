@@ -1,0 +1,14 @@
+[
+  {
+    "prompt": "coding: install torch with cuda on windows; version mismatch",
+    "answer": "I have a 32gb gpu and 16gb ram"
+  },
+  {
+    "prompt": "coding: python script crashes when loading model on gpu; CUDA out of memory",
+    "answer": "I have a 32gb gpu, and I'm using 16gb of ram."
+  },
+  {
+    "prompt": "chat: hey, how's it going? I finally got the new setup working.",
+    "answer": "I'm not sure if I should be using the 3090 or the 3080"
+  }
+]

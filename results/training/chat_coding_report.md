@@ -20,9 +20,10 @@ Two LoRA pilots on the same data:
 | Model | Val loss | Perplexity | Base loss | Base ppl |
 |---|---:|---:|---:|---:|
 | SmolLM2-135M | 3.541 | 34.51 | 4.040 | 56.84 |
-| SmolLM2-360M | **3.382** | **29.43** | 3.765 | 43.17 |
+| SmolLM2-360M, 120 steps | 3.382 | 29.43 | 3.765 | 43.17 |
+| SmolLM2-360M, 400 steps | **3.246** | **25.69** | 3.765 | 43.17 |
 
-The 360M adapter was trained for 120 steps, 1,920 examples, about 4 minutes. Sample outputs are coherent for simple coding/chat prompts, but can repeat or drift; this is a next-message model, not an instruction-tuned assistant. Release: `v0.1-chat-360m`.
+The 400-step 360M adapter saw 6,400 examples and trained for about 11 minutes. Sample outputs are coherent for simple coding/chat prompts, but still drift; this is a next-message model, not an instruction-tuned assistant. Release: `v0.2-chat-360m`.
 
 ## Retrieval on real messages
 
