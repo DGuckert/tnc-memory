@@ -21,9 +21,10 @@ Two LoRA pilots on the same data:
 |---|---:|---:|---:|---:|
 | SmolLM2-135M | 3.541 | 34.51 | 4.040 | 56.84 |
 | SmolLM2-360M, 120 steps | 3.382 | 29.43 | 3.765 | 43.17 |
-| SmolLM2-360M, 400 steps | **3.246** | **25.69** | 3.765 | 43.17 |
+| SmolLM2-360M, 400 steps | 3.246 | 25.69 | 3.765 | 43.17 |
+| SmolLM2-360M, 700 steps | **3.204** | **24.64** | 3.765 | 43.17 |
 
-The 400-step 360M adapter saw 6,400 examples and trained for about 11 minutes. Sample outputs are coherent for simple coding/chat prompts, but still drift; this is a next-message model, not an instruction-tuned assistant. Release: `v0.2-chat-360m`.
+The 700-step 360M adapter saw 11,200 examples and trained for about 20 minutes. Sample outputs are short and sometimes drift; this is a next-message model, not an instruction-tuned assistant. Release: `v0.3-chat-360m`.
 
 ## Retrieval on real messages
 
@@ -34,7 +35,16 @@ Global exact-message retrieval over 551,541 messages with BM25:
 | Code answer from question | 0.000 | 0.008 | 0.018 |
 | Chat answer from question | 0.000 | 0.016 | 0.024 |
 
-This is near zero. Exact next-answer retrieval at 550K messages is not a useful QA benchmark and lexical BM25 is not enough for open-domain chat/code. The next retrieval step is semantic embeddings plus channel/time scoping, not more BM25 tuning.
+This is near zero. Exact next-answer retrieval at 550K messages is not a useful QA benchmark and lexical BM25 is not enough for open-domain chat/code.
+
+A semantic retrieval check with `bge-small` on a **20,000-message candidate bank**:
+
+| Task | BM25 r@10 | Semantic r@10 |
+|---|---:|---:|
+| Code answer | 0.008 | **0.048** |
+| Chat answer | 0.016 | **0.060** |
+
+Semantic search is 4–6× better than BM25 on this candidate set, but exact-answer retrieval is still low. The next retrieval step is semantic embeddings plus channel/time scoping, not more BM25 tuning.
 
 ## What this tells us
 
@@ -58,4 +68,5 @@ This is near zero. Exact next-answer retrieval at 550K messages is not a useful 
 - `chat_135m_val_metrics.json`, `chat_135m_base_val_metrics.json` — 135M comparison.
 - `chat_next_message_retrieval.json` — next-message retrieval negative.
 - `answer_retrieval_metrics.json` — code/chat answer retrieval negative.
-- `chat_samples_360m.json` — sanitized sample outputs.
+- `semantic_message_metrics.json` — 20K candidate semantic retrieval check.
+- `chat_samples_360m_v2.json` — sanitized sample outputs.

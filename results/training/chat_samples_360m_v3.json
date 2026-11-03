@@ -1,0 +1,14 @@
+[
+  {
+    "prompt": "coding: install torch with cuda on windows; version mismatch",
+    "answer": "I'm using 128GB of ram"
+  },
+  {
+    "prompt": "coding: python script crashes when loading model on gpu; CUDA out of memory",
+    "answer": "I'm using 16GB of ram"
+  },
+  {
+    "prompt": "chat: hey, how's it going? I finally got the new setup working.",
+    "answer": "I'm not sure if it's the GPU or the CPU"
+  }
+]

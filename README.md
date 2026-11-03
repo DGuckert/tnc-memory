@@ -76,7 +76,7 @@ A first real-Discord adapter was trained on 11,553 context→next-message rows:
 | Model | Val loss | Perplexity |
 |---|---:|---:|
 | SmolLM2-135M | 3.541 | 34.51 |
-| SmolLM2-360M, 400 steps | **3.246** | **25.69** |
+| SmolLM2-360M, 700 steps | **3.204** | **24.64** |
 | 360M base | 3.765 | 43.17 |
 
 The 360M adapter can produce coherent short coding/chat replies, but it is a next-message model, not a full assistant. Global exact-answer retrieval over 551K real messages is near zero with BM25; open-domain chat/code needs a semantic index. Raw Discord text is not committed.
@@ -100,5 +100,5 @@ The scripts expect a Linux/WSL workspace at `/home/daniel/tnc` with the prepared
 - The gateway is integrated; noisy-conversation end-to-end answer accuracy is **0.88**.
 - Structured facts: **1.000** on the 200-conversation 9.75M benchmark; model fallback **0.950**.
 - Noisy conversations with real chatter: **0.94** end-to-end.
-- Coding/chat: 360M adapter reaches **25.69** held-out perplexity; global real-message BM25 retrieval is near zero.
+- Coding/chat: 360M adapter reaches **24.64** held-out perplexity; semantic retrieval improves 4–6× over BM25 but is still low.
 - Next: human-labeled conversations and a semantic message index.
