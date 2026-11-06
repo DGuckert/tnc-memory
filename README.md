@@ -15,6 +15,8 @@ The 100M store was built by repeating the 9.75M corpus to 781,250 chunks and inj
 
 A 1B logical-token test with an entity index reached **1.000 exact-name** and **0.935 typo + entity correction**; the structured gateway answered **200/200** conversations. It does not run the full 1B word/character index. See `results/training/scale_1b_report.md`.
 
+The same 1B test with coding entities reached **1.000** for exact function/project lookup, but only **0.030 recall@1** when the user described the task without naming the function. See `results/training/coding_1b_report.md`.
+
 ## What worked
 
 - **Word BM25** for exact project names: 0.995 r@10 at 9.75M; 1.000 at 100M.
@@ -39,6 +41,7 @@ A 1B logical-token test with an entity index reached **1.000 exact-name** and **
 - `results/hybrid_report.md` — 9.75M lexical/hybrid result.
 - `results/hybrid_100m_report.md` — 100M scale result.
 - `results/training/scale_1b_report.md` — 1B logical-token entity-index test.
+- `results/training/coding_1b_report.md` — 1B coding entity/description-only test.
 - `training/` — synthetic SFT and reranker data; see `training/README.md`.
 
 ## Training data
@@ -105,4 +108,5 @@ The scripts expect a Linux/WSL workspace at `/home/daniel/tnc` with the prepared
 - Noisy conversations with real chatter: **0.94** end-to-end.
 - Coding/chat: 360M adapter reaches **24.64** held-out perplexity; semantic retrieval improves 4–6× over BM25 but is still low.
 - 1B logical-token entity index: exact **1.000**, typo + entity correction **0.935**; structured gateway **1.000**.
+- 1B coding entities: exact/project lookup **1.000**; description-only recall@1 **0.030**.
 - Next: human-labeled conversations and a semantic message index.

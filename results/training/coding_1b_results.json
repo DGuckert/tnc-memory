@@ -1,0 +1,80 @@
+{
+ "N": 1000000000,
+ "n_chunks": 7812500,
+ "content_tokens": 1000000000,
+ "coding_entities": 800,
+ "project_entities": 800,
+ "build_s": 3.2,
+ "exact_function_recall@1": 1.0,
+ "typo_function_recall@1": 1.0,
+ "project_scoped_recall@1": 1.0,
+ "structured_coding_fact_acc": 1.0,
+ "no_name_unresolved_rate": 0.0,
+ "examples": [
+  {
+   "project": "Firvri",
+   "function": "vrarne_cache",
+   "typo": "vrarne_caceh",
+   "corrected": "vrarne_cache",
+   "gold_pos": 4236587,
+   "post_pos": 4236587
+  },
+  {
+   "project": "Grurk",
+   "function": "trour_cache",
+   "typo": "trour_caceh",
+   "corrected": "trour_cache",
+   "gold_pos": 5846547,
+   "post_pos": 5846547
+  },
+  {
+   "project": "Thermaem",
+   "function": "krav_util",
+   "typo": "krav_utli",
+   "corrected": "krav_util",
+   "gold_pos": 822737,
+   "post_pos": 822737
+  },
+  {
+   "project": "Grithzhaend",
+   "function": "durk_router",
+   "typo": "durk_routre",
+   "corrected": "durk_router",
+   "gold_pos": 518831,
+   "post_pos": 518831
+  },
+  {
+   "project": "Morkful",
+   "function": "zhithes_patch",
+   "typo": "zhithes_pathc",
+   "corrected": "zhithes_patch",
+   "gold_pos": 6535085,
+   "post_pos": 6535085
+  },
+  {
+   "project": "Groultan",
+   "function": "thux_runner",
+   "typo": "thux_runnre",
+   "corrected": "thux_runner",
+   "gold_pos": 2076458,
+   "post_pos": 2076458
+  },
+  {
+   "project": "Dril",
+   "function": "thuxzaeth_client",
+   "typo": "thuxzaeth_clietn",
+   "corrected": "thuxzaeth_client",
+   "gold_pos": 2672922,
+   "post_pos": 2672922
+  },
+  {
+   "project": "Pastmial",
+   "function": "drith_runner",
+   "typo": "drith_runnre",
+   "corrected": "drith_runner",
+   "gold_pos": 3266411,
+   "post_pos": 3266411
+  }
+ ],
+ "note": "1B logical-token coding-entity test; unique function/project names are indexed. No full BM25/char index."
+}

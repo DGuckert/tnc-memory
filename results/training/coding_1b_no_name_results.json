@@ -1,0 +1,10 @@
+{
+ "N": 1000000000,
+ "n_chunks": 7812500,
+ "content_tokens": 1000000000,
+ "purpose_only_recall@1": 0.03,
+ "purpose_only_recall@10": 0.25,
+ "purpose_only_recall@50": 1.0,
+ "candidates_per_purpose": 40,
+ "note": "1B coding description-only test: no unique project/function name, only the task description."
+}
