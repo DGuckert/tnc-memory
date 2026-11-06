@@ -1,0 +1,24 @@
+{
+  "N": 1000000000,
+  "n_chunks": 7812500,
+  "content_tokens": 1000000000,
+  "structured_gateway": {
+    "pronoun": {
+      "n": 100,
+      "ok": 100,
+      "acc": 1.0
+    },
+    "explicit": {
+      "n": 50,
+      "ok": 50,
+      "acc": 1.0
+    },
+    "typo": {
+      "n": 50,
+      "ok": 50,
+      "acc": 1.0
+    }
+  },
+  "overall_acc": 1.0,
+  "note": "1B logical-token structured-gateway test; no full BM25/char index."
+}

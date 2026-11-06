@@ -1,0 +1,84 @@
+{
+ "N": 1000000000,
+ "n_chunks": 7812500,
+ "content_tokens": 1000000000,
+ "entities": 800,
+ "postings": 800,
+ "build_s": 2.8,
+ "exact_recall@1": 1.0,
+ "typo_entity_recall@1": 0.935,
+ "structured_fact_acc": 1.0,
+ "typo_examples": [
+  {
+   "query_name": "Groth",
+   "typo": "Groht",
+   "corrected": "groth",
+   "gold_pos": 4236587,
+   "post_pos": 4236587
+  },
+  {
+   "query_name": "Pathkiath",
+   "typo": "Pathkiaht",
+   "corrected": "pathkiath",
+   "gold_pos": 5846547,
+   "post_pos": 5846547
+  },
+  {
+   "query_name": "Voulzhux",
+   "typo": "Voulzhxu",
+   "corrected": "voulzhux",
+   "gold_pos": 822737,
+   "post_pos": 822737
+  },
+  {
+   "query_name": "Bourk",
+   "typo": "Boukr",
+   "corrected": "bourk",
+   "gold_pos": 518831,
+   "post_pos": 518831
+  },
+  {
+   "query_name": "Giastvirk",
+   "typo": "Giastvikr",
+   "corrected": "giastvirk",
+   "gold_pos": 6535085,
+   "post_pos": 6535085
+  },
+  {
+   "query_name": "Droulzhark",
+   "typo": "Droulzhakr",
+   "corrected": "droulzhark",
+   "gold_pos": 2076458,
+   "post_pos": 2076458
+  },
+  {
+   "query_name": "Zhov",
+   "typo": "Zhvo",
+   "corrected": "zhov",
+   "gold_pos": 2672922,
+   "post_pos": 2672922
+  },
+  {
+   "query_name": "Konddaerk",
+   "typo": "Konddaekr",
+   "corrected": "konddaerk",
+   "gold_pos": 3266411,
+   "post_pos": 3266411
+  },
+  {
+   "query_name": "Futhzork",
+   "typo": "Futhzokr",
+   "corrected": "futhzork",
+   "gold_pos": 4375721,
+   "post_pos": 4375721
+  },
+  {
+   "query_name": "Drerquax",
+   "typo": "Drerquxa",
+   "corrected": "drerquax",
+   "gold_pos": 5164014,
+   "post_pos": 5164014
+  }
+ ],
+ "note": "1B logical-token entity-index test; 1B store is repeated filler with 800 facts injected once."
+}

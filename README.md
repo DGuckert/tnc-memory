@@ -13,6 +13,8 @@ A dense-only locator was not good enough: **0.405 recall@10** at 9.75M tokens. A
 
 The 100M store was built by repeating the 9.75M corpus to 781,250 chunks and injecting 800 synthetic facts once. It is a scale/memory test, not 100M unique conversations.
 
+A 1B logical-token test with an entity index reached **1.000 exact-name** and **0.935 typo + entity correction**; the structured gateway answered **200/200** conversations. It does not run the full 1B word/character index. See `results/training/scale_1b_report.md`.
+
 ## What worked
 
 - **Word BM25** for exact project names: 0.995 r@10 at 9.75M; 1.000 at 100M.
@@ -36,6 +38,7 @@ The 100M store was built by repeating the 9.75M corpus to 781,250 chunks and inj
 - `results/llm_report.md` — small-LLM reader study.
 - `results/hybrid_report.md` — 9.75M lexical/hybrid result.
 - `results/hybrid_100m_report.md` — 100M scale result.
+- `results/training/scale_1b_report.md` — 1B logical-token entity-index test.
 - `training/` — synthetic SFT and reranker data; see `training/README.md`.
 
 ## Training data
@@ -101,4 +104,5 @@ The scripts expect a Linux/WSL workspace at `/home/daniel/tnc` with the prepared
 - Structured facts: **1.000** on the 200-conversation 9.75M benchmark; model fallback **0.950**.
 - Noisy conversations with real chatter: **0.94** end-to-end.
 - Coding/chat: 360M adapter reaches **24.64** held-out perplexity; semantic retrieval improves 4–6× over BM25 but is still low.
+- 1B logical-token entity index: exact **1.000**, typo + entity correction **0.935**; structured gateway **1.000**.
 - Next: human-labeled conversations and a semantic message index.
