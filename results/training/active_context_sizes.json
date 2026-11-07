@@ -1,0 +1,37 @@
+{
+  "gateway_975m_tool_prompt_tokens": {
+    "n": 200,
+    "min": 92,
+    "median": 113,
+    "p95": 117,
+    "max": 120
+  },
+  "gateway_reader_prompt_tokens_5_notes": {
+    "n": 200,
+    "min": 163,
+    "median": 175,
+    "p95": 182,
+    "max": 186
+  },
+  "hard_noisy_tool_prompt_tokens": {
+    "n": 100,
+    "min": 84,
+    "median": 231,
+    "p95": 310,
+    "max": 346
+  },
+  "chat_coding_adapter_tokens_chat_coding": {
+    "n": 500,
+    "min": 76,
+    "median": 132,
+    "p95": 354,
+    "max": 974
+  },
+  "chat_coding_adapter_tokens_chat_coding_clean": {
+    "n": 500,
+    "min": 83,
+    "median": 141,
+    "p95": 343,
+    "max": 635
+  }
+}
