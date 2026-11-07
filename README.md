@@ -2,7 +2,17 @@
 
 Experiments on compact long-term memory for chat. The goal is to keep a large history in a small token budget, find the right note, and let a model answer from it.
 
-## Main result
+## v2 (2026-11-07): return notes, not answers
+
+Full write-up: `results/training/memory_v2_report.md`; sweep: `results/training/topk_sweep_report.md`.
+
+- **New interface** `scripts/memory_api.py`: `retrieve(messages)` returns the resolved entity, a clarify flag, any exact typed fact, and k ranked notes for the *host* model to read. The 360M reader is off the critical path.
+- **Entity tracker** `scripts/entity_tracker.py` replaces the regex project shortcuts. Resolution: 0.828 to **0.968** on the old hard set, 0.565 to **0.978** on held-out phrasings. Noisy conversations end-to-end: 0.94 with 6 wrong answers, now **0.97 with 0**, asking instead of guessing on 3.
+- **top_k sweep**: 5 notes is optimal for the 360M reader. It copies note 1 (shuffled notes: 0.27 at k=50).
+- **Real-message recall** `scripts/message_index.py`: 205 hand-written questions over 603K Discord messages. Hybrid BM25 + bge + rerank reaches **0.951 r@1** (0.86 on the low-word-overlap subset). The old "near zero" measured next-message prediction, not recall.
+- **Code memory** `scripts/code_index.py`: 14.3K symbol/file/error/dependency/command records across 9 repos. Vague coding questions: **0.73 r@1 / 0.96 r@10** repo-scoped. The old 0.030 description-only number was chance by construction.
+
+## Main result (v1)
 
 A dense-only locator was not good enough: **0.405 recall@10** at 9.75M tokens. Adding exact-word search and a spelling fallback fixed the main failure:
 
@@ -15,7 +25,7 @@ The 100M store was built by repeating the 9.75M corpus to 781,250 chunks and inj
 
 A 1B logical-token test with an entity index reached **1.000 exact-name** and **0.935 typo + entity correction**; the structured gateway answered **200/200** conversations. It does not run the full 1B word/character index. See `results/training/scale_1b_report.md`.
 
-The same 1B test with coding entities reached **1.000** for exact function/project lookup, but only **0.030 recall@1** when the user described the task without naming the function. See `results/training/coding_1b_report.md`.
+The same 1B test with coding entities reached **1.000** for exact function/project lookup, but only **0.030 recall@1** when the user described the task without naming the function (v2 note: that test ranked 40 identically-worded notes by index position, so it was chance by construction; see the v2 code-memory eval). See `results/training/coding_1b_report.md`.
 
 ## What worked
 

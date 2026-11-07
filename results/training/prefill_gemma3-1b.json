@@ -1,0 +1,49 @@
+{
+  "host": "gemma-3-1b-it Q4_K_M, llama.cpp CUDA, RTX 2060",
+  "cache_prompt": false,
+  "rows": [
+    {
+      "k": 1,
+      "prompt_tokens": 135.0,
+      "prefill_tok_s": 3349,
+      "prefill_ms": 40.4,
+      "decode_tok_s": 156
+    },
+    {
+      "k": 5,
+      "prompt_tokens": 231.0,
+      "prefill_tok_s": 4782,
+      "prefill_ms": 48.4,
+      "decode_tok_s": 154
+    },
+    {
+      "k": 10,
+      "prompt_tokens": 353.5,
+      "prefill_tok_s": 5896,
+      "prefill_ms": 60.0,
+      "decode_tok_s": 156
+    },
+    {
+      "k": 20,
+      "prompt_tokens": 606.5,
+      "prefill_tok_s": 6196,
+      "prefill_ms": 98.8,
+      "decode_tok_s": 152
+    },
+    {
+      "k": 50,
+      "prompt_tokens": 1369.0,
+      "prefill_tok_s": 7300,
+      "prefill_ms": 187.4,
+      "decode_tok_s": 152
+    },
+    {
+      "k": 100,
+      "prompt_tokens": 2625.5,
+      "prefill_tok_s": 7719,
+      "prefill_ms": 339.8,
+      "decode_tok_s": 149
+    }
+  ],
+  "note": "k=200 exceeded -c 8192"
+}

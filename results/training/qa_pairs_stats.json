@@ -1,0 +1,28 @@
+{
+  "pairs": 27291,
+  "technical": 12703,
+  "by_channel": {
+    "general": 20825,
+    "llm-discussion": 4309,
+    "local-llm-help-livechat": 609,
+    "local-llm-help": 543,
+    "off-topic": 341,
+    "model-updates": 297,
+    "bots": 135,
+    "memes": 94
+  },
+  "technical_by_channel": {
+    "general": 8616,
+    "llm-discussion": 2767,
+    "local-llm-help-livechat": 474,
+    "local-llm-help": 459,
+    "model-updates": 164,
+    "bots": 64,
+    "off-topic": 57,
+    "setup-showcase": 29
+  },
+  "median_q_chars": 92,
+  "median_a_chars": 99,
+  "answer_directly_follows": 0.424,
+  "quality_note": "Heuristic adjacency pairing. Spot check of 5 technical help-channel pairs: 4/5 answers belonged to a different conversation. The export has no reply-to metadata, so mined pairs are NOT usable as instruction data. Re-export with message references (Discord reply ids) before training on this."
+}

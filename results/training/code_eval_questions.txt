@@ -1,0 +1,79 @@
+1|where do we score the trained router model on tool calls and reader answers after training
+2|the repository call that fetches discovery songs for the home page
+3|where do we describe smart home devices with their type so the model stops switching the wrong thing
+4|the edit distance function that allows transposed letters
+5|where does the bot send the conversation to the local llm and get a reply back
+6|where is the app drawer grid built on the launcher home screen
+7|the worker loop that pulls discord messages off the queue and handles them
+9|where do we decide whether to ignore a message from a blacklisted server or rate limit a user
+10|what re-attaches all the listeners and refreshes state when the launcher comes back to the foreground
+11|when the home assistant send button is pressed, where do we read the command text and run it
+12|where are the time-synced lyrics scrolled to highlight the current line
+13|the horizontal row of song cards on the home screen
+15|where do we refresh live bus vehicle positions from the realtime feed
+16|starting the discord bot and checking the token is valid first
+18|the check that only replies when the bot is explicitly mentioned, not role pings or everyone
+19|the retrofit endpoints for login, me and search
+20|the command that prints the available microphone and speaker devices
+21|the mini player bar at the bottom showing the current track
+22|the local http handler that catches the oauth redirect code for spotify login
+23|where does the launcher show the assistant's reply text, appending if it's still streaming
+26|iterative deepening search loop in the chess engine
+28|the old fuzzy typo matching for project names in the gateway
+29|find the next calendar event this profile needs to get to on time
+30|turning network and auth exceptions into friendly login error messages
+31|where do we call a home assistant service for an entity
+32|schedule the background job that syncs the bus plan every 15 minutes
+33|the overlay that shows incoming or outgoing call status on the launcher
+34|neural net evaluation of a chess position with a cache
+35|load the gtfs timetable in the background at startup so the api comes up fast
+36|the interceptor that logs the user out on a 401 except for the login call itself
+39|the middleman retrieve function that returns notes instead of answers
+40|parse gtfs times where the hour can be past 24
+41|the loop that updates playback position every half second
+42|start listening from a button press without the wake word
+44|add or remove a server from the blacklist via the api
+45|the one-line summary of running timers that gets put into the llm prompt
+46|quiescence search over captures in the chess engine
+47|save a camera snapshot and keep only the last 50
+48|download one song to disk with a partial file and a progress notification
+49|cancel a timer by id on the launcher and unschedule its alarm
+50|close the satellite socket safely
+51|reset the wake word model when going back to idle so the gap doesn't look like a detection
+52|move spotify playback to a different speaker
+53|stop the tick and room refresh callbacks when the activity pauses
+54|scoring whether the retrieved message is the exact target or within the same exchange
+55|add an item to the household shopping list, ignoring duplicates
+56|generate the wake and done chime locally instead of streaming it
+57|store the google oauth refresh token, failing if google didn't return one
+58|order chess moves using the policy logits and captures first
+59|parse python files into functions and classes with docstrings and calls
+60|restore saved timers from disk after a restart and drop the expired ones
+62|the navigation routes and bottom bar items for the music app
+63|precompute the twiddle factors and bit reversal for the fft used in echo cancellation
+65|build the whole launcher home ui with the wallpaper and round screen handling
+66|add the bearer token to every api request
+67|the old context-based project resolution that gave up on "the other one"
+68|send a chat request to the local llm server for the host reader sweep
+69|start the voice foreground service, handling android 12 restrictions
+70|toggle whether a playlist is shared with an optimistic update
+73|the confirmation dialog for deleting a playlist
+75|negamax with alpha beta pruning and transposition table
+76|test that timetabled arrivals are padded but live predictions aren't
+77|per-satellite config overrides deep merged over the top level
+78|bm25 or character n-gram search in the gateway depending on whether the project is known
+79|the countdown card that changes colour as leave time gets close
+80|check if an alert was already sent for this plan so we don't double notify
+81|prompt the user to pick home and destination stops when setup is incomplete
+84|load all saved timers from shared preferences json
+85|generate fact lines for the llm history test in plain or tagged formats
+86|the full screen alarm with snooze and a live countdown to departure
+87|cancel a voice assistant timer or alarm by label or all of them
+89|strip think tags and filter swear words from the bot reply
+90|get the current state of one home assistant device by its spoken name
+94|search for bus stops by name or nearby location to pick home and destination
+95|run one llm turn streaming complete sentences and rolling history back on failure
+96|templates for explicit and pronoun questions in the training set
+97|write each captured utterance to a wav file when recording is on
+99|plot query latency against index size for the flat and pq indexes
+100|the system status endpoint with gtfs row counts and timezone

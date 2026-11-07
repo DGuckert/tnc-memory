@@ -1,0 +1,1069 @@
+{
+  "ks": [
+    1,
+    5,
+    10,
+    20,
+    50
+  ],
+  "structured_shortcuts": false,
+  "gpu": "NVIDIA GeForce RTX 2060",
+  "note": "reader LoRA was trained on 4-6 notes per prompt",
+  "bench975": {
+    "build_s": 27.0,
+    "store_chunks": 76145,
+    "sweep": {
+      "1": {
+        "k": 1,
+        "n": 200,
+        "accuracy": 0.92,
+        "accuracy_shuffled": 0.92,
+        "gold_in_notes": 0.97,
+        "accuracy_given_gold_in_notes": 0.9484536082474226,
+        "gold_rank_median": 1.0,
+        "gold_rank1_rate": 0.97,
+        "by_case": {
+          "pronoun": {
+            "n": 100,
+            "ok": 92,
+            "acc": 0.92
+          },
+          "explicit": {
+            "n": 50,
+            "ok": 45,
+            "acc": 0.9
+          },
+          "typo": {
+            "n": 50,
+            "ok": 47,
+            "acc": 0.94
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 78.0,
+          "p95": 82.0,
+          "max": 85,
+          "mean": 78.4,
+          "n": 200
+        },
+        "latency_ms": {
+          "total": {
+            "median": 699.7,
+            "p95": 838.6,
+            "max": 950.5,
+            "mean": 696.0,
+            "n": 200
+          },
+          "reader": {
+            "median": 498.3,
+            "p95": 645.4,
+            "max": 744.7,
+            "mean": 504.1,
+            "n": 200
+          },
+          "rerank": {
+            "median": 71.8,
+            "p95": 91.5,
+            "max": 98.2,
+            "mean": 71.6,
+            "n": 200
+          }
+        },
+        "gpu_peak_gb": 1.333,
+        "gpu_peak_over_weights_gb": 0.172,
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "2WS-QX77",
+            "answer": "I don't know.",
+            "gold_rank": 1,
+            "answer_shuffled": "I don't know."
+          },
+          {
+            "kind": "pronoun",
+            "gold": "DFD-TCRZ",
+            "answer": "FDD-TCRZ",
+            "gold_rank": 1,
+            "answer_shuffled": "FDD-TCRZ"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "9P4-ZZWV",
+            "answer": "I don't know.",
+            "gold_rank": 1,
+            "answer_shuffled": "I don't know."
+          },
+          {
+            "kind": "pronoun",
+            "gold": "78H-5FBK",
+            "answer": "I don't know.",
+            "gold_rank": 1,
+            "answer_shuffled": "I don't know."
+          },
+          {
+            "kind": "pronoun",
+            "gold": "RSV-8SCX",
+            "answer": "S8S-R7NT",
+            "gold_rank": null,
+            "answer_shuffled": "S8S-R7NT"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "6DZ-Y6K2",
+            "answer": "I don't know.",
+            "gold_rank": 1,
+            "answer_shuffled": "I don't know."
+          },
+          {
+            "kind": "pronoun",
+            "gold": "2TM-PEF4",
+            "answer": "FMB-LD32",
+            "gold_rank": null,
+            "answer_shuffled": "FMB-LD32"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "8XA-VCE7",
+            "answer": "I don't know.",
+            "gold_rank": 1,
+            "answer_shuffled": "I don't know."
+          },
+          {
+            "kind": "explicit",
+            "gold": "SE8-Y8C9",
+            "answer": "ANC-XJ5G",
+            "gold_rank": null,
+            "answer_shuffled": "ANC-XJ5G"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SKL-TRCZ",
+            "answer": "4RP-FTDB",
+            "gold_rank": null,
+            "answer_shuffled": "4RP-FTDB"
+          }
+        ]
+      },
+      "5": {
+        "k": 5,
+        "n": 200,
+        "accuracy": 0.97,
+        "accuracy_shuffled": 0.945,
+        "gold_in_notes": 0.98,
+        "accuracy_given_gold_in_notes": 0.9897959183673469,
+        "gold_rank_median": 1.0,
+        "gold_rank1_rate": 0.97,
+        "by_case": {
+          "pronoun": {
+            "n": 100,
+            "ok": 98,
+            "acc": 0.98
+          },
+          "explicit": {
+            "n": 50,
+            "ok": 47,
+            "acc": 0.94
+          },
+          "typo": {
+            "n": 50,
+            "ok": 49,
+            "acc": 0.98
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 175.0,
+          "p95": 183.0,
+          "max": 188,
+          "mean": 175.4,
+          "n": 200
+        },
+        "latency_ms": {
+          "total": {
+            "median": 717.7,
+            "p95": 861.3,
+            "max": 1006.3,
+            "mean": 715.8,
+            "n": 200
+          },
+          "reader": {
+            "median": 523.3,
+            "p95": 673.4,
+            "max": 763.3,
+            "mean": 525.7,
+            "n": 200
+          },
+          "rerank": {
+            "median": 67.3,
+            "p95": 84.5,
+            "max": 151.7,
+            "mean": 68.4,
+            "n": 200
+          }
+        },
+        "gpu_peak_gb": 1.333,
+        "gpu_peak_over_weights_gb": 0.172,
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "RSV-8SCX",
+            "answer": "S8S-R7NT",
+            "gold_rank": null,
+            "answer_shuffled": "S8S-R7NT"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "2TM-PEF4",
+            "answer": "FMB-LD32",
+            "gold_rank": null,
+            "answer_shuffled": "FMB-LD32"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SE8-Y8C9",
+            "answer": "ANC-XJ5G",
+            "gold_rank": 2,
+            "answer_shuffled": "ANC-XJ5G"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SKL-TRCZ",
+            "answer": "4RP-FTDB",
+            "gold_rank": null,
+            "answer_shuffled": "4RP-FTDB"
+          },
+          {
+            "kind": "explicit",
+            "gold": "KW8-T6HW",
+            "answer": "7V2-UF5R",
+            "gold_rank": null,
+            "answer_shuffled": "7V2-UF5R"
+          },
+          {
+            "kind": "typo",
+            "gold": "4UE-JEYJ",
+            "answer": "5XN-KWWS",
+            "gold_rank": 2,
+            "answer_shuffled": "5XN-KWWS"
+          }
+        ]
+      },
+      "10": {
+        "k": 10,
+        "n": 200,
+        "accuracy": 0.96,
+        "accuracy_shuffled": 0.81,
+        "gold_in_notes": 0.98,
+        "accuracy_given_gold_in_notes": 0.9795918367346939,
+        "gold_rank_median": 1.0,
+        "gold_rank1_rate": 0.97,
+        "by_case": {
+          "pronoun": {
+            "n": 100,
+            "ok": 96,
+            "acc": 0.96
+          },
+          "explicit": {
+            "n": 50,
+            "ok": 47,
+            "acc": 0.94
+          },
+          "typo": {
+            "n": 50,
+            "ok": 49,
+            "acc": 0.98
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 297.0,
+          "p95": 307.1,
+          "max": 414,
+          "mean": 298.0,
+          "n": 200
+        },
+        "latency_ms": {
+          "total": {
+            "median": 726.9,
+            "p95": 892.2,
+            "max": 1030.0,
+            "mean": 732.3,
+            "n": 200
+          },
+          "reader": {
+            "median": 544.5,
+            "p95": 702.6,
+            "max": 823.6,
+            "mean": 548.6,
+            "n": 200
+          },
+          "rerank": {
+            "median": 62.6,
+            "p95": 74.8,
+            "max": 84.6,
+            "mean": 62.4,
+            "n": 200
+          }
+        },
+        "gpu_peak_gb": 1.333,
+        "gpu_peak_over_weights_gb": 0.172,
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "DFD-TCRZ",
+            "answer": "FDD-TCRZ",
+            "gold_rank": 1,
+            "answer_shuffled": "MD-8EK"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "FFW-PNT3",
+            "answer": "FWF-PNT3",
+            "gold_rank": 1,
+            "answer_shuffled": "FFW-PNT3"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "RSV-8SCX",
+            "answer": "S8S-R7NT",
+            "gold_rank": null,
+            "answer_shuffled": "S8S-R7NT"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "2TM-PEF4",
+            "answer": "FMB-LD32",
+            "gold_rank": null,
+            "answer_shuffled": "FMB-LD32"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SE8-Y8C9",
+            "answer": "ANC-XJ5G",
+            "gold_rank": 2,
+            "answer_shuffled": "Faelrin"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SKL-TRCZ",
+            "answer": "4RP-FTDB",
+            "gold_rank": null,
+            "answer_shuffled": "4RP-FTDB"
+          },
+          {
+            "kind": "explicit",
+            "gold": "KW8-T6HW",
+            "answer": "7V2-UF5R",
+            "gold_rank": null,
+            "answer_shuffled": "7V2-UF5R"
+          },
+          {
+            "kind": "typo",
+            "gold": "4UE-JEYJ",
+            "answer": "5XN-KWWS",
+            "gold_rank": 2,
+            "answer_shuffled": "5XN-KWWS"
+          }
+        ]
+      },
+      "20": {
+        "k": 20,
+        "n": 200,
+        "accuracy": 0.96,
+        "accuracy_shuffled": 0.58,
+        "gold_in_notes": 0.98,
+        "accuracy_given_gold_in_notes": 0.9795918367346939,
+        "gold_rank_median": 1.0,
+        "gold_rank1_rate": 0.97,
+        "by_case": {
+          "pronoun": {
+            "n": 100,
+            "ok": 96,
+            "acc": 0.96
+          },
+          "explicit": {
+            "n": 50,
+            "ok": 47,
+            "acc": 0.94
+          },
+          "typo": {
+            "n": 50,
+            "ok": 49,
+            "acc": 0.98
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 550.0,
+          "p95": 562.0,
+          "max": 668,
+          "mean": 549.9,
+          "n": 200
+        },
+        "latency_ms": {
+          "total": {
+            "median": 726.5,
+            "p95": 876.1,
+            "max": 943.5,
+            "mean": 730.9,
+            "n": 200
+          },
+          "reader": {
+            "median": 545.3,
+            "p95": 697.2,
+            "max": 759.4,
+            "mean": 551.9,
+            "n": 200
+          },
+          "rerank": {
+            "median": 56.5,
+            "p95": 65.4,
+            "max": 69.8,
+            "mean": 58.6,
+            "n": 200
+          }
+        },
+        "gpu_peak_gb": 1.333,
+        "gpu_peak_over_weights_gb": 0.172,
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "DFD-TCRZ",
+            "answer": "FDD-TCRZ",
+            "gold_rank": 1,
+            "answer_shuffled": "FDD-TCRZ"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "FFW-PNT3",
+            "answer": "FWF-PNT3",
+            "gold_rank": 1,
+            "answer_shuffled": "DFW-PNT3"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "RSV-8SCX",
+            "answer": "S8S-R7NT",
+            "gold_rank": null,
+            "answer_shuffled": "S8S-R7NT"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "2TM-PEF4",
+            "answer": "FMB-LD32",
+            "gold_rank": null,
+            "answer_shuffled": "FMB-LD32"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SE8-Y8C9",
+            "answer": "ANC-XJ5G",
+            "gold_rank": 2,
+            "answer_shuffled": "ANC-XJ5G"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SKL-TRCZ",
+            "answer": "4RP-FTDB",
+            "gold_rank": null,
+            "answer_shuffled": "4RP-FTDB"
+          },
+          {
+            "kind": "explicit",
+            "gold": "KW8-T6HW",
+            "answer": "7V2-UF5R",
+            "gold_rank": null,
+            "answer_shuffled": "7V2-UF5R"
+          },
+          {
+            "kind": "typo",
+            "gold": "4UE-JEYJ",
+            "answer": "5XN-KWWS",
+            "gold_rank": 2,
+            "answer_shuffled": "5XN-KWWS"
+          }
+        ]
+      },
+      "50": {
+        "k": 50,
+        "n": 200,
+        "accuracy": 0.945,
+        "accuracy_shuffled": 0.27,
+        "gold_in_notes": 1.0,
+        "accuracy_given_gold_in_notes": 0.945,
+        "gold_rank_median": 1.0,
+        "gold_rank1_rate": 0.97,
+        "by_case": {
+          "pronoun": {
+            "n": 100,
+            "ok": 94,
+            "acc": 0.94
+          },
+          "explicit": {
+            "n": 50,
+            "ok": 47,
+            "acc": 0.94
+          },
+          "typo": {
+            "n": 50,
+            "ok": 48,
+            "acc": 0.96
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 1310.0,
+          "p95": 1528.0,
+          "max": 2990,
+          "mean": 1380.0,
+          "n": 200
+        },
+        "latency_ms": {
+          "total": {
+            "median": 984.4,
+            "p95": 1184.6,
+            "max": 2304.2,
+            "mean": 1009.4,
+            "n": 200
+          },
+          "reader": {
+            "median": 801.7,
+            "p95": 995.2,
+            "max": 2145.7,
+            "mean": 827.5,
+            "n": 200
+          },
+          "rerank": {
+            "median": 57.8,
+            "p95": 66.2,
+            "max": 108.6,
+            "mean": 59.6,
+            "n": 200
+          }
+        },
+        "gpu_peak_gb": 2.605,
+        "gpu_peak_over_weights_gb": 1.444,
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "KKK-K3N5",
+            "answer": "KKKK-KK3N5",
+            "gold_rank": 1,
+            "answer_shuffled": "Grisham"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "DFD-TCRZ",
+            "answer": "FD-TCRZ",
+            "gold_rank": 1,
+            "answer_shuffled": "DF-TCRZ"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "FFW-PNT3",
+            "answer": "FWF-PNT3",
+            "gold_rank": 1,
+            "answer_shuffled": "FFW-PNT3"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "RSV-8SCX",
+            "answer": "S8S-R7NT",
+            "gold_rank": 27,
+            "answer_shuffled": "S8S-R7NT"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "CJR-QXTN",
+            "answer": "CMD-556626762",
+            "gold_rank": 1,
+            "answer_shuffled": "I don't know."
+          },
+          {
+            "kind": "pronoun",
+            "gold": "2TM-PEF4",
+            "answer": "FMB-LD32",
+            "gold_rank": 29,
+            "answer_shuffled": "RUV-49M3"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SE8-Y8C9",
+            "answer": "ANC-XJ5G",
+            "gold_rank": 2,
+            "answer_shuffled": "ANC-XJ5G"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SKL-TRCZ",
+            "answer": "4RP-FTDB",
+            "gold_rank": 29,
+            "answer_shuffled": "{\"tool\":\"what is the access code for project Briark"
+          },
+          {
+            "kind": "explicit",
+            "gold": "KW8-T6HW",
+            "answer": "7V2-UF5R",
+            "gold_rank": 44,
+            "answer_shuffled": "7V2-UF5R"
+          },
+          {
+            "kind": "typo",
+            "gold": "6KS-NZPT",
+            "answer": "Note to self: the access code for project Rast is",
+            "gold_rank": 1,
+            "answer_shuffled": "EJT-CDEZ"
+          }
+        ]
+      }
+    }
+  },
+  "hard": {
+    "store_notes": 80,
+    "sweep": {
+      "1": {
+        "k": 1,
+        "n": 91,
+        "accuracy": 0.9120879120879121,
+        "accuracy_shuffled": null,
+        "gold_in_notes": 0.9340659340659341,
+        "accuracy_given_gold_in_notes": 0.9764705882352941,
+        "gold_rank_median": 1,
+        "gold_rank1_rate": 0.9340659340659341,
+        "by_case": {
+          "hard": {
+            "n": 91,
+            "ok": 83,
+            "acc": 0.9120879120879121
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 78.0,
+          "p95": 83.0,
+          "max": 84,
+          "mean": 78.6,
+          "n": 91
+        },
+        "latency_ms": {
+          "total": {
+            "median": 590.3,
+            "p95": 2612.8,
+            "max": 3140.8,
+            "mean": 864.2,
+            "n": 91
+          },
+          "reader": {
+            "median": 549.2,
+            "p95": 677.1,
+            "max": 708.2,
+            "mean": 551.6,
+            "n": 91
+          },
+          "rerank": {
+            "median": 20.4,
+            "p95": 23.5,
+            "max": 25.1,
+            "mean": 20.4,
+            "n": 91
+          }
+        },
+        "gpu_peak_gb": 0.91,
+        "gpu_peak_over_weights_gb": 0.037,
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "2D8-DYG5",
+            "answer": "I don't know.",
+            "gold_rank": 1
+          },
+          {
+            "kind": "hard",
+            "gold": "QKU-C4XN",
+            "answer": "WVV-JGBL",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "JRC-F635",
+            "answer": "922-ZDQW",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "TJL-9V5R",
+            "answer": "T62-V5YB",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "FY4-S9RA",
+            "answer": "PR9-DD2P",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "922-ZDQW",
+            "answer": "M62-Z4KQ",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "2D8-DYG5",
+            "answer": "I don't know.",
+            "gold_rank": 1
+          },
+          {
+            "kind": "hard",
+            "gold": "CQH-GQN7",
+            "answer": "AVA-WGHQ",
+            "gold_rank": null
+          }
+        ]
+      },
+      "5": {
+        "k": 5,
+        "n": 91,
+        "accuracy": 0.9340659340659341,
+        "accuracy_shuffled": null,
+        "gold_in_notes": 0.9560439560439561,
+        "accuracy_given_gold_in_notes": 0.9770114942528736,
+        "gold_rank_median": 1,
+        "gold_rank1_rate": 0.9340659340659341,
+        "by_case": {
+          "hard": {
+            "n": 91,
+            "ok": 85,
+            "acc": 0.9340659340659341
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 176.0,
+          "p95": 182.0,
+          "max": 184,
+          "mean": 175.6,
+          "n": 91
+        },
+        "latency_ms": {
+          "total": {
+            "median": 656.1,
+            "p95": 3128.6,
+            "max": 6471.1,
+            "mean": 1078.8,
+            "n": 91
+          },
+          "reader": {
+            "median": 619.8,
+            "p95": 1327.4,
+            "max": 1542.3,
+            "mean": 690.5,
+            "n": 91
+          },
+          "rerank": {
+            "median": 20.5,
+            "p95": 35.7,
+            "max": 38.7,
+            "mean": 21.3,
+            "n": 91
+          }
+        },
+        "gpu_peak_gb": 0.91,
+        "gpu_peak_over_weights_gb": 0.037,
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "QKU-C4XN",
+            "answer": "WVV-JGBL",
+            "gold_rank": 3
+          },
+          {
+            "kind": "hard",
+            "gold": "JRC-F635",
+            "answer": "922-ZDQW",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "TJL-9V5R",
+            "answer": "T62-V5YB",
+            "gold_rank": 2
+          },
+          {
+            "kind": "hard",
+            "gold": "FY4-S9RA",
+            "answer": "PR9-DD2P",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "922-ZDQW",
+            "answer": "M62-Z4KQ",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "CQH-GQN7",
+            "answer": "AVA-WGHQ",
+            "gold_rank": null
+          }
+        ]
+      },
+      "10": {
+        "k": 10,
+        "n": 91,
+        "accuracy": 0.9340659340659341,
+        "accuracy_shuffled": null,
+        "gold_in_notes": 0.9560439560439561,
+        "accuracy_given_gold_in_notes": 0.9770114942528736,
+        "gold_rank_median": 1,
+        "gold_rank1_rate": 0.9340659340659341,
+        "by_case": {
+          "hard": {
+            "n": 91,
+            "ok": 85,
+            "acc": 0.9340659340659341
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 299.0,
+          "p95": 306.0,
+          "max": 308,
+          "mean": 299.0,
+          "n": 91
+        },
+        "latency_ms": {
+          "total": {
+            "median": 641.7,
+            "p95": 2772.2,
+            "max": 6961.2,
+            "mean": 1070.8,
+            "n": 91
+          },
+          "reader": {
+            "median": 582.5,
+            "p95": 1246.2,
+            "max": 1381.9,
+            "mean": 685.3,
+            "n": 91
+          },
+          "rerank": {
+            "median": 16.8,
+            "p95": 37.3,
+            "max": 39.6,
+            "mean": 20.8,
+            "n": 91
+          }
+        },
+        "gpu_peak_gb": 0.91,
+        "gpu_peak_over_weights_gb": 0.037,
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "QKU-C4XN",
+            "answer": "WVV-JGBL",
+            "gold_rank": 3
+          },
+          {
+            "kind": "hard",
+            "gold": "JRC-F635",
+            "answer": "922-ZDQW",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "TJL-9V5R",
+            "answer": "T62-V5YB",
+            "gold_rank": 2
+          },
+          {
+            "kind": "hard",
+            "gold": "FY4-S9RA",
+            "answer": "PR9-DD2P",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "922-ZDQW",
+            "answer": "M62-Z4KQ",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "CQH-GQN7",
+            "answer": "AVA-WGHQ",
+            "gold_rank": null
+          }
+        ]
+      },
+      "20": {
+        "k": 20,
+        "n": 91,
+        "accuracy": 0.9340659340659341,
+        "accuracy_shuffled": null,
+        "gold_in_notes": 0.978021978021978,
+        "accuracy_given_gold_in_notes": 0.9550561797752809,
+        "gold_rank_median": 1,
+        "gold_rank1_rate": 0.9340659340659341,
+        "by_case": {
+          "hard": {
+            "n": 91,
+            "ok": 85,
+            "acc": 0.9340659340659341
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 558.0,
+          "p95": 565.0,
+          "max": 566,
+          "mean": 558.4,
+          "n": 91
+        },
+        "latency_ms": {
+          "total": {
+            "median": 1023.8,
+            "p95": 4741.2,
+            "max": 6637.4,
+            "mean": 1432.3,
+            "n": 91
+          },
+          "reader": {
+            "median": 872.4,
+            "p95": 1456.3,
+            "max": 1564.4,
+            "mean": 939.5,
+            "n": 91
+          },
+          "rerank": {
+            "median": 19.7,
+            "p95": 38.9,
+            "max": 46.7,
+            "mean": 24.5,
+            "n": 91
+          }
+        },
+        "gpu_peak_gb": 0.956,
+        "gpu_peak_over_weights_gb": 0.084,
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "QKU-C4XN",
+            "answer": "WVV-JGBL",
+            "gold_rank": 3
+          },
+          {
+            "kind": "hard",
+            "gold": "JRC-F635",
+            "answer": "922-ZDQW",
+            "gold_rank": 12
+          },
+          {
+            "kind": "hard",
+            "gold": "TJL-9V5R",
+            "answer": "T62-V5YB",
+            "gold_rank": 2
+          },
+          {
+            "kind": "hard",
+            "gold": "FY4-S9RA",
+            "answer": "PR9-DD2P",
+            "gold_rank": null
+          },
+          {
+            "kind": "hard",
+            "gold": "922-ZDQW",
+            "answer": "M62-Z4KQ",
+            "gold_rank": 15
+          },
+          {
+            "kind": "hard",
+            "gold": "CQH-GQN7",
+            "answer": "AVA-WGHQ",
+            "gold_rank": null
+          }
+        ]
+      },
+      "50": {
+        "k": 50,
+        "n": 91,
+        "accuracy": 0.9340659340659341,
+        "accuracy_shuffled": null,
+        "gold_in_notes": 1.0,
+        "accuracy_given_gold_in_notes": 0.9340659340659341,
+        "gold_rank_median": 1,
+        "gold_rank1_rate": 0.9340659340659341,
+        "by_case": {
+          "hard": {
+            "n": 91,
+            "ok": 85,
+            "acc": 0.9340659340659341
+          }
+        },
+        "reader_prompt_tokens": {
+          "median": 1317.0,
+          "p95": 1323.0,
+          "max": 1324,
+          "mean": 1316.7,
+          "n": 91
+        },
+        "latency_ms": {
+          "total": {
+            "median": 861.5,
+            "p95": 3054.7,
+            "max": 5423.3,
+            "mean": 1227.9,
+            "n": 91
+          },
+          "reader": {
+            "median": 828.9,
+            "p95": 1498.3,
+            "max": 1743.1,
+            "mean": 896.3,
+            "n": 91
+          },
+          "rerank": {
+            "median": 15.1,
+            "p95": 35.6,
+            "max": 60.0,
+            "mean": 17.4,
+            "n": 91
+          }
+        },
+        "gpu_peak_gb": 1.206,
+        "gpu_peak_over_weights_gb": 0.334,
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "QKU-C4XN",
+            "answer": "WVV-JGBL",
+            "gold_rank": 3
+          },
+          {
+            "kind": "hard",
+            "gold": "JRC-F635",
+            "answer": "922-ZDQW",
+            "gold_rank": 12
+          },
+          {
+            "kind": "hard",
+            "gold": "TJL-9V5R",
+            "answer": "T62-V5YB",
+            "gold_rank": 2
+          },
+          {
+            "kind": "hard",
+            "gold": "FY4-S9RA",
+            "answer": "PR9-DD2P",
+            "gold_rank": 25
+          },
+          {
+            "kind": "hard",
+            "gold": "922-ZDQW",
+            "answer": "M62-Z4KQ",
+            "gold_rank": 15
+          },
+          {
+            "kind": "hard",
+            "gold": "CQH-GQN7",
+            "answer": "AVA-WGHQ",
+            "gold_rank": 44
+          }
+        ]
+      }
+    }
+  }
+}

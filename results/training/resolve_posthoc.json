@@ -1,0 +1,8 @@
+{
+ "tracker_posthoc_negation_fix": {
+  "hard": 0.968,
+  "reference": 1.0,
+  "heldout": 0.995
+ },
+ "note": "after adding don't mean / other than / besides to NEG; held-out is not blind for this number"
+}

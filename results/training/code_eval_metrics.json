@@ -1,0 +1,94 @@
+{
+  "n": 79,
+  "index": {
+    "records": 14331,
+    "by_kind": {
+      "file": 1647,
+      "function": 4509,
+      "error": 2236,
+      "class": 1514,
+      "method": 4064,
+      "dependency": 64,
+      "command": 297
+    },
+    "by_repo": {
+      "voice-assistant": 761,
+      "bus-alarm": 526,
+      "jarvis-launcher": 500,
+      "discord-ai-response": 52,
+      "chessforge": 56,
+      "butler": 287,
+      "tnc-memory": 377,
+      "flowsint": 4432,
+      "strata": 7340
+    },
+    "parse_s": 36.5
+  },
+  "build_s": 117.5,
+  "conditions": {
+    "bm25|global": {
+      "r@1": 0.633,
+      "r@5": 0.785,
+      "r@10": 0.886,
+      "r@50": 0.937,
+      "mrr": 0.707,
+      "latency_ms_median": 3.0
+    },
+    "bm25|repo_scoped": {
+      "r@1": 0.722,
+      "r@5": 0.835,
+      "r@10": 0.937,
+      "r@50": 0.975,
+      "mrr": 0.78,
+      "latency_ms_median": 2.5
+    },
+    "dense|global": {
+      "r@1": 0.595,
+      "r@5": 0.797,
+      "r@10": 0.873,
+      "r@50": 0.975,
+      "mrr": 0.696,
+      "latency_ms_median": 17.7
+    },
+    "dense|repo_scoped": {
+      "r@1": 0.658,
+      "r@5": 0.899,
+      "r@10": 0.937,
+      "r@50": 0.987,
+      "mrr": 0.77,
+      "latency_ms_median": 19.2
+    },
+    "hybrid|global": {
+      "r@1": 0.684,
+      "r@5": 0.848,
+      "r@10": 0.899,
+      "r@50": 0.975,
+      "mrr": 0.748,
+      "latency_ms_median": 22.4
+    },
+    "hybrid|repo_scoped": {
+      "r@1": 0.734,
+      "r@5": 0.886,
+      "r@10": 0.962,
+      "r@50": 1.0,
+      "mrr": 0.801,
+      "latency_ms_median": 20.0
+    },
+    "hybrid+rerank|global": {
+      "r@1": 0.633,
+      "r@5": 0.899,
+      "r@10": 0.924,
+      "r@50": 0.975,
+      "mrr": 0.747,
+      "latency_ms_median": 251.5
+    },
+    "hybrid+rerank|repo_scoped": {
+      "r@1": 0.696,
+      "r@5": 0.924,
+      "r@10": 0.937,
+      "r@50": 1.0,
+      "mrr": 0.803,
+      "latency_ms_median": 245.3
+    }
+  }
+}

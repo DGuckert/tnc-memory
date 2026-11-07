@@ -1,0 +1,696 @@
+{
+  "host": "gemma3-1b",
+  "ks": [
+    1,
+    5,
+    10,
+    20,
+    50
+  ],
+  "bench975": {
+    "retrieve_ms": {
+      "median": 167.4,
+      "p95": 185.1
+    },
+    "sweep": {
+      "1": {
+        "k": 1,
+        "n": 200,
+        "accuracy": 0.91,
+        "accuracy_shuffled": 0.9,
+        "gold_in_notes": 0.97,
+        "clarified": 0,
+        "prompt_tokens": {
+          "median": 131.0,
+          "p95": 138.0,
+          "max": 146
+        },
+        "host_latency_ms": {
+          "median": 86.2,
+          "p95": 103.3
+        },
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "UNS-SCC4",
+            "answer": "UN-SCC4",
+            "entity": "Skultheth"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "DFD-TCRZ",
+            "answer": "I don't know.",
+            "entity": "Grouv"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "RSV-8SCX",
+            "answer": "6GF-2GJ2",
+            "entity": "Mind"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "DQK-P9WT",
+            "answer": "DKK-P9WT",
+            "entity": "Torkkav"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "WFY-K3FE",
+            "answer": "I don't know.",
+            "entity": "Truth"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "2TM-PEF4",
+            "answer": "FMB-LD32",
+            "entity": "Kind"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SE8-Y8C9",
+            "answer": "I don't know.",
+            "entity": "Faethderk"
+          },
+          {
+            "kind": "explicit",
+            "gold": "SKL-TRCZ",
+            "answer": "4RP-FTDB",
+            "entity": "Bound"
+          }
+        ]
+      },
+      "5": {
+        "k": 5,
+        "n": 200,
+        "accuracy": 0.745,
+        "accuracy_shuffled": 0.79,
+        "gold_in_notes": 0.98,
+        "clarified": 0,
+        "prompt_tokens": {
+          "median": 228.0,
+          "p95": 238.0,
+          "max": 246
+        },
+        "host_latency_ms": {
+          "median": 102.0,
+          "p95": 115.6
+        },
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "66B-7RNV",
+            "answer": "I don't know.",
+            "entity": "Bourk"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "CJM-NYW7",
+            "answer": "I don't know.",
+            "entity": "Futhzork"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "UNS-SCC4",
+            "answer": "I don't know.",
+            "entity": "Skultheth"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "8FR-Y8GC",
+            "answer": "I don't know.",
+            "entity": "Staemkiv"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "K8C-8GE7",
+            "answer": "WML-XG9R",
+            "entity": "Saelsir"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "VZU-B8U9",
+            "answer": "ZUV-B8U9",
+            "entity": "Zandtria"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "DFD-TCRZ",
+            "answer": "I don't know.",
+            "entity": "Grouv"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "8VD-SH5W",
+            "answer": "I don't know.",
+            "entity": "Zhurk"
+          }
+        ]
+      },
+      "10": {
+        "k": 10,
+        "n": 200,
+        "accuracy": 0.695,
+        "accuracy_shuffled": 0.635,
+        "gold_in_notes": 0.98,
+        "clarified": 0,
+        "prompt_tokens": {
+          "median": 349.0,
+          "p95": 360.0,
+          "max": 464
+        },
+        "host_latency_ms": {
+          "median": 122.2,
+          "p95": 145.6
+        },
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "8HU-CM6H",
+            "answer": "I don't know.",
+            "entity": "Groth"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "66B-7RNV",
+            "answer": "I don't know.",
+            "entity": "Bourk"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "KBP-X6E2",
+            "answer": "I don't know.",
+            "entity": "Drerquax"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "UNS-SCC4",
+            "answer": "I don't know.",
+            "entity": "Skultheth"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "8FR-Y8GC",
+            "answer": "I don't know.",
+            "entity": "Staemkiv"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "K8C-8GE7",
+            "answer": "I don't know.",
+            "entity": "Saelsir"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "B8K-ZBFR",
+            "answer": "I don't know.",
+            "entity": "Murkgrourk"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "VZU-B8U9",
+            "answer": "I don't know.",
+            "entity": "Zandtria"
+          }
+        ]
+      },
+      "20": {
+        "k": 20,
+        "n": 200,
+        "accuracy": 0.33,
+        "accuracy_shuffled": 0.415,
+        "gold_in_notes": 0.98,
+        "clarified": 0,
+        "prompt_tokens": {
+          "median": 601.0,
+          "p95": 616.0,
+          "max": 715
+        },
+        "host_latency_ms": {
+          "median": 152.3,
+          "p95": 177.3
+        },
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "8HU-CM6H",
+            "answer": "I don't know.",
+            "entity": "Groth"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "N2S-3G48",
+            "answer": "I don't know.",
+            "entity": "Pathkiath"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "66B-7RNV",
+            "answer": "I don't know.",
+            "entity": "Bourk"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "P6F-NAR3",
+            "answer": "I don't know.",
+            "entity": "Giastvirk"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "KKK-K3N5",
+            "answer": "I don't know.",
+            "entity": "Zhov"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "CJM-NYW7",
+            "answer": "I don't know.",
+            "entity": "Futhzork"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "KBP-X6E2",
+            "answer": "I don't know.",
+            "entity": "Drerquax"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "UNS-SCC4",
+            "answer": "I don't know.",
+            "entity": "Skultheth"
+          }
+        ]
+      },
+      "50": {
+        "k": 50,
+        "n": 200,
+        "accuracy": 0.505,
+        "accuracy_shuffled": 0.315,
+        "gold_in_notes": 1.0,
+        "clarified": 0,
+        "prompt_tokens": {
+          "median": 1357.0,
+          "p95": 1583.0,
+          "max": 2405
+        },
+        "host_latency_ms": {
+          "median": 235.6,
+          "p95": 268.5
+        },
+        "errors": [
+          {
+            "kind": "pronoun",
+            "gold": "ZGR-ULCT",
+            "answer": "I don't know.",
+            "entity": "Voulzhux"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "66B-7RNV",
+            "answer": "I don't know.",
+            "entity": "Bourk"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "P6F-NAR3",
+            "answer": "I don't know.",
+            "entity": "Giastvirk"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "CJM-NYW7",
+            "answer": "I don't know.",
+            "entity": "Futhzork"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "KBP-X6E2",
+            "answer": "I don't know.",
+            "entity": "Drerquax"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "UNS-SCC4",
+            "answer": "I don't know.",
+            "entity": "Skultheth"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "TQ4-GWWW",
+            "answer": "UTS-MD6W",
+            "entity": "Quir"
+          },
+          {
+            "kind": "pronoun",
+            "gold": "7L3-6B93",
+            "answer": "I don't know.",
+            "entity": "Taerdras"
+          }
+        ]
+      }
+    }
+  },
+  "hard": {
+    "retrieve_ms": {
+      "median": 16.1,
+      "p95": 21.5
+    },
+    "sweep": {
+      "1": {
+        "k": 1,
+        "n": 91,
+        "accuracy": 0.6483516483516484,
+        "accuracy_shuffled": 0.6593406593406593,
+        "gold_in_notes": 0.967032967032967,
+        "clarified": 3,
+        "prompt_tokens": {
+          "median": 156.0,
+          "p95": 169.6,
+          "max": 179
+        },
+        "host_latency_ms": {
+          "median": 88.5,
+          "p95": 97.9
+        },
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "6QN-WC67",
+            "answer": "1",
+            "entity": "Grost"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "8NF-R65H",
+            "answer": "I don't know.",
+            "entity": "Zhou"
+          },
+          {
+            "kind": "hard",
+            "gold": "VUZ-AZ93",
+            "answer": "I don't know.",
+            "entity": "Vrouszel"
+          },
+          {
+            "kind": "hard",
+            "gold": "782-K8NZ",
+            "answer": "I don't know.",
+            "entity": "Veskian"
+          },
+          {
+            "kind": "hard",
+            "gold": "6QN-WC67",
+            "answer": "I don't know.",
+            "entity": "Grost"
+          },
+          {
+            "kind": "hard",
+            "gold": "L24-S2WN",
+            "answer": "I don't know.",
+            "entity": "Thothpax"
+          }
+        ]
+      },
+      "5": {
+        "k": 5,
+        "n": 91,
+        "accuracy": 0.6483516483516484,
+        "accuracy_shuffled": 0.7252747252747253,
+        "gold_in_notes": 0.967032967032967,
+        "clarified": 3,
+        "prompt_tokens": {
+          "median": 253.0,
+          "p95": 267.6,
+          "max": 272
+        },
+        "host_latency_ms": {
+          "median": 99.3,
+          "p95": 113.3
+        },
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "6QN-WC67",
+            "answer": "I don't know.",
+            "entity": "Grost"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "VUZ-AZ93",
+            "answer": "I don't know.",
+            "entity": "Vrouszel"
+          },
+          {
+            "kind": "hard",
+            "gold": "782-K8NZ",
+            "answer": "I don't know.",
+            "entity": "Veskian"
+          },
+          {
+            "kind": "hard",
+            "gold": "6QN-WC67",
+            "answer": "I don't know.",
+            "entity": "Grost"
+          },
+          {
+            "kind": "hard",
+            "gold": "L24-S2WN",
+            "answer": "I don't know.",
+            "entity": "Thothpax"
+          },
+          {
+            "kind": "hard",
+            "gold": "JVC-8E7N",
+            "answer": "I don't know.",
+            "entity": "Themgrork"
+          }
+        ]
+      },
+      "10": {
+        "k": 10,
+        "n": 91,
+        "accuracy": 0.6483516483516484,
+        "accuracy_shuffled": 0.5934065934065934,
+        "gold_in_notes": 0.967032967032967,
+        "clarified": 3,
+        "prompt_tokens": {
+          "median": 375.0,
+          "p95": 392.3,
+          "max": 396
+        },
+        "host_latency_ms": {
+          "median": 111.4,
+          "p95": 122.1
+        },
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "6QN-WC67",
+            "answer": "I don't know.",
+            "entity": "Grost"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "VUZ-AZ93",
+            "answer": "I don't know.",
+            "entity": "Vrouszel"
+          },
+          {
+            "kind": "hard",
+            "gold": "782-K8NZ",
+            "answer": "I don't know.",
+            "entity": "Veskian"
+          },
+          {
+            "kind": "hard",
+            "gold": "6QN-WC67",
+            "answer": "I don't know.",
+            "entity": "Grost"
+          },
+          {
+            "kind": "hard",
+            "gold": "8EY-FZ8U",
+            "answer": "I don't know.",
+            "entity": "Trisra"
+          },
+          {
+            "kind": "hard",
+            "gold": "L24-S2WN",
+            "answer": "I don't know.",
+            "entity": "Thothpax"
+          }
+        ]
+      },
+      "20": {
+        "k": 20,
+        "n": 91,
+        "accuracy": 0.4175824175824176,
+        "accuracy_shuffled": 0.4175824175824176,
+        "gold_in_notes": 0.967032967032967,
+        "clarified": 3,
+        "prompt_tokens": {
+          "median": 632.5,
+          "p95": 648.6,
+          "max": 657
+        },
+        "host_latency_ms": {
+          "median": 142.3,
+          "p95": 155.2
+        },
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "6QN-WC67",
+            "answer": "I don't know.",
+            "entity": "Grost"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "8NF-R65H",
+            "answer": "I don't know.",
+            "entity": "Zhou"
+          },
+          {
+            "kind": "hard",
+            "gold": "VUZ-AZ93",
+            "answer": "I don't know.",
+            "entity": "Vrouszel"
+          },
+          {
+            "kind": "hard",
+            "gold": "TNA-KADX",
+            "answer": "I don't know.",
+            "entity": "Vrasza"
+          },
+          {
+            "kind": "hard",
+            "gold": "782-K8NZ",
+            "answer": "I don't know.",
+            "entity": "Veskian"
+          },
+          {
+            "kind": "hard",
+            "gold": "QKU-C4XN",
+            "answer": "I don't know.",
+            "entity": "Luxkrax"
+          }
+        ]
+      },
+      "50": {
+        "k": 50,
+        "n": 91,
+        "accuracy": 0.5274725274725275,
+        "accuracy_shuffled": 0.3076923076923077,
+        "gold_in_notes": 0.967032967032967,
+        "clarified": 3,
+        "prompt_tokens": {
+          "median": 1380.0,
+          "p95": 1395.7,
+          "max": 1407
+        },
+        "host_latency_ms": {
+          "median": 226.2,
+          "p95": 246.9
+        },
+        "errors": [
+          {
+            "kind": "hard",
+            "gold": "6QN-WC67",
+            "answer": "I don't know.",
+            "entity": "Grost"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "UET-8UVE",
+            "answer": "I don't know.",
+            "entity": "Stes"
+          },
+          {
+            "kind": "hard",
+            "gold": "W89-Z7RM",
+            "answer": "I don't know.",
+            "entity": "Tous"
+          },
+          {
+            "kind": "hard",
+            "gold": "VUZ-AZ93",
+            "answer": "I don't know.",
+            "entity": "Vrouszel"
+          },
+          {
+            "kind": "hard",
+            "gold": "782-K8NZ",
+            "answer": "I don't know.",
+            "entity": "Veskian"
+          },
+          {
+            "kind": "hard",
+            "gold": "QKU-C4XN",
+            "answer": "I don't know.",
+            "entity": "Luxkrax"
+          },
+          {
+            "kind": "hard",
+            "gold": "6QN-WC67",
+            "answer": "I don't know.",
+            "entity": "Grost"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "n": 100,
+  "end_to_end_acc": 0.97,
+  "asked_instead_of_answer": 3,
+  "wrong_answers": 0,
+  "by_case": {
+    "explicit": {
+      "n": 55,
+      "ok": 55,
+      "asked": 0,
+      "wrong": 0
+    },
+    "new": {
+      "n": 5,
+      "ok": 5,
+      "asked": 0,
+      "wrong": 0
+    },
+    "pronoun": {
+      "n": 23,
+      "ok": 23,
+      "asked": 0,
+      "wrong": 0
+    },
+    "small_talk": {
+      "n": 7,
+      "ok": 7,
+      "asked": 0,
+      "wrong": 0
+    },
+    "other": {
+      "n": 8,
+      "ok": 5,
+      "asked": 3,
+      "wrong": 0
+    },
+    "clarify": {
+      "n": 2,
+      "ok": 2,
+      "asked": 0,
+      "wrong": 0
+    }
+  },
+  "errors": [],
+  "baseline_gateway_v1": {
+    "end_to_end_acc": 0.94,
+    "wrong_answers": 6
+  }
+}

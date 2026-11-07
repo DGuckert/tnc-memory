@@ -48,9 +48,16 @@ def osa(a, b):
 
 class MemoryGateway:
     def __init__(self, docs, middleman=DEFAULT_MIDDLEMAN, reader=DEFAULT_READER,
-                 reranker=DEFAULT_RERANKER, top_k=5, max_new_tokens=48):
+                 reranker=DEFAULT_RERANKER, top_k=5, max_new_tokens=48,
+                 structured=True, search_k=50, canonicalize=True, llms=True):
         self.docs = docs
         self.top_k = top_k
+        # structured=False forces every query through search -> rerank -> reader
+        # (used by the top_k sweep so the reader actually sees k notes).
+        self.structured = structured
+        self.search_k = search_k
+        # canonicalize=False asks the reader the tool query instead of rewriting it from the top note
+        self.canonicalize = canonicalize
         self.max_new_tokens = max_new_tokens
         self._build_word()
         self._build_char()
@@ -61,8 +68,13 @@ class MemoryGateway:
             m = re.search(r"the (.+?) for project ([A-Za-z0-9]+) is ([A-Z0-9]{3}-[A-Z0-9]{4})", d)
             if m:
                 self.fact_map[(m.group(2).lower(), m.group(1).lower())] = m.group(3)
-        self.mtok, self.llm = load_adapter(middleman)
-        if reader and reader != middleman:
+        if not llms:  # retrieval-only (memory_api): no tool router, no reader
+            self.mtok = self.llm = self.reader_tok = self.reader_llm = None
+        else:
+            self.mtok, self.llm = load_adapter(middleman)
+        if not llms:
+            pass
+        elif reader and reader != middleman:
             self.reader_tok, self.reader_llm = load_adapter(reader)
         else:
             self.reader_tok, self.reader_llm = self.mtok, self.llm
@@ -168,6 +180,7 @@ class MemoryGateway:
             out = self.reader_llm.generate(**enc, max_new_tokens=12, do_sample=False,
                                            pad_token_id=self.reader_tok.eos_token_id,
                                            eos_token_id=self.reader_tok.eos_token_id)
+        self.last_reader_prompt_tokens = int(enc["input_ids"].shape[1])
         return self.reader_tok.decode(out[0][enc["input_ids"].shape[1]:], skip_special_tokens=True).strip()
 
     def find_exact_project(self, messages):
@@ -229,7 +242,7 @@ class MemoryGateway:
         args = tool.get("args", {})
         query = args.get("query", "")
         project = args.get("project", "")
-        if project:
+        if project and self.structured:
             m = re.search(r"the (.+?) for", query, re.I)
             if m:
                 code = self.fact_map.get((project.lower(), m.group(1).strip().lower()))
@@ -239,14 +252,15 @@ class MemoryGateway:
                             "notes": [], "structured": True,
                             "timings": {"tool": t1 - t0, "search": 0.0, "rerank": 0.0,
                                         "reader": 0.0, "total": t1b - t0}}
-        ids, mode = self.search(query, project)
+        ids, mode = self.search(query, project, k=max(self.search_k, self.top_k))
+        cand_ids = [int(i) for i in ids]
         t2 = time.perf_counter()
         canon0 = canonical_from_note(extract_note(self.docs[int(ids[0])])) or query
         ids = self.rerank(canon0, ids, self.top_k)
         t3 = time.perf_counter()
         notes = [extract_note(self.docs[int(i)]) for i in ids]
-        canon = canonical_from_note(notes[0]) or canon0
-        code = self.structured_answer(notes[0], project)
+        canon = (canonical_from_note(notes[0]) or canon0) if self.canonicalize else query
+        code = self.structured_answer(notes[0], project) if self.structured else None
         if code:
             answer = code
         else:
@@ -254,6 +268,8 @@ class MemoryGateway:
         t4 = time.perf_counter()
         return {"tool": tool, "raw": raw, "mode": mode, "query": canon,
                 "answer": answer, "notes": notes, "structured": bool(code),
+                "ids": ids, "candidates": cand_ids,
+                "reader_prompt_tokens": None if code else self.last_reader_prompt_tokens,
                 "timings": {"tool": t1 - t0, "search": t2 - t1,
                             "rerank": t3 - t2, "reader": t4 - t3,
                             "total": t4 - t0}}

@@ -1,0 +1,431 @@
+{
+  "hard": {
+    "n": 93,
+    "tracker_ms_per_query": 0.435,
+    "systems": {
+      "old_heuristics": {
+        "acc": 0.828,
+        "by_case": {
+          "clarify": 1.0,
+          "explicit": 0.945,
+          "new": 0.0,
+          "other": 0.0,
+          "pronoun": 1.0
+        },
+        "n_by_case": {
+          "clarify": 2,
+          "explicit": 55,
+          "new": 5,
+          "other": 8,
+          "pronoun": 23
+        }
+      },
+      "tracker": {
+        "acc": 0.968,
+        "by_case": {
+          "clarify": 1.0,
+          "explicit": 1.0,
+          "new": 1.0,
+          "other": 0.625,
+          "pronoun": 1.0
+        },
+        "n_by_case": {
+          "clarify": 2,
+          "explicit": 55,
+          "new": 5,
+          "other": 8,
+          "pronoun": 23
+        }
+      },
+      "tool135m": {
+        "acc": 0.828,
+        "by_case": {
+          "clarify": 1.0,
+          "explicit": 0.891,
+          "new": 0.8,
+          "other": 0.5,
+          "pronoun": 0.783
+        },
+        "n_by_case": {
+          "clarify": 2,
+          "explicit": 55,
+          "new": 5,
+          "other": 8,
+          "pronoun": 23
+        }
+      },
+      "middleman360m": {
+        "acc": 0.86,
+        "by_case": {
+          "clarify": 1.0,
+          "explicit": 0.927,
+          "new": 0.8,
+          "other": 0.375,
+          "pronoun": 0.87
+        },
+        "n_by_case": {
+          "clarify": 2,
+          "explicit": 55,
+          "new": 5,
+          "other": 8,
+          "pronoun": 23
+        }
+      }
+    },
+    "tracker_errors": [
+      {
+        "id": "hard-tool-0038",
+        "case": "other",
+        "gold": "Drour",
+        "pred": null,
+        "how": "clarify",
+        "cands": [
+          "Drour",
+          "Vrathfouv"
+        ],
+        "last": "what about the license key for the other project?"
+      },
+      {
+        "id": "hard-tool-0039",
+        "case": "other",
+        "gold": "Zhou",
+        "pred": null,
+        "how": "clarify",
+        "cands": [
+          "Zhou",
+          "Tous"
+        ],
+        "last": "and the access code for the other one?"
+      },
+      {
+        "id": "hard-tool-0082",
+        "case": "other",
+        "gold": "Tiast",
+        "pred": null,
+        "how": "clarify",
+        "cands": [
+          "Tiast",
+          "Fuskrath"
+        ],
+        "last": "and the passphrase for the other one?"
+      }
+    ]
+  },
+  "reference": {
+    "n": 400,
+    "tracker_ms_per_query": 0.741,
+    "systems": {
+      "old_heuristics": {
+        "acc": 0.527,
+        "by_case": {
+          "chain_other": 0.0,
+          "clarify_none": 1.0,
+          "clarify_other3": 1.0,
+          "explicit": 1.0,
+          "first": 0.0,
+          "negation": 0.0,
+          "newest": 0.683,
+          "other_after_q": 0.0,
+          "other_two": 0.0,
+          "person_distractor": 1.0,
+          "pronoun_focus": 1.0,
+          "pronoun_single": 1.0,
+          "second": 0.0,
+          "typo": 0.721
+        },
+        "n_by_case": {
+          "chain_other": 18,
+          "clarify_none": 21,
+          "clarify_other3": 15,
+          "explicit": 26,
+          "first": 35,
+          "negation": 13,
+          "newest": 41,
+          "other_after_q": 52,
+          "other_two": 23,
+          "person_distractor": 23,
+          "pronoun_focus": 44,
+          "pronoun_single": 23,
+          "second": 23,
+          "typo": 43
+        }
+      },
+      "tracker": {
+        "acc": 1.0,
+        "by_case": {
+          "chain_other": 1.0,
+          "clarify_none": 1.0,
+          "clarify_other3": 1.0,
+          "explicit": 1.0,
+          "first": 1.0,
+          "negation": 1.0,
+          "newest": 1.0,
+          "other_after_q": 1.0,
+          "other_two": 1.0,
+          "person_distractor": 1.0,
+          "pronoun_focus": 1.0,
+          "pronoun_single": 1.0,
+          "second": 1.0,
+          "typo": 1.0
+        },
+        "n_by_case": {
+          "chain_other": 18,
+          "clarify_none": 21,
+          "clarify_other3": 15,
+          "explicit": 26,
+          "first": 35,
+          "negation": 13,
+          "newest": 41,
+          "other_after_q": 52,
+          "other_two": 23,
+          "person_distractor": 23,
+          "pronoun_focus": 44,
+          "pronoun_single": 23,
+          "second": 23,
+          "typo": 43
+        }
+      },
+      "tool135m": {
+        "acc": 0.365,
+        "by_case": {
+          "chain_other": 0.0,
+          "clarify_none": 0.0,
+          "clarify_other3": 0.0,
+          "explicit": 1.0,
+          "first": 0.371,
+          "negation": 0.154,
+          "newest": 0.659,
+          "other_after_q": 0.115,
+          "other_two": 0.348,
+          "person_distractor": 0.0,
+          "pronoun_focus": 0.455,
+          "pronoun_single": 0.609,
+          "second": 0.043,
+          "typo": 0.674
+        },
+        "n_by_case": {
+          "chain_other": 18,
+          "clarify_none": 21,
+          "clarify_other3": 15,
+          "explicit": 26,
+          "first": 35,
+          "negation": 13,
+          "newest": 41,
+          "other_after_q": 52,
+          "other_two": 23,
+          "person_distractor": 23,
+          "pronoun_focus": 44,
+          "pronoun_single": 23,
+          "second": 23,
+          "typo": 43
+        }
+      },
+      "middleman360m": {
+        "acc": 0.352,
+        "by_case": {
+          "chain_other": 0.0,
+          "clarify_none": 0.0,
+          "clarify_other3": 0.0,
+          "explicit": 0.923,
+          "first": 0.371,
+          "negation": 0.231,
+          "newest": 0.707,
+          "other_after_q": 0.096,
+          "other_two": 0.174,
+          "person_distractor": 0.0,
+          "pronoun_focus": 0.477,
+          "pronoun_single": 0.652,
+          "second": 0.087,
+          "typo": 0.581
+        },
+        "n_by_case": {
+          "chain_other": 18,
+          "clarify_none": 21,
+          "clarify_other3": 15,
+          "explicit": 26,
+          "first": 35,
+          "negation": 13,
+          "newest": 41,
+          "other_after_q": 52,
+          "other_two": 23,
+          "person_distractor": 23,
+          "pronoun_focus": 44,
+          "pronoun_single": 23,
+          "second": 23,
+          "typo": 43
+        }
+      }
+    },
+    "tracker_errors": []
+  },
+  "heldout": {
+    "n": 400,
+    "tracker_ms_per_query": 0.737,
+    "systems": {
+      "old_heuristics": {
+        "acc": 0.565,
+        "by_case": {
+          "chain_other": 0.0,
+          "clarify_none": 1.0,
+          "clarify_other3": 1.0,
+          "explicit": 1.0,
+          "first": 0.0,
+          "negation": 0.0,
+          "newest": 1.0,
+          "other_after_q": 0.0,
+          "other_two": 0.0,
+          "person_distractor": 1.0,
+          "pronoun_focus": 1.0,
+          "pronoun_single": 1.0,
+          "second": 0.0,
+          "typo": 0.697
+        },
+        "n_by_case": {
+          "chain_other": 23,
+          "clarify_none": 18,
+          "clarify_other3": 24,
+          "explicit": 34,
+          "first": 43,
+          "negation": 20,
+          "newest": 39,
+          "other_after_q": 46,
+          "other_two": 21,
+          "person_distractor": 30,
+          "pronoun_focus": 43,
+          "pronoun_single": 15,
+          "second": 11,
+          "typo": 33
+        }
+      },
+      "tracker": {
+        "acc": 0.995,
+        "by_case": {
+          "chain_other": 1.0,
+          "clarify_none": 1.0,
+          "clarify_other3": 1.0,
+          "explicit": 1.0,
+          "first": 1.0,
+          "negation": 1.0,
+          "newest": 1.0,
+          "other_after_q": 1.0,
+          "other_two": 1.0,
+          "person_distractor": 1.0,
+          "pronoun_focus": 1.0,
+          "pronoun_single": 0.933,
+          "second": 1.0,
+          "typo": 0.97
+        },
+        "n_by_case": {
+          "chain_other": 23,
+          "clarify_none": 18,
+          "clarify_other3": 24,
+          "explicit": 34,
+          "first": 43,
+          "negation": 20,
+          "newest": 39,
+          "other_after_q": 46,
+          "other_two": 21,
+          "person_distractor": 30,
+          "pronoun_focus": 43,
+          "pronoun_single": 15,
+          "second": 11,
+          "typo": 33
+        }
+      },
+      "tool135m": {
+        "acc": 0.3,
+        "by_case": {
+          "chain_other": 0.0,
+          "clarify_none": 0.0,
+          "clarify_other3": 0.0,
+          "explicit": 1.0,
+          "first": 0.233,
+          "negation": 0.05,
+          "newest": 0.385,
+          "other_after_q": 0.109,
+          "other_two": 0.19,
+          "person_distractor": 0.033,
+          "pronoun_focus": 0.442,
+          "pronoun_single": 0.6,
+          "second": 0.091,
+          "typo": 0.636
+        },
+        "n_by_case": {
+          "chain_other": 23,
+          "clarify_none": 18,
+          "clarify_other3": 24,
+          "explicit": 34,
+          "first": 43,
+          "negation": 20,
+          "newest": 39,
+          "other_after_q": 46,
+          "other_two": 21,
+          "person_distractor": 30,
+          "pronoun_focus": 43,
+          "pronoun_single": 15,
+          "second": 11,
+          "typo": 33
+        }
+      },
+      "middleman360m": {
+        "acc": 0.275,
+        "by_case": {
+          "chain_other": 0.0,
+          "clarify_none": 0.0,
+          "clarify_other3": 0.042,
+          "explicit": 0.941,
+          "first": 0.186,
+          "negation": 0.2,
+          "newest": 0.487,
+          "other_after_q": 0.087,
+          "other_two": 0.19,
+          "person_distractor": 0.0,
+          "pronoun_focus": 0.349,
+          "pronoun_single": 0.667,
+          "second": 0.0,
+          "typo": 0.394
+        },
+        "n_by_case": {
+          "chain_other": 23,
+          "clarify_none": 18,
+          "clarify_other3": 24,
+          "explicit": 34,
+          "first": 43,
+          "negation": 20,
+          "newest": 39,
+          "other_after_q": 46,
+          "other_two": 21,
+          "person_distractor": 30,
+          "pronoun_focus": 43,
+          "pronoun_single": 15,
+          "second": 11,
+          "typo": 33
+        }
+      }
+    },
+    "tracker_errors": [
+      {
+        "id": "ref-0321",
+        "case": "typo",
+        "gold": "Norjor",
+        "pred": "Nornor",
+        "how": "typo",
+        "cands": [
+          "Nornor"
+        ],
+        "last": "quick one, Noror license key"
+      },
+      {
+        "id": "ref-0398",
+        "case": "pronoun_single",
+        "gold": "Yennor",
+        "pred": "Castes",
+        "how": "focus",
+        "cands": [
+          "Castes"
+        ],
+        "last": "and that one's serial number"
+      }
+    ]
+  }
+}
