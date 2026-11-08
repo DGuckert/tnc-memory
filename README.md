@@ -2,24 +2,25 @@
 
 Experiments on compact long-term memory for chat. The goal is to keep a large history in a small token budget, find the right note, and let a model answer from it.
 
-## v2.1 (2026-11-08): memory that behaves like context (in progress)
+## v2.1 (2026-11-08): memory that behaves like context
 
 Plain RAG can answer "what is X?". It can't answer "which projects use Postgres?", "what port was it on before?" or "what language is the project on port 5035?". v2.1 adds:
-- **write-time consolidation**: the host LLM reads every message once and turns it into dated, superseding facts;
-- **per-project cards**: about 1.5K tokens covers all 16 projects, whether the log is 7K or 600K tokens;
-- **aggregate queries** over the whole fact store;
-- **an agent loop**, so the host can chain lookups.
+- **write-time memory**: the host LLM reads every message once and writes dated facts, where newer facts replace older ones;
+- **hygiene rules and a recall pass** that clean up the extractor's mistakes;
+- **per-project cards plus precomputed indexes**: about 3.8K tokens, the same size whether the log is 10K or 600K tokens.
 
-It's tested on a synthetic 10-month life log buried in real chatter. Small-log results so far, with a Qwen3-30B host:
+It's tested on a synthetic 10-month project log buried in real chatter, with 56 questions over 7 types (current, past, history, which, how many, multi-hop, ordering) and a Qwen3-30B host:
 
-| | RAG | cards (extracted) | cards (perfect extraction) |
-|---|---:|---:|---:|
-| overall | 0.43 | 0.70 | 0.77 |
-| history | 0.38 | 0.88 | 1.00 |
-| which projects | 0.13 | 0.38 | 0.50 |
-| multi-hop | 0.13 | 0.50 | 0.38 |
+| | small log (~10K tokens) | 600K-token log |
+|---|---:|---:|
+| full context (whole log in prompt) | 0.66 | can't fit |
+| RAG (top-10 messages) | 0.43 | 0.36 |
+| **memory (cards v3)** | **0.89** | **0.82** |
+| memory with perfect extraction | 0.95 | 0.96 |
 
-Still running: the full-context ceiling, the agent mode, and the 600K-token log. Write-up: `results/training/lifelog_report.md`.
+**On these questions the memory beats real full context**, and it holds up at 60× the size. The remaining gap is extraction: 91% of stored values are right on the 600K log, up from 66% for raw extraction. Agent mode (tool calls) doesn't work with this host.
+
+The caveat: this is a typed domain (7 project attributes), and the hygiene rules were developed on the same logs; there's no held-out log yet. Write-up: `results/training/lifelog_report.md`.
 
 Also new: **Qwen3-30B-A3B as the host reader scores 0.98–1.00 at k = 1–50 and reads every note it is given.** The "5 notes" ceiling was a limit of the small readers.
 

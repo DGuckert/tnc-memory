@@ -1,0 +1,2310 @@
+{
+ "dir": "/home/daniel/tnc/work/lifelog/small",
+ "n_messages": 314,
+ "n_questions": 56,
+ "conditions": {
+  "cards_v2": {
+   "summary": {
+    "accuracy": 0.857,
+    "by_type": {
+     "current": 1.0,
+     "past": 1.0,
+     "history": 1.0,
+     "aggregate": 0.625,
+     "count": 0.625,
+     "multi_hop": 0.875,
+     "temporal": 0.875
+    },
+    "prompt_tokens_median": 3850,
+    "latency_ms_median": 26839
+   },
+   "rows": [
+    {
+     "id": 0,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Redis",
+     "prompt_tokens": 3853,
+     "ms": 140372,
+     "calls": null
+    },
+    {
+     "id": 1,
+     "type": "current",
+     "score": 1.0,
+     "gold": "7764",
+     "prompt_tokens": 3863,
+     "ms": 70585,
+     "calls": null
+    },
+    {
+     "id": 2,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3853,
+     "ms": 91835,
+     "calls": null
+    },
+    {
+     "id": 3,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3854,
+     "ms": 102551,
+     "calls": null
+    },
+    {
+     "id": 4,
+     "type": "current",
+     "score": 1.0,
+     "gold": "ironbark",
+     "prompt_tokens": 3850,
+     "ms": 72976,
+     "calls": null
+    },
+    {
+     "id": 5,
+     "type": "current",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 3850,
+     "ms": 436079,
+     "calls": null
+    },
+    {
+     "id": 6,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Python",
+     "prompt_tokens": 3836,
+     "ms": 385815,
+     "calls": null
+    },
+    {
+     "id": 7,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MongoDB",
+     "prompt_tokens": 3833,
+     "ms": 367712,
+     "calls": null
+    },
+    {
+     "id": 12,
+     "type": "past",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 3839,
+     "ms": 320563,
+     "calls": null
+    },
+    {
+     "id": 13,
+     "type": "past",
+     "score": 1.0,
+     "gold": "Go",
+     "prompt_tokens": 3848,
+     "ms": 180685,
+     "calls": null
+    },
+    {
+     "id": 14,
+     "type": "past",
+     "score": 1.0,
+     "gold": "active",
+     "prompt_tokens": 3848,
+     "ms": 81983,
+     "calls": null
+    },
+    {
+     "id": 15,
+     "type": "past",
+     "score": 1.0,
+     "gold": "pumice",
+     "prompt_tokens": 3863,
+     "ms": 24693,
+     "calls": null
+    },
+    {
+     "id": 16,
+     "type": "past",
+     "score": 1.0,
+     "gold": "9367",
+     "prompt_tokens": 3857,
+     "ms": 31174,
+     "calls": null
+    },
+    {
+     "id": 17,
+     "type": "past",
+     "score": 1.0,
+     "gold": "4539",
+     "prompt_tokens": 3862,
+     "ms": 20327,
+     "calls": null
+    },
+    {
+     "id": 18,
+     "type": "past",
+     "score": 1.0,
+     "gold": "active",
+     "prompt_tokens": 3825,
+     "ms": 30850,
+     "calls": null
+    },
+    {
+     "id": 19,
+     "type": "past",
+     "score": 1.0,
+     "gold": "7679",
+     "prompt_tokens": 3857,
+     "ms": 25839,
+     "calls": null
+    },
+    {
+     "id": 24,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "kestrel",
+      "basalt",
+      "pumice"
+     ],
+     "prompt_tokens": 3837,
+     "ms": 28684,
+     "calls": null
+    },
+    {
+     "id": 25,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "active",
+      "paused",
+      "active"
+     ],
+     "prompt_tokens": 3841,
+     "ms": 28757,
+     "calls": null
+    },
+    {
+     "id": 26,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "5455",
+      "5962",
+      "6712",
+      "6814"
+     ],
+     "prompt_tokens": 3873,
+     "ms": 33405,
+     "calls": null
+    },
+    {
+     "id": 27,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "pumice",
+      "wharf",
+      "pumice",
+      "quokka"
+     ],
+     "prompt_tokens": 3843,
+     "ms": 27363,
+     "calls": null
+    },
+    {
+     "id": 28,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "8833",
+      "7487",
+      "3798",
+      "6050"
+     ],
+     "prompt_tokens": 3840,
+     "ms": 28974,
+     "calls": null
+    },
+    {
+     "id": 29,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "7355",
+      "8573",
+      "7066"
+     ],
+     "prompt_tokens": 3849,
+     "ms": 29683,
+     "calls": null
+    },
+    {
+     "id": 30,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "8070",
+      "3488",
+      "7623"
+     ],
+     "prompt_tokens": 3853,
+     "ms": 26925,
+     "calls": null
+    },
+    {
+     "id": 31,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "ironbark",
+      "kestrel",
+      "quokka"
+     ],
+     "prompt_tokens": 3825,
+     "ms": 27574,
+     "calls": null
+    },
+    {
+     "id": 36,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Ferrow",
+      "Pexwick",
+      "Umbrin",
+      "Venmire"
+     ],
+     "prompt_tokens": 3866,
+     "ms": 21034,
+     "calls": null
+    },
+    {
+     "id": 37,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Halvane",
+      "Mirevale"
+     ],
+     "prompt_tokens": 3850,
+     "ms": 17431,
+     "calls": null
+    },
+    {
+     "id": 38,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Brakka",
+      "Ostrel",
+      "Zephram"
+     ],
+     "prompt_tokens": 3854,
+     "ms": 27208,
+     "calls": null
+    },
+    {
+     "id": 39,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Halvane",
+      "Lorrish",
+      "Umbrin",
+      "Zephram"
+     ],
+     "prompt_tokens": 3846,
+     "ms": 26525,
+     "calls": null
+    },
+    {
+     "id": 40,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Kestova",
+      "Quillon"
+     ],
+     "prompt_tokens": 3845,
+     "ms": 26712,
+     "calls": null
+    },
+    {
+     "id": 41,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Lorrish",
+      "Mirevale",
+      "Pexwick"
+     ],
+     "prompt_tokens": 3849,
+     "ms": 27127,
+     "calls": null
+    },
+    {
+     "id": 42,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Ferrow",
+      "Lorrish",
+      "Pexwick"
+     ],
+     "prompt_tokens": 3828,
+     "ms": 23077,
+     "calls": null
+    },
+    {
+     "id": 43,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Kestova",
+      "Mirevale",
+      "Pexwick",
+      "Quillon",
+      "Venmire"
+     ],
+     "prompt_tokens": 3840,
+     "ms": 25500,
+     "calls": null
+    },
+    {
+     "id": 48,
+     "type": "count",
+     "score": 0.0,
+     "gold": 11,
+     "prompt_tokens": 3957,
+     "ms": 20988,
+     "calls": null
+    },
+    {
+     "id": 49,
+     "type": "count",
+     "score": 1.0,
+     "gold": 2,
+     "prompt_tokens": 3848,
+     "ms": 27216,
+     "calls": null
+    },
+    {
+     "id": 50,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3856,
+     "ms": 24482,
+     "calls": null
+    },
+    {
+     "id": 51,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3848,
+     "ms": 25809,
+     "calls": null
+    },
+    {
+     "id": 52,
+     "type": "count",
+     "score": 0.0,
+     "gold": 4,
+     "prompt_tokens": 3848,
+     "ms": 25060,
+     "calls": null
+    },
+    {
+     "id": 53,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3851,
+     "ms": 18842,
+     "calls": null
+    },
+    {
+     "id": 54,
+     "type": "count",
+     "score": 0.0,
+     "gold": 0,
+     "prompt_tokens": 3998,
+     "ms": 29160,
+     "calls": null
+    },
+    {
+     "id": 55,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3848,
+     "ms": 26839,
+     "calls": null
+    },
+    {
+     "id": 60,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Rust",
+     "prompt_tokens": 3862,
+     "ms": 22068,
+     "calls": null
+    },
+    {
+     "id": 61,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "C++",
+     "prompt_tokens": 3859,
+     "ms": 21606,
+     "calls": null
+    },
+    {
+     "id": 62,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3849,
+     "ms": 19120,
+     "calls": null
+    },
+    {
+     "id": 63,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Kotlin",
+     "prompt_tokens": 3859,
+     "ms": 21915,
+     "calls": null
+    },
+    {
+     "id": 64,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 3854,
+     "ms": 26012,
+     "calls": null
+    },
+    {
+     "id": 65,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 3852,
+     "ms": 27341,
+     "calls": null
+    },
+    {
+     "id": 66,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Redis",
+     "prompt_tokens": 3847,
+     "ms": 22045,
+     "calls": null
+    },
+    {
+     "id": 67,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3852,
+     "ms": 24742,
+     "calls": null
+    },
+    {
+     "id": 72,
+     "type": "temporal",
+     "score": 0.0,
+     "gold": "Calyx",
+     "prompt_tokens": 3847,
+     "ms": 28699,
+     "calls": null
+    },
+    {
+     "id": 73,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Umbrin",
+     "prompt_tokens": 3844,
+     "ms": 25993,
+     "calls": null
+    },
+    {
+     "id": 74,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Quillon",
+     "prompt_tokens": 3859,
+     "ms": 17629,
+     "calls": null
+    },
+    {
+     "id": 75,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Mirevale",
+     "prompt_tokens": 3858,
+     "ms": 14631,
+     "calls": null
+    },
+    {
+     "id": 76,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 3861,
+     "ms": 17410,
+     "calls": null
+    },
+    {
+     "id": 77,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Brakka",
+     "prompt_tokens": 3861,
+     "ms": 24742,
+     "calls": null
+    },
+    {
+     "id": 78,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 3852,
+     "ms": 26198,
+     "calls": null
+    },
+    {
+     "id": 79,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Drisk",
+     "prompt_tokens": 3844,
+     "ms": 25820,
+     "calls": null
+    }
+   ]
+  },
+  "agent": {
+   "summary": {
+    "accuracy": 0.518,
+    "by_type": {
+     "current": 0.75,
+     "past": 0.5,
+     "history": 0.25,
+     "aggregate": 0.5,
+     "count": 0.375,
+     "multi_hop": 0.375,
+     "temporal": 0.875
+    },
+    "prompt_tokens_median": 1419,
+    "latency_ms_median": 19056
+   },
+   "rows": [
+    {
+     "id": 0,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Redis",
+     "prompt_tokens": 2771,
+     "ms": 37819,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Lorrish"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Lorrish"
+       }
+      }
+     ]
+    },
+    {
+     "id": 1,
+     "type": "current",
+     "score": 1.0,
+     "gold": "7764",
+     "prompt_tokens": 1381,
+     "ms": 18880,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Drisk"
+       }
+      }
+     ]
+    },
+    {
+     "id": 2,
+     "type": "current",
+     "score": 0.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 545,
+     "ms": 6709,
+     "calls": []
+    },
+    {
+     "id": 3,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 2621,
+     "ms": 26648,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Venmire"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Venmire"
+       }
+      }
+     ]
+    },
+    {
+     "id": 4,
+     "type": "current",
+     "score": 1.0,
+     "gold": "ironbark",
+     "prompt_tokens": 2694,
+     "ms": 32409,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Ostrel"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Ostrel"
+       }
+      }
+     ]
+    },
+    {
+     "id": 5,
+     "type": "current",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 2570,
+     "ms": 28082,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Umbrin"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Umbrin"
+       }
+      }
+     ]
+    },
+    {
+     "id": 6,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Python",
+     "prompt_tokens": 1423,
+     "ms": 14913,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Sorrel"
+       }
+      }
+     ]
+    },
+    {
+     "id": 7,
+     "type": "current",
+     "score": 0.0,
+     "gold": "MongoDB",
+     "prompt_tokens": 544,
+     "ms": 6981,
+     "calls": []
+    },
+    {
+     "id": 12,
+     "type": "past",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 1419,
+     "ms": 14391,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Quillon"
+       }
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "type": "past",
+     "score": 1.0,
+     "gold": "Go",
+     "prompt_tokens": 1431,
+     "ms": 13031,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Sorrel"
+       }
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "type": "past",
+     "score": 0.0,
+     "gold": "active",
+     "prompt_tokens": 548,
+     "ms": 9702,
+     "calls": []
+    },
+    {
+     "id": 15,
+     "type": "past",
+     "score": 1.0,
+     "gold": "pumice",
+     "prompt_tokens": 2534,
+     "ms": 24444,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Drisk"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Drisk"
+       }
+      }
+     ]
+    },
+    {
+     "id": 16,
+     "type": "past",
+     "score": 0.0,
+     "gold": "9367",
+     "prompt_tokens": 552,
+     "ms": 10205,
+     "calls": []
+    },
+    {
+     "id": 17,
+     "type": "past",
+     "score": 1.0,
+     "gold": "4539",
+     "prompt_tokens": 1377,
+     "ms": 20998,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Halvane"
+       }
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "type": "past",
+     "score": 0.0,
+     "gold": "active",
+     "prompt_tokens": 548,
+     "ms": 7622,
+     "calls": []
+    },
+    {
+     "id": 19,
+     "type": "past",
+     "score": 0.0,
+     "gold": "7679",
+     "prompt_tokens": 552,
+     "ms": 10284,
+     "calls": []
+    },
+    {
+     "id": 24,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "kestrel",
+      "basalt",
+      "pumice"
+     ],
+     "prompt_tokens": 1246,
+     "ms": 15762,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "Ferrow"
+       }
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "active",
+      "paused",
+      "active"
+     ],
+     "prompt_tokens": 8464,
+     "ms": 75224,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Kestova"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Kestova"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Kestova"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Kestova"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Kestova"
+       }
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "5455",
+      "5962",
+      "6712",
+      "6814"
+     ],
+     "prompt_tokens": 3464,
+     "ms": 38632,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "port",
+        "value": "Brakka"
+       }
+      },
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "name",
+        "value": "Brakka"
+       }
+      },
+      {
+       "name": "list_projects",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "pumice",
+      "wharf",
+      "pumice",
+      "quokka"
+     ],
+     "prompt_tokens": 549,
+     "ms": 9860,
+     "calls": []
+    },
+    {
+     "id": 28,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "8833",
+      "7487",
+      "3798",
+      "6050"
+     ],
+     "prompt_tokens": 547,
+     "ms": 11521,
+     "calls": []
+    },
+    {
+     "id": 29,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "7355",
+      "8573",
+      "7066"
+     ],
+     "prompt_tokens": 2858,
+     "ms": 33731,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Calyx"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Calyx"
+       }
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "8070",
+      "3488",
+      "7623"
+     ],
+     "prompt_tokens": 4341,
+     "ms": 44375,
+     "calls": [
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Mirevale"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Mirevale"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Mirevale"
+       }
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "ironbark",
+      "kestrel",
+      "quokka"
+     ],
+     "prompt_tokens": 1247,
+     "ms": 16137,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "Calyx"
+       }
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Ferrow",
+      "Pexwick",
+      "Umbrin",
+      "Venmire"
+     ],
+     "prompt_tokens": 1270,
+     "ms": 19266,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "collaborator",
+        "value": "pickle_rick77"
+       }
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Halvane",
+      "Mirevale"
+     ],
+     "prompt_tokens": 2147,
+     "ms": 23121,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "collaborator",
+        "value": "veyra"
+       }
+      },
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "collaborator",
+        "value": "veyra"
+       }
+      }
+     ]
+    },
+    {
+     "id": 38,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Brakka",
+      "Ostrel",
+      "Zephram"
+     ],
+     "prompt_tokens": 2142,
+     "ms": 24741,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "ironbark"
+       }
+      },
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "ironbark"
+       }
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Halvane",
+      "Lorrish",
+      "Umbrin",
+      "Zephram"
+     ],
+     "prompt_tokens": 1241,
+     "ms": 18125,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "database",
+        "value": "Redis"
+       }
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Kestova",
+      "Quillon"
+     ],
+     "prompt_tokens": 3582,
+     "ms": 37442,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "basalt"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Kestova"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Quillon"
+       }
+      }
+     ]
+    },
+    {
+     "id": 41,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Lorrish",
+      "Mirevale",
+      "Pexwick"
+     ],
+     "prompt_tokens": 2137,
+     "ms": 25023,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "kestrel"
+       }
+      },
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "kestrel"
+       }
+      }
+     ]
+    },
+    {
+     "id": 42,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Ferrow",
+      "Lorrish",
+      "Pexwick"
+     ],
+     "prompt_tokens": 543,
+     "ms": 8844,
+     "calls": []
+    },
+    {
+     "id": 43,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Kestova",
+      "Mirevale",
+      "Pexwick",
+      "Quillon",
+      "Venmire"
+     ],
+     "prompt_tokens": 1265,
+     "ms": 19340,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "database",
+        "value": "MariaDB"
+       }
+      }
+     ]
+    },
+    {
+     "id": 48,
+     "type": "count",
+     "score": 0.0,
+     "gold": 11,
+     "prompt_tokens": 1300,
+     "ms": 14913,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "status",
+        "value": "active"
+       }
+      }
+     ]
+    },
+    {
+     "id": 49,
+     "type": "count",
+     "score": 0.0,
+     "gold": 2,
+     "prompt_tokens": 546,
+     "ms": 6364,
+     "calls": []
+    },
+    {
+     "id": 50,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 1243,
+     "ms": 13274,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "language",
+        "value": "Python"
+       }
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "type": "count",
+     "score": 0.0,
+     "gold": 1,
+     "prompt_tokens": 546,
+     "ms": 6381,
+     "calls": []
+    },
+    {
+     "id": 52,
+     "type": "count",
+     "score": 0.0,
+     "gold": 4,
+     "prompt_tokens": 2230,
+     "ms": 27084,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "start_date",
+        "value": "2026-04",
+        "as_of": "2026-04-30"
+       }
+      },
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "start_date",
+        "value": "2026-04",
+        "as_of": "2026-04-30"
+       }
+      }
+     ]
+    },
+    {
+     "id": 53,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 547,
+     "ms": 8983,
+     "calls": []
+    },
+    {
+     "id": 54,
+     "type": "count",
+     "score": 1.0,
+     "gold": 0,
+     "prompt_tokens": 1250,
+     "ms": 13783,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "status",
+        "value": "shipped"
+       }
+      }
+     ]
+    },
+    {
+     "id": 55,
+     "type": "count",
+     "score": 0.0,
+     "gold": 1,
+     "prompt_tokens": 546,
+     "ms": 6692,
+     "calls": []
+    },
+    {
+     "id": 60,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Rust",
+     "prompt_tokens": 2314,
+     "ms": 21384,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "port",
+        "value": "5035"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Quillon"
+       }
+      }
+     ]
+    },
+    {
+     "id": 61,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "C++",
+     "prompt_tokens": 1272,
+     "ms": 19056,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "port",
+        "value": "4472"
+       }
+      }
+     ]
+    },
+    {
+     "id": 62,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 2317,
+     "ms": 23983,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "port",
+        "value": "7623"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Mirevale"
+       }
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Kotlin",
+     "prompt_tokens": 2286,
+     "ms": 21209,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "port",
+        "value": "3844"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "Umbrin"
+       }
+      }
+     ]
+    },
+    {
+     "id": 64,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 4704,
+     "ms": 66022,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "wharf",
+        "as_of": "2026-03-01"
+       }
+      },
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "wharf",
+        "as_of": "2026-03-01"
+       }
+      },
+      {
+       "name": "get_project",
+       "args": {
+        "name": "wharf"
+       }
+      },
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "wharf",
+        "as_of": "2026-03-01"
+       }
+      }
+     ]
+    },
+    {
+     "id": 65,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 1277,
+     "ms": 18865,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "host",
+        "value": "pumice"
+       }
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "Redis",
+     "prompt_tokens": 550,
+     "ms": 9985,
+     "calls": []
+    },
+    {
+     "id": 67,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 1267,
+     "ms": 19085,
+     "calls": [
+      {
+       "name": "find_projects",
+       "args": {
+        "attr": "port",
+        "value": "7066"
+       }
+      }
+     ]
+    },
+    {
+     "id": 72,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Calyx",
+     "prompt_tokens": 3102,
+     "ms": 24740,
+     "calls": [
+      {
+       "name": "list_projects",
+       "args": {}
+      },
+      {
+       "name": "list_projects",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "id": 73,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Umbrin",
+     "prompt_tokens": 1572,
+     "ms": 20268,
+     "calls": [
+      {
+       "name": "list_projects",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Quillon",
+     "prompt_tokens": 3122,
+     "ms": 30045,
+     "calls": [
+      {
+       "name": "list_projects",
+       "args": {}
+      },
+      {
+       "name": "list_projects",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "id": 75,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Mirevale",
+     "prompt_tokens": 1569,
+     "ms": 17249,
+     "calls": [
+      {
+       "name": "list_projects",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "id": 76,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 1573,
+     "ms": 16546,
+     "calls": [
+      {
+       "name": "list_projects",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "id": 77,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Brakka",
+     "prompt_tokens": 3118,
+     "ms": 26072,
+     "calls": [
+      {
+       "name": "list_projects",
+       "args": {}
+      },
+      {
+       "name": "list_projects",
+       "args": {}
+      }
+     ]
+    },
+    {
+     "id": 78,
+     "type": "temporal",
+     "score": 0.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 548,
+     "ms": 8940,
+     "calls": []
+    },
+    {
+     "id": 79,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Drisk",
+     "prompt_tokens": 1573,
+     "ms": 21740,
+     "calls": [
+      {
+       "name": "list_projects",
+       "args": {}
+      }
+     ]
+    }
+   ]
+  },
+  "cards_v2_oracle": {
+   "summary": {
+    "accuracy": 0.946,
+    "by_type": {
+     "current": 1.0,
+     "past": 1.0,
+     "history": 1.0,
+     "aggregate": 1.0,
+     "count": 0.75,
+     "multi_hop": 0.875,
+     "temporal": 1.0
+    },
+    "prompt_tokens_median": 3721,
+    "latency_ms_median": 23959
+   },
+   "rows": [
+    {
+     "id": 0,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Redis",
+     "prompt_tokens": 3724,
+     "ms": 27181,
+     "calls": null
+    },
+    {
+     "id": 1,
+     "type": "current",
+     "score": 1.0,
+     "gold": "7764",
+     "prompt_tokens": 3734,
+     "ms": 20210,
+     "calls": null
+    },
+    {
+     "id": 2,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3724,
+     "ms": 21395,
+     "calls": null
+    },
+    {
+     "id": 3,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3725,
+     "ms": 23444,
+     "calls": null
+    },
+    {
+     "id": 4,
+     "type": "current",
+     "score": 1.0,
+     "gold": "ironbark",
+     "prompt_tokens": 3721,
+     "ms": 22521,
+     "calls": null
+    },
+    {
+     "id": 5,
+     "type": "current",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 3721,
+     "ms": 26577,
+     "calls": null
+    },
+    {
+     "id": 6,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Python",
+     "prompt_tokens": 3707,
+     "ms": 20551,
+     "calls": null
+    },
+    {
+     "id": 7,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MongoDB",
+     "prompt_tokens": 3704,
+     "ms": 26564,
+     "calls": null
+    },
+    {
+     "id": 12,
+     "type": "past",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 3710,
+     "ms": 23454,
+     "calls": null
+    },
+    {
+     "id": 13,
+     "type": "past",
+     "score": 1.0,
+     "gold": "Go",
+     "prompt_tokens": 3719,
+     "ms": 21922,
+     "calls": null
+    },
+    {
+     "id": 14,
+     "type": "past",
+     "score": 1.0,
+     "gold": "active",
+     "prompt_tokens": 3719,
+     "ms": 26521,
+     "calls": null
+    },
+    {
+     "id": 15,
+     "type": "past",
+     "score": 1.0,
+     "gold": "pumice",
+     "prompt_tokens": 3734,
+     "ms": 20967,
+     "calls": null
+    },
+    {
+     "id": 16,
+     "type": "past",
+     "score": 1.0,
+     "gold": "9367",
+     "prompt_tokens": 3728,
+     "ms": 19469,
+     "calls": null
+    },
+    {
+     "id": 17,
+     "type": "past",
+     "score": 1.0,
+     "gold": "4539",
+     "prompt_tokens": 3733,
+     "ms": 18713,
+     "calls": null
+    },
+    {
+     "id": 18,
+     "type": "past",
+     "score": 1.0,
+     "gold": "active",
+     "prompt_tokens": 3696,
+     "ms": 20194,
+     "calls": null
+    },
+    {
+     "id": 19,
+     "type": "past",
+     "score": 1.0,
+     "gold": "7679",
+     "prompt_tokens": 3728,
+     "ms": 21226,
+     "calls": null
+    },
+    {
+     "id": 24,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "kestrel",
+      "basalt",
+      "pumice"
+     ],
+     "prompt_tokens": 3708,
+     "ms": 32640,
+     "calls": null
+    },
+    {
+     "id": 25,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "active",
+      "paused",
+      "active"
+     ],
+     "prompt_tokens": 3712,
+     "ms": 29479,
+     "calls": null
+    },
+    {
+     "id": 26,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "5455",
+      "5962",
+      "6712",
+      "6814"
+     ],
+     "prompt_tokens": 3744,
+     "ms": 31412,
+     "calls": null
+    },
+    {
+     "id": 27,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "pumice",
+      "wharf",
+      "pumice",
+      "quokka"
+     ],
+     "prompt_tokens": 3714,
+     "ms": 29035,
+     "calls": null
+    },
+    {
+     "id": 28,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "8833",
+      "7487",
+      "3798",
+      "6050"
+     ],
+     "prompt_tokens": 3711,
+     "ms": 29906,
+     "calls": null
+    },
+    {
+     "id": 29,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "7355",
+      "8573",
+      "7066"
+     ],
+     "prompt_tokens": 3720,
+     "ms": 24598,
+     "calls": null
+    },
+    {
+     "id": 30,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "8070",
+      "3488",
+      "7623"
+     ],
+     "prompt_tokens": 3724,
+     "ms": 28745,
+     "calls": null
+    },
+    {
+     "id": 31,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "ironbark",
+      "kestrel",
+      "quokka"
+     ],
+     "prompt_tokens": 3696,
+     "ms": 31677,
+     "calls": null
+    },
+    {
+     "id": 36,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Ferrow",
+      "Pexwick",
+      "Umbrin",
+      "Venmire"
+     ],
+     "prompt_tokens": 3737,
+     "ms": 24512,
+     "calls": null
+    },
+    {
+     "id": 37,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Halvane",
+      "Mirevale"
+     ],
+     "prompt_tokens": 3721,
+     "ms": 14075,
+     "calls": null
+    },
+    {
+     "id": 38,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Brakka",
+      "Ostrel",
+      "Zephram"
+     ],
+     "prompt_tokens": 3725,
+     "ms": 29287,
+     "calls": null
+    },
+    {
+     "id": 39,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Halvane",
+      "Lorrish",
+      "Umbrin",
+      "Zephram"
+     ],
+     "prompt_tokens": 3717,
+     "ms": 23165,
+     "calls": null
+    },
+    {
+     "id": 40,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Kestova",
+      "Quillon"
+     ],
+     "prompt_tokens": 3716,
+     "ms": 29207,
+     "calls": null
+    },
+    {
+     "id": 41,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Lorrish",
+      "Mirevale",
+      "Pexwick"
+     ],
+     "prompt_tokens": 3720,
+     "ms": 30197,
+     "calls": null
+    },
+    {
+     "id": 42,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Ferrow",
+      "Lorrish",
+      "Pexwick"
+     ],
+     "prompt_tokens": 3699,
+     "ms": 22275,
+     "calls": null
+    },
+    {
+     "id": 43,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Kestova",
+      "Mirevale",
+      "Pexwick",
+      "Quillon",
+      "Venmire"
+     ],
+     "prompt_tokens": 3711,
+     "ms": 18875,
+     "calls": null
+    },
+    {
+     "id": 48,
+     "type": "count",
+     "score": 1.0,
+     "gold": 11,
+     "prompt_tokens": 3828,
+     "ms": 17808,
+     "calls": null
+    },
+    {
+     "id": 49,
+     "type": "count",
+     "score": 1.0,
+     "gold": 2,
+     "prompt_tokens": 3719,
+     "ms": 30567,
+     "calls": null
+    },
+    {
+     "id": 50,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3727,
+     "ms": 17640,
+     "calls": null
+    },
+    {
+     "id": 51,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3719,
+     "ms": 30179,
+     "calls": null
+    },
+    {
+     "id": 52,
+     "type": "count",
+     "score": 0.0,
+     "gold": 4,
+     "prompt_tokens": 3719,
+     "ms": 27427,
+     "calls": null
+    },
+    {
+     "id": 53,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3722,
+     "ms": 20605,
+     "calls": null
+    },
+    {
+     "id": 54,
+     "type": "count",
+     "score": 0.0,
+     "gold": 0,
+     "prompt_tokens": 3869,
+     "ms": 23959,
+     "calls": null
+    },
+    {
+     "id": 55,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3719,
+     "ms": 29403,
+     "calls": null
+    },
+    {
+     "id": 60,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Rust",
+     "prompt_tokens": 3733,
+     "ms": 20863,
+     "calls": null
+    },
+    {
+     "id": 61,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "C++",
+     "prompt_tokens": 3730,
+     "ms": 21061,
+     "calls": null
+    },
+    {
+     "id": 62,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3720,
+     "ms": 21100,
+     "calls": null
+    },
+    {
+     "id": 63,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Kotlin",
+     "prompt_tokens": 3730,
+     "ms": 20499,
+     "calls": null
+    },
+    {
+     "id": 64,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 3725,
+     "ms": 28637,
+     "calls": null
+    },
+    {
+     "id": 65,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 3723,
+     "ms": 28131,
+     "calls": null
+    },
+    {
+     "id": 66,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Redis",
+     "prompt_tokens": 3718,
+     "ms": 19465,
+     "calls": null
+    },
+    {
+     "id": 67,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3723,
+     "ms": 24040,
+     "calls": null
+    },
+    {
+     "id": 72,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Calyx",
+     "prompt_tokens": 3718,
+     "ms": 28628,
+     "calls": null
+    },
+    {
+     "id": 73,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Umbrin",
+     "prompt_tokens": 3715,
+     "ms": 28347,
+     "calls": null
+    },
+    {
+     "id": 74,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Quillon",
+     "prompt_tokens": 3730,
+     "ms": 15592,
+     "calls": null
+    },
+    {
+     "id": 75,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Mirevale",
+     "prompt_tokens": 3729,
+     "ms": 24573,
+     "calls": null
+    },
+    {
+     "id": 76,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 3732,
+     "ms": 18154,
+     "calls": null
+    },
+    {
+     "id": 77,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Brakka",
+     "prompt_tokens": 3732,
+     "ms": 22689,
+     "calls": null
+    },
+    {
+     "id": 78,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 3723,
+     "ms": 24923,
+     "calls": null
+    },
+    {
+     "id": 79,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Drisk",
+     "prompt_tokens": 3715,
+     "ms": 11967,
+     "calls": null
+    }
+   ]
+  }
+ },
+ "extraction": {
+  "messages": 314,
+  "sent_to_extractor": 314,
+  "calls": 32,
+  "facts": 216,
+  "seconds": 532.1,
+  "prompt_tokens": 23761,
+  "dropped_unseen_entity": 17,
+  "hygiene": {
+   "ungrounded_dropped": 30,
+   "snapped": 5,
+   "restart_dropped": 6,
+   "self_collab_dropped": 2,
+   "reattached": 8
+  },
+  "vs_oracle_raw": {
+   "current_value_acc": 0.893,
+   "history_exact": 0.844,
+   "n_values": 112,
+   "spurious_entities": [
+    "Atlas",
+    "host"
+   ]
+  },
+  "vs_oracle": {
+   "current_value_acc": 0.955,
+   "history_exact": 0.938,
+   "n_values": 112,
+   "spurious_entities": [
+    "Atlas",
+    "Host"
+   ]
+  }
+ }
+}

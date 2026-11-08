@@ -13,7 +13,7 @@ from collections import defaultdict
 sys.path.insert(0, "/home/daniel/tnc")
 import host_reader_sweep
 from host_reader_sweep import complete
-from lifelog_memory import FactStore, oracle_store, extract, store_accuracy, llm
+from lifelog_memory import FactStore, oracle_store, extract, store_accuracy, llm, consolidate, recall_pass
 import life_log as LL
 
 host_reader_sweep.RAW = "1"
@@ -117,8 +117,9 @@ TOOLS = [
     {"name": "get_project", "description": "Everything remembered about one project: current language, database, "
      "host, port, status and collaborators, with the full history of changes and dates.",
      "parameters": {"type": "object", "properties": {"name": {"type": "string"}}, "required": ["name"]}},
-    {"name": "find_projects", "description": "List projects whose attribute equals a value, now or as of a date. "
-     "attr is one of language, database, host, port, status, collaborator.", "parameters": {"type": "object",
+    {"name": "find_projects", "description": "Count and list the projects whose attribute equals a value, now or as of "
+     "a date. Exact: use it for any 'which' or 'how many' question. attr is one of language, database, host, port, "
+     "status, collaborator.", "parameters": {"type": "object",
      "properties": {"attr": {"type": "string"}, "value": {"type": "string"},
                     "as_of": {"type": "string", "description": "YYYY-MM-DD, optional"}}, "required": ["attr", "value"]}},
     {"name": "list_projects", "description": "Every project with its start date and current status, oldest first.",
@@ -137,7 +138,7 @@ def run_tool(name, args, fs, searcher):
             return fs.card(hit) if hit else f"no project named {n}; known: {', '.join(fs.entities())}"
         if name == "find_projects":
             r = fs.query(args["attr"].lower(), args["value"], args.get("as_of") or None)
-            return ", ".join(r) if r else "none"
+            return f"{len(r)} project(s): " + ", ".join(r) if r else "0 projects"
         if name == "list_projects":
             es = sorted(fs.entities(), key=lambda e: fs.value(e, "started") or "9999")
             return "\n".join(f"{e}: started {fs.value(e, 'started')}, status {fs.value(e, 'status')}" for e in es)
@@ -146,7 +147,19 @@ def run_tool(name, args, fs, searcher):
     return "unknown tool"
 
 
-def agent(question, fs, searcher, max_steps=6):
+AGENT_GRAMMAR = r'''
+root  ::= note act
+note  ::= [^<]{0,500}
+act   ::= call | ans
+call  ::= "<tool_call>\n{\"name\": \"" fname "\", \"arguments\": {" args? "}}\n</tool_call>"
+fname ::= "search_messages" | "get_project" | "find_projects" | "list_projects"
+args  ::= kv (", " kv){0,3}
+kv    ::= "\"" [a-z_]{1,10} "\": " ( "\"" [^"\n]{0,80} "\"" | [0-9]{1,4} )
+ans   ::= "ANSWER: " [^\n<]{1,200}
+'''
+
+
+def agent(question, fs, searcher, max_steps=8):
     tools = "\n".join(json.dumps({"type": "function", "function": t}) for t in TOOLS)
     sys_ = (ANS_SYS.replace("using the memory below", "using the tools to look things up") +
             "\n\n# Tools\n\nYou may call one or more functions to assist with the user query.\n\n"
@@ -156,7 +169,12 @@ def agent(question, fs, searcher, max_steps=6):
     conv = [{"role": "system", "content": sys_}, {"role": "user", "content": question}]
     calls, ptoks, t0 = [], 0, time.perf_counter()
     for step in range(max_steps):
-        text, pt, _ = llm(URL, conv, 400)
+        # The Thinking checkpoint deliberates for 400+ tokens about which tool to use and never calls one.
+        # The grammar allows a short note (<=500 chars), then forces an action: a tool call or the answer.
+        # Tried and rejected (2026-11-08, 26 previously-failed questions): no note at all -> 0/12, the model
+        # answers "I don't know" without calling anything; forcing step 0 to be a tool call -> 1/26, it picks
+        # the wrong tool (find_projects(name, X)) and gives up. This checkpoint needs room to think to use tools.
+        text, pt, _ = llm(URL, conv, 320, grammar=AGENT_GRAMMAR)
         ptoks += pt or 0
         tc = re.findall(r"<tool_call>\s*(\{.*?\})\s*</tool_call>", text, re.S)
         if not tc:
@@ -193,6 +211,7 @@ def main():
     ap.add_argument("--conds", default="full,rag,cards,cards_oracle,agent")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--per_type", type=int, default=0)
+    ap.add_argument("--recall", action="store_true", help="second read of project messages that left no facts")
     ap.add_argument("--gate", action="store_true", help="keyword/entity gate before extraction (big log)")
     ap.add_argument("--tag", default="")
     a = ap.parse_args()
@@ -208,25 +227,34 @@ def main():
     conds = a.conds.split(",")
     out = {"dir": a.dir, "n_messages": len(msgs), "n_questions": len(qs), "conditions": {}}
     oracle = oracle_store(events)
-    fs = None
-    store_p = os.path.join(a.dir, "extracted_store.json")
-    if any(c in ("cards", "agent") for c in conds):
-        if os.path.exists(store_p):
-            d = json.load(open(store_p))
-            fs = FactStore()
-            for e, attr, op, v, date in d["facts"]:
-                fs.apply(e, attr, op, v, date)
-            out["extraction"] = d["stats"]
+    fs = fs_raw = None
+    raw_p = os.path.join(a.dir, "extracted_raw.json")
+    if any(c in ("cards", "cards_v2", "agent") for c in conds):
+        if os.path.exists(raw_p):
+            d = json.load(open(raw_p))
+            stats, raw = d["stats"], d["raw"]
         else:
-            fs, stats = extract(msgs, URL, use_gate=a.gate, log=sys.stdout)
-            facts = [(e, attr, "set", v, d) for (e, attr), h in fs.h.items() for d, v, _ in h if attr != "status" or True]
-            facts += [(e, "collaborator", op, p, d) for e, h in fs.collab.items() for d, op, p, _ in h]
-            facts.sort(key=lambda x: x[4])
-            json.dump({"stats": stats, "facts": facts}, open(store_p, "w"))
-            out["extraction"] = stats
-        out["extraction"]["vs_oracle"] = store_accuracy(fs, oracle)
+            _, stats = extract(msgs, URL, use_gate=a.gate, log=sys.stdout)
+            raw = stats.pop("raw")
+            json.dump({"stats": stats, "raw": raw}, open(raw_p, "w"))
+        fs_raw = consolidate(raw, msgs, hygiene=False)
+        if a.recall:
+            # second, closer read of messages that name a project but left nothing in the store
+            d = json.load(open(raw_p))
+            if "recall" not in d:
+                extra, rst = recall_pass(msgs, d["raw"], consolidate(d["raw"], msgs), URL, use_gate=a.gate,
+                                         log=sys.stdout)
+                d["recall"] = {"stats": rst, "raw": extra}
+                json.dump(d, open(raw_p, "w"))
+            raw = raw + d["recall"]["raw"]
+            stats = dict(stats, **d["recall"]["stats"])
+        hyg = {}
+        fs = consolidate(raw, msgs, hygiene=True, stats=hyg)
+        hyg.pop("reattach_log", None)
+        out["extraction"] = dict(stats, hygiene=hyg, vs_oracle_raw=store_accuracy(fs_raw, oracle),
+                                 vs_oracle=store_accuracy(fs, oracle))
         print("extraction", json.dumps(out["extraction"]), flush=True)
-    searcher = Searcher(msgs, a.dir) if any(c in ("rag", "cards", "cards_oracle", "agent") for c in conds) else None
+    searcher = Searcher(msgs, a.dir) if any(c != "full" for c in conds) else None
     full_text = "\n".join(fmt_msg(m) for m in msgs)
     for c in conds:
         rows = []
@@ -238,10 +266,13 @@ def main():
             elif c == "rag":
                 ids = searcher.search(q["q"], 10)
                 ans, pt, _, _ = ask("\n".join(fmt_msg(msgs[i]) for i in ids), q["q"])
-            elif c in ("cards", "cards_oracle"):
-                store = fs if c == "cards" else oracle
+            elif c in ("cards", "cards_oracle", "cards_v2", "cards_v2_oracle"):
+                # cards: raw extraction, cards only. cards_v2: hygiene rules + write-time aggregate views.
+                store = {"cards": fs_raw, "cards_oracle": oracle, "cards_v2": fs, "cards_v2_oracle": oracle}[c]
                 ids = searcher.search(q["q"], 5)
-                mem = ("Project cards (consolidated, current as of today):\n" + store.cards() +
+                views = ("\n\nIndexes (precomputed from the cards, current as of today):\n" + store.views()
+                         if "v2" in c else "")
+                mem = ("Project cards (consolidated, current as of today):\n" + store.cards() + views +
                        "\n\nRelevant messages:\n" + "\n".join(fmt_msg(msgs[i]) for i in ids))
                 ans, pt, _, _ = ask(mem, q["q"])
             elif c == "agent":
