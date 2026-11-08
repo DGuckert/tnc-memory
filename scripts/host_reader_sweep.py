@@ -18,7 +18,44 @@ SYSTEM = ("You are an assistant with access to memory notes retrieved for this c
           "If the value is not in the notes, reply exactly: I don't know.")
 
 
+# Qwen3 "Thinking" checkpoints ignore enable_thinking=False (their template always opens <think>).
+# HOST_RAW_CHATML=1 builds the ChatML prompt by hand with an empty, already-closed think block and
+# sends it to /completion, so the model answers directly. HOST_RAW_CHATML=think leaves thinking on.
+RAW = os.environ.get("HOST_RAW_CHATML", "")
+
+
+def chatml(msgs, think=False):
+    s = "".join(f"<|im_start|>{m['role']}\n{m['content']}<|im_end|>\n" for m in msgs)
+    return s + "<|im_start|>assistant\n" + ("<think>\n" if think else "<think>\n\n</think>\n\n")
+
+
+def complete(url, msgs, max_tokens, cache_prompt=True):
+    """Returns (text, prompt_tokens, timings, wall_ms)."""
+    t = time.perf_counter()
+    if RAW:
+        think = RAW == "think"
+        body = {"prompt": chatml(msgs, think), "n_predict": max_tokens * (40 if think else 1), "temperature": 0,
+                "cache_prompt": cache_prompt, "stop": ["<|im_end|>"]}
+        o = json.loads(urllib.request.urlopen(urllib.request.Request(
+            url + "/completion", json.dumps(body).encode(), {"Content-Type": "application/json"}), timeout=1800).read())
+        text = o["content"]
+        if "</think>" in text:
+            text = text.split("</think>", 1)[1]
+        tm = o.get("timings", {})
+        # prompt_n excludes the cached prefix; tokens_evaluated is the whole prompt
+        return text.strip(), o.get("tokens_evaluated") or tm.get("prompt_n"), tm, (time.perf_counter() - t) * 1e3
+    body = {"model": "host", "messages": msgs, "max_tokens": max_tokens, "temperature": 0,
+            "cache_prompt": cache_prompt, "chat_template_kwargs": {"enable_thinking": False}}
+    o = json.loads(urllib.request.urlopen(urllib.request.Request(
+        url + "/v1/chat/completions", json.dumps(body).encode(), {"Content-Type": "application/json"}), timeout=600).read())
+    return (o["choices"][0]["message"]["content"].strip(), o.get("usage", {}).get("prompt_tokens"),
+            o.get("timings", {}), (time.perf_counter() - t) * 1e3)
+
+
 def ask(url, model, msgs, max_tokens=24):
+    if RAW:
+        text, pt, _, ms = complete(url, msgs, max_tokens)
+        return text, pt, ms
     body = json.dumps({"model": model, "messages": msgs, "max_tokens": max_tokens, "temperature": 0,
                        "chat_template_kwargs": {"enable_thinking": False}}).encode()
     req = urllib.request.Request(url + "/v1/chat/completions", body, {"Content-Type": "application/json"})

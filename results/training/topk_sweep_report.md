@@ -2,7 +2,12 @@
 
 Question: does handing the reader more memory notes (top_k = 1, 5, 10, 20, 50) improve answers?
 
-Short answer: **5 is the sweet spot for the 360M reader, and more context never helped it.** That reader isn't really reading. When the notes are shuffled its accuracy collapses, so it mostly copies note #1. A 1B general host (gemma-3-1b) was worse still: 0.91 at k=1 and 0.33 at k=20. So far no reader here benefits from more than 5 notes. A 7B+ host is the open test.
+Short answer: **5 is the sweet spot for the 360M reader, but that's a limit of the reader, not the memory.**
+- The 360M reader isn't really reading: shuffle the notes and its accuracy collapses, so it mostly copies note #1.
+- A 1B general host (gemma-3-1b) was worse still.
+- **Qwen3-30B-A3B as the host reads properly.** It scores 0.98 at k=1 and 0.99–1.00 from k=5 to 50, matching "gold in notes" at every k. Shuffling doesn't hurt it up to k=20.
+
+With a capable host, give it 10–20 notes.
 
 ## Setup
 
@@ -69,6 +74,23 @@ Without the rewrite, the 360M reader can't resolve references from the raw wordi
 | 50 | 0.505 | 0.315 | 0.527 | 1357 | 236 ms |
 
 **A 1B general model is a worse reader than the fine-tuned 360M.** Its errors are mostly over-refusal ("I don't know." with the value sitting in note 1), copy slips ("UN-SCC4" for "UNS-SCC4"), and answering with the note number. It does read rather than copy position (ranked and shuffled are close), but it gets confused as the list grows. So this run does **not** show that more context helps a real host. That needs a 7B+ instruction model. It also shows why `retrieve()` returns the exact `structured` value when there is one: no reader is the most reliable reader.
+
+### A capable host: Qwen3-30B-A3B (Thinking-2507, Q4_K_M, thinking block closed)
+
+Same harness, run on the first 100 of the 200 conversations. llama.cpp Windows CUDA build, experts on CPU (`--n-cpu-moe 42`), model mmapped from E: because only about 12 GB of RAM was free.
+
+| k | accuracy | shuffled | gold in notes | prompt tokens (median) | host latency (median) |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 0.98 | 0.98 | 0.98 | 130 | 3.5 s |
+| 5 | 0.99 | 0.99 | 0.99 | 222 | 4.5 s |
+| 20 | 0.99 | 0.98 | 0.99 | 580 | 7.3 s |
+| 50 | **1.00** | 0.81 | 1.00 | 1,311 | 9.8 s |
+
+**A capable host reads every note it is given.** Accuracy equals "gold in notes" at every k, so it answers every case where retrieval found the note, and it is the first reader that *gains* from more notes (k=50 is 1.00). Shuffling costs nothing up to k=20. At k=50 it drops to 0.81, so even a 30B model starts leaning on note order in long lists. So the "top_k = 5" ceiling was a property of the small readers, not of the middleman. With a real host, give it 10–20 notes.
+
+The latency is this PC, not the model. Prefill ran at about 36 tok/s because the 18.5 GB model doesn't fit in free RAM and the experts are re-read from disk on every prompt. Decode was a normal ~20 tok/s.
+
+The noisy hard-set run for Qwen was paused to make room for the life-log eval (`lifelog_report.md`) and is still to do.
 
 ### Prefill and decode speed (gemma-3-1b, cold prompt, `cache_prompt=false`)
 

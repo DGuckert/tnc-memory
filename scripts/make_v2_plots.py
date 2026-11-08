@@ -31,6 +31,10 @@ def sweep_plot():
     if host:
         line(host["bench975"]["sweep"], "accuracy", "gemma-3-1b host, ranked", "-", "#c2571a")
         line(host["bench975"]["sweep"], "accuracy_shuffled", "gemma-3-1b host, shuffled", "--", "#c2571a")
+    qwen = load("host_reader_qwen3-30b-b975.json")
+    if qwen:
+        line(qwen["bench975"]["sweep"], "accuracy", "Qwen3-30B-A3B host, ranked (n=100)", "-", "#2a7f62")
+        line(qwen["bench975"]["sweep"], "accuracy_shuffled", "Qwen3-30B-A3B host, shuffled", "--", "#2a7f62")
     ax[0].set_xscale("log"); ax[0].set_xticks([1, 5, 10, 20, 50]); ax[0].set_xticklabels(["1", "5", "10", "20", "50"])
     ax[0].set_ylim(0, 1.02); ax[0].set_xlabel("memory notes given to the reader (k)"); ax[0].set_ylabel("answer accuracy")
     ax[0].set_title("9.75M store, 200 conversations, structured shortcut off"); ax[0].legend(fontsize=8, loc="lower left")

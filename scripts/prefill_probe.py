@@ -8,18 +8,14 @@ import json, statistics, sys, urllib.request
 sys.path.insert(0, "/home/daniel/tnc")
 from memory_api import Memory
 from topk_sweep import load_975
-from host_reader_sweep import build_msgs
+from host_reader_sweep import build_msgs, complete
 
 URL = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:8131"
 TAG = sys.argv[2] if len(sys.argv) > 2 else "gemma3-1b"
 
 
 def call(msgs):
-    body = json.dumps({"model": "host", "messages": msgs, "max_tokens": 16, "temperature": 0,
-                       "cache_prompt": False, "chat_template_kwargs": {"enable_thinking": False}}).encode()
-    o = json.loads(urllib.request.urlopen(urllib.request.Request(URL + "/v1/chat/completions", body,
-                                                                 {"Content-Type": "application/json"}), timeout=600).read())
-    t = o.get("timings", {})
+    _, _, t, _ = complete(URL, msgs, 16, cache_prompt=False)
     return t.get("prompt_n"), t.get("prompt_per_second"), t.get("prompt_ms"), t.get("predicted_per_second")
 
 
@@ -28,7 +24,8 @@ mem = Memory(fact_docs=docs, search_k=200)
 cases = cases[:20]
 rets = [(c, mem.retrieve([m for m in c[1] if m["role"] != "system"], k=200, sources=("fact",))) for c in cases]
 out = {"host": TAG, "rows": []}
-for k in (1, 5, 10, 20, 50, 100, 200):
+KS = [int(x) for x in sys.argv[3].split(",")] if len(sys.argv) > 3 else [1, 5, 10, 20, 50, 100]
+for k in KS:
     pn, pps, pms, dps = [], [], [], []
     for (kind, conv, gold), r in rets:
         a, b, c, d = call(build_msgs(conv, r, r["notes"][:k]))

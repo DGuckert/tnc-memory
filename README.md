@@ -2,6 +2,27 @@
 
 Experiments on compact long-term memory for chat. The goal is to keep a large history in a small token budget, find the right note, and let a model answer from it.
 
+## v2.1 (2026-11-08): memory that behaves like context (in progress)
+
+Plain RAG can answer "what is X?". It can't answer "which projects use Postgres?", "what port was it on before?" or "what language is the project on port 5035?". v2.1 adds:
+- **write-time consolidation**: the host LLM reads every message once and turns it into dated, superseding facts;
+- **per-project cards**: about 1.5K tokens covers all 16 projects, whether the log is 7K or 600K tokens;
+- **aggregate queries** over the whole fact store;
+- **an agent loop**, so the host can chain lookups.
+
+It's tested on a synthetic 10-month life log buried in real chatter. Small-log results so far, with a Qwen3-30B host:
+
+| | RAG | cards (extracted) | cards (perfect extraction) |
+|---|---:|---:|---:|
+| overall | 0.43 | 0.70 | 0.77 |
+| history | 0.38 | 0.88 | 1.00 |
+| which projects | 0.13 | 0.38 | 0.50 |
+| multi-hop | 0.13 | 0.50 | 0.38 |
+
+Still running: the full-context ceiling, the agent mode, and the 600K-token log. Write-up: `results/training/lifelog_report.md`.
+
+Also new: **Qwen3-30B-A3B as the host reader scores 0.98–1.00 at k = 1–50 and reads every note it is given.** The "5 notes" ceiling was a limit of the small readers.
+
 ## v2 (2026-11-07): return notes, not answers
 
 Full write-up: `results/training/memory_v2_report.md`; sweep: `results/training/topk_sweep_report.md`.

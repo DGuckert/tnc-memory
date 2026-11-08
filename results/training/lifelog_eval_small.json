@@ -1,0 +1,1821 @@
+{
+ "dir": "/home/daniel/tnc/work/lifelog/small",
+ "n_messages": 314,
+ "n_questions": 56,
+ "conditions": {
+  "cards_oracle": {
+   "summary": {
+    "accuracy": 0.768,
+    "by_type": {
+     "current": 1.0,
+     "past": 1.0,
+     "history": 1.0,
+     "aggregate": 0.5,
+     "count": 0.75,
+     "multi_hop": 0.375,
+     "temporal": 0.75
+    },
+    "prompt_tokens_median": 2862,
+    "latency_ms_median": 30132
+   },
+   "rows": [
+    {
+     "id": 0,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Redis",
+     "prompt_tokens": 2865,
+     "ms": 29016,
+     "calls": null
+    },
+    {
+     "id": 1,
+     "type": "current",
+     "score": 1.0,
+     "gold": "7764",
+     "prompt_tokens": 2875,
+     "ms": 17727,
+     "calls": null
+    },
+    {
+     "id": 2,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 2865,
+     "ms": 24362,
+     "calls": null
+    },
+    {
+     "id": 3,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 2866,
+     "ms": 20748,
+     "calls": null
+    },
+    {
+     "id": 4,
+     "type": "current",
+     "score": 1.0,
+     "gold": "ironbark",
+     "prompt_tokens": 2862,
+     "ms": 25888,
+     "calls": null
+    },
+    {
+     "id": 5,
+     "type": "current",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 2862,
+     "ms": 28433,
+     "calls": null
+    },
+    {
+     "id": 6,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Python",
+     "prompt_tokens": 2848,
+     "ms": 21995,
+     "calls": null
+    },
+    {
+     "id": 7,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MongoDB",
+     "prompt_tokens": 2845,
+     "ms": 32290,
+     "calls": null
+    },
+    {
+     "id": 12,
+     "type": "past",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 2851,
+     "ms": 30175,
+     "calls": null
+    },
+    {
+     "id": 13,
+     "type": "past",
+     "score": 1.0,
+     "gold": "Go",
+     "prompt_tokens": 2860,
+     "ms": 28435,
+     "calls": null
+    },
+    {
+     "id": 14,
+     "type": "past",
+     "score": 1.0,
+     "gold": "active",
+     "prompt_tokens": 2860,
+     "ms": 29230,
+     "calls": null
+    },
+    {
+     "id": 15,
+     "type": "past",
+     "score": 1.0,
+     "gold": "pumice",
+     "prompt_tokens": 2875,
+     "ms": 19185,
+     "calls": null
+    },
+    {
+     "id": 16,
+     "type": "past",
+     "score": 1.0,
+     "gold": "9367",
+     "prompt_tokens": 2869,
+     "ms": 24005,
+     "calls": null
+    },
+    {
+     "id": 17,
+     "type": "past",
+     "score": 1.0,
+     "gold": "4539",
+     "prompt_tokens": 2874,
+     "ms": 18192,
+     "calls": null
+    },
+    {
+     "id": 18,
+     "type": "past",
+     "score": 1.0,
+     "gold": "active",
+     "prompt_tokens": 2837,
+     "ms": 23962,
+     "calls": null
+    },
+    {
+     "id": 19,
+     "type": "past",
+     "score": 1.0,
+     "gold": "7679",
+     "prompt_tokens": 2869,
+     "ms": 26170,
+     "calls": null
+    },
+    {
+     "id": 24,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "kestrel",
+      "basalt",
+      "pumice"
+     ],
+     "prompt_tokens": 2849,
+     "ms": 31831,
+     "calls": null
+    },
+    {
+     "id": 25,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "active",
+      "paused",
+      "active"
+     ],
+     "prompt_tokens": 2853,
+     "ms": 28578,
+     "calls": null
+    },
+    {
+     "id": 26,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "5455",
+      "5962",
+      "6712",
+      "6814"
+     ],
+     "prompt_tokens": 2885,
+     "ms": 31987,
+     "calls": null
+    },
+    {
+     "id": 27,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "pumice",
+      "wharf",
+      "pumice",
+      "quokka"
+     ],
+     "prompt_tokens": 2855,
+     "ms": 29823,
+     "calls": null
+    },
+    {
+     "id": 28,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "8833",
+      "7487",
+      "3798",
+      "6050"
+     ],
+     "prompt_tokens": 2852,
+     "ms": 32005,
+     "calls": null
+    },
+    {
+     "id": 29,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "7355",
+      "8573",
+      "7066"
+     ],
+     "prompt_tokens": 2861,
+     "ms": 31725,
+     "calls": null
+    },
+    {
+     "id": 30,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "8070",
+      "3488",
+      "7623"
+     ],
+     "prompt_tokens": 2865,
+     "ms": 30526,
+     "calls": null
+    },
+    {
+     "id": 31,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "ironbark",
+      "kestrel",
+      "quokka"
+     ],
+     "prompt_tokens": 2837,
+     "ms": 31842,
+     "calls": null
+    },
+    {
+     "id": 36,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Ferrow",
+      "Pexwick",
+      "Umbrin",
+      "Venmire"
+     ],
+     "prompt_tokens": 2878,
+     "ms": 31719,
+     "calls": null
+    },
+    {
+     "id": 37,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Halvane",
+      "Mirevale"
+     ],
+     "prompt_tokens": 2862,
+     "ms": 31698,
+     "calls": null
+    },
+    {
+     "id": 38,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Brakka",
+      "Ostrel",
+      "Zephram"
+     ],
+     "prompt_tokens": 2866,
+     "ms": 32707,
+     "calls": null
+    },
+    {
+     "id": 39,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Halvane",
+      "Lorrish",
+      "Umbrin",
+      "Zephram"
+     ],
+     "prompt_tokens": 2858,
+     "ms": 34096,
+     "calls": null
+    },
+    {
+     "id": 40,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Kestova",
+      "Quillon"
+     ],
+     "prompt_tokens": 2857,
+     "ms": 31025,
+     "calls": null
+    },
+    {
+     "id": 41,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Lorrish",
+      "Mirevale",
+      "Pexwick"
+     ],
+     "prompt_tokens": 2861,
+     "ms": 30263,
+     "calls": null
+    },
+    {
+     "id": 42,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Ferrow",
+      "Lorrish",
+      "Pexwick"
+     ],
+     "prompt_tokens": 2840,
+     "ms": 32371,
+     "calls": null
+    },
+    {
+     "id": 43,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Kestova",
+      "Mirevale",
+      "Pexwick",
+      "Quillon",
+      "Venmire"
+     ],
+     "prompt_tokens": 2852,
+     "ms": 30772,
+     "calls": null
+    },
+    {
+     "id": 48,
+     "type": "count",
+     "score": 0.0,
+     "gold": 11,
+     "prompt_tokens": 2969,
+     "ms": 29455,
+     "calls": null
+    },
+    {
+     "id": 49,
+     "type": "count",
+     "score": 1.0,
+     "gold": 2,
+     "prompt_tokens": 2860,
+     "ms": 29753,
+     "calls": null
+    },
+    {
+     "id": 50,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 2868,
+     "ms": 30132,
+     "calls": null
+    },
+    {
+     "id": 51,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 2860,
+     "ms": 30821,
+     "calls": null
+    },
+    {
+     "id": 52,
+     "type": "count",
+     "score": 1.0,
+     "gold": 4,
+     "prompt_tokens": 2860,
+     "ms": 29507,
+     "calls": null
+    },
+    {
+     "id": 53,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 2863,
+     "ms": 31268,
+     "calls": null
+    },
+    {
+     "id": 54,
+     "type": "count",
+     "score": 0.0,
+     "gold": 0,
+     "prompt_tokens": 3010,
+     "ms": 32706,
+     "calls": null
+    },
+    {
+     "id": 55,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 2860,
+     "ms": 32034,
+     "calls": null
+    },
+    {
+     "id": 60,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "Rust",
+     "prompt_tokens": 2874,
+     "ms": 28812,
+     "calls": null
+    },
+    {
+     "id": 61,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "C++",
+     "prompt_tokens": 2871,
+     "ms": 31712,
+     "calls": null
+    },
+    {
+     "id": 62,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 2861,
+     "ms": 29598,
+     "calls": null
+    },
+    {
+     "id": 63,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Kotlin",
+     "prompt_tokens": 2871,
+     "ms": 28392,
+     "calls": null
+    },
+    {
+     "id": 64,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 2866,
+     "ms": 31936,
+     "calls": null
+    },
+    {
+     "id": 65,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 2864,
+     "ms": 33224,
+     "calls": null
+    },
+    {
+     "id": 66,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "Redis",
+     "prompt_tokens": 2859,
+     "ms": 31802,
+     "calls": null
+    },
+    {
+     "id": 67,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 2864,
+     "ms": 30456,
+     "calls": null
+    },
+    {
+     "id": 72,
+     "type": "temporal",
+     "score": 0.0,
+     "gold": "Calyx",
+     "prompt_tokens": 2859,
+     "ms": 30248,
+     "calls": null
+    },
+    {
+     "id": 73,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Umbrin",
+     "prompt_tokens": 2856,
+     "ms": 11470,
+     "calls": null
+    },
+    {
+     "id": 74,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Quillon",
+     "prompt_tokens": 2871,
+     "ms": 13396,
+     "calls": null
+    },
+    {
+     "id": 75,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Mirevale",
+     "prompt_tokens": 2870,
+     "ms": 11982,
+     "calls": null
+    },
+    {
+     "id": 76,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 2873,
+     "ms": 10650,
+     "calls": null
+    },
+    {
+     "id": 77,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Brakka",
+     "prompt_tokens": 2873,
+     "ms": 11502,
+     "calls": null
+    },
+    {
+     "id": 78,
+     "type": "temporal",
+     "score": 0.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 2864,
+     "ms": 34065,
+     "calls": null
+    },
+    {
+     "id": 79,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Drisk",
+     "prompt_tokens": 2856,
+     "ms": 9743,
+     "calls": null
+    }
+   ]
+  },
+  "cards": {
+   "summary": {
+    "accuracy": 0.696,
+    "by_type": {
+     "current": 0.875,
+     "past": 1.0,
+     "history": 0.875,
+     "aggregate": 0.375,
+     "count": 0.375,
+     "multi_hop": 0.5,
+     "temporal": 0.875
+    },
+    "prompt_tokens_median": 3158,
+    "latency_ms_median": 25096
+   },
+   "rows": [
+    {
+     "id": 0,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Redis",
+     "prompt_tokens": 3161,
+     "ms": 32236,
+     "calls": null
+    },
+    {
+     "id": 1,
+     "type": "current",
+     "score": 1.0,
+     "gold": "7764",
+     "prompt_tokens": 3171,
+     "ms": 16296,
+     "calls": null
+    },
+    {
+     "id": 2,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3161,
+     "ms": 29180,
+     "calls": null
+    },
+    {
+     "id": 3,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3162,
+     "ms": 31875,
+     "calls": null
+    },
+    {
+     "id": 4,
+     "type": "current",
+     "score": 0.0,
+     "gold": "ironbark",
+     "prompt_tokens": 3158,
+     "ms": 31101,
+     "calls": null
+    },
+    {
+     "id": 5,
+     "type": "current",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 3158,
+     "ms": 29587,
+     "calls": null
+    },
+    {
+     "id": 6,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Python",
+     "prompt_tokens": 3144,
+     "ms": 22705,
+     "calls": null
+    },
+    {
+     "id": 7,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MongoDB",
+     "prompt_tokens": 3141,
+     "ms": 25724,
+     "calls": null
+    },
+    {
+     "id": 12,
+     "type": "past",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 3147,
+     "ms": 20272,
+     "calls": null
+    },
+    {
+     "id": 13,
+     "type": "past",
+     "score": 1.0,
+     "gold": "Go",
+     "prompt_tokens": 3156,
+     "ms": 23722,
+     "calls": null
+    },
+    {
+     "id": 14,
+     "type": "past",
+     "score": 1.0,
+     "gold": "active",
+     "prompt_tokens": 3156,
+     "ms": 30504,
+     "calls": null
+    },
+    {
+     "id": 15,
+     "type": "past",
+     "score": 1.0,
+     "gold": "pumice",
+     "prompt_tokens": 3171,
+     "ms": 26107,
+     "calls": null
+    },
+    {
+     "id": 16,
+     "type": "past",
+     "score": 1.0,
+     "gold": "9367",
+     "prompt_tokens": 3165,
+     "ms": 31464,
+     "calls": null
+    },
+    {
+     "id": 17,
+     "type": "past",
+     "score": 1.0,
+     "gold": "4539",
+     "prompt_tokens": 3170,
+     "ms": 24967,
+     "calls": null
+    },
+    {
+     "id": 18,
+     "type": "past",
+     "score": 1.0,
+     "gold": "active",
+     "prompt_tokens": 3133,
+     "ms": 17703,
+     "calls": null
+    },
+    {
+     "id": 19,
+     "type": "past",
+     "score": 1.0,
+     "gold": "7679",
+     "prompt_tokens": 3165,
+     "ms": 26043,
+     "calls": null
+    },
+    {
+     "id": 24,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "kestrel",
+      "basalt",
+      "pumice"
+     ],
+     "prompt_tokens": 3145,
+     "ms": 32268,
+     "calls": null
+    },
+    {
+     "id": 25,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "active",
+      "paused",
+      "active"
+     ],
+     "prompt_tokens": 3149,
+     "ms": 33207,
+     "calls": null
+    },
+    {
+     "id": 26,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "5455",
+      "5962",
+      "6712",
+      "6814"
+     ],
+     "prompt_tokens": 3181,
+     "ms": 34515,
+     "calls": null
+    },
+    {
+     "id": 27,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "pumice",
+      "wharf",
+      "pumice",
+      "quokka"
+     ],
+     "prompt_tokens": 3151,
+     "ms": 34429,
+     "calls": null
+    },
+    {
+     "id": 28,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "8833",
+      "7487",
+      "3798",
+      "6050"
+     ],
+     "prompt_tokens": 3148,
+     "ms": 31167,
+     "calls": null
+    },
+    {
+     "id": 29,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "7355",
+      "8573",
+      "7066"
+     ],
+     "prompt_tokens": 3157,
+     "ms": 28856,
+     "calls": null
+    },
+    {
+     "id": 30,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "8070",
+      "3488",
+      "7623"
+     ],
+     "prompt_tokens": 3161,
+     "ms": 25932,
+     "calls": null
+    },
+    {
+     "id": 31,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "ironbark",
+      "kestrel",
+      "quokka"
+     ],
+     "prompt_tokens": 3133,
+     "ms": 22807,
+     "calls": null
+    },
+    {
+     "id": 36,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Ferrow",
+      "Pexwick",
+      "Umbrin",
+      "Venmire"
+     ],
+     "prompt_tokens": 3174,
+     "ms": 26781,
+     "calls": null
+    },
+    {
+     "id": 37,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Halvane",
+      "Mirevale"
+     ],
+     "prompt_tokens": 3158,
+     "ms": 24924,
+     "calls": null
+    },
+    {
+     "id": 38,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Brakka",
+      "Ostrel",
+      "Zephram"
+     ],
+     "prompt_tokens": 3162,
+     "ms": 24942,
+     "calls": null
+    },
+    {
+     "id": 39,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Halvane",
+      "Lorrish",
+      "Umbrin",
+      "Zephram"
+     ],
+     "prompt_tokens": 3154,
+     "ms": 25385,
+     "calls": null
+    },
+    {
+     "id": 40,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Kestova",
+      "Quillon"
+     ],
+     "prompt_tokens": 3153,
+     "ms": 25096,
+     "calls": null
+    },
+    {
+     "id": 41,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Lorrish",
+      "Mirevale",
+      "Pexwick"
+     ],
+     "prompt_tokens": 3157,
+     "ms": 25750,
+     "calls": null
+    },
+    {
+     "id": 42,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Ferrow",
+      "Lorrish",
+      "Pexwick"
+     ],
+     "prompt_tokens": 3136,
+     "ms": 25043,
+     "calls": null
+    },
+    {
+     "id": 43,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Kestova",
+      "Mirevale",
+      "Pexwick",
+      "Quillon",
+      "Venmire"
+     ],
+     "prompt_tokens": 3148,
+     "ms": 27708,
+     "calls": null
+    },
+    {
+     "id": 48,
+     "type": "count",
+     "score": 0.0,
+     "gold": 11,
+     "prompt_tokens": 3265,
+     "ms": 27489,
+     "calls": null
+    },
+    {
+     "id": 49,
+     "type": "count",
+     "score": 1.0,
+     "gold": 2,
+     "prompt_tokens": 3156,
+     "ms": 29734,
+     "calls": null
+    },
+    {
+     "id": 50,
+     "type": "count",
+     "score": 0.0,
+     "gold": 1,
+     "prompt_tokens": 3164,
+     "ms": 25109,
+     "calls": null
+    },
+    {
+     "id": 51,
+     "type": "count",
+     "score": 0.0,
+     "gold": 1,
+     "prompt_tokens": 3156,
+     "ms": 24827,
+     "calls": null
+    },
+    {
+     "id": 52,
+     "type": "count",
+     "score": 0.0,
+     "gold": 4,
+     "prompt_tokens": 3156,
+     "ms": 24685,
+     "calls": null
+    },
+    {
+     "id": 53,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3159,
+     "ms": 24937,
+     "calls": null
+    },
+    {
+     "id": 54,
+     "type": "count",
+     "score": 0.0,
+     "gold": 0,
+     "prompt_tokens": 3306,
+     "ms": 25783,
+     "calls": null
+    },
+    {
+     "id": 55,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 3156,
+     "ms": 24811,
+     "calls": null
+    },
+    {
+     "id": 60,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "Rust",
+     "prompt_tokens": 3170,
+     "ms": 25118,
+     "calls": null
+    },
+    {
+     "id": 61,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "C++",
+     "prompt_tokens": 3167,
+     "ms": 24932,
+     "calls": null
+    },
+    {
+     "id": 62,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3157,
+     "ms": 24717,
+     "calls": null
+    },
+    {
+     "id": 63,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Kotlin",
+     "prompt_tokens": 3167,
+     "ms": 22795,
+     "calls": null
+    },
+    {
+     "id": 64,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 3162,
+     "ms": 24858,
+     "calls": null
+    },
+    {
+     "id": 65,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 3160,
+     "ms": 25495,
+     "calls": null
+    },
+    {
+     "id": 66,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "Redis",
+     "prompt_tokens": 3155,
+     "ms": 20322,
+     "calls": null
+    },
+    {
+     "id": 67,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 3160,
+     "ms": 21542,
+     "calls": null
+    },
+    {
+     "id": 72,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Calyx",
+     "prompt_tokens": 3155,
+     "ms": 24751,
+     "calls": null
+    },
+    {
+     "id": 73,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Umbrin",
+     "prompt_tokens": 3152,
+     "ms": 7563,
+     "calls": null
+    },
+    {
+     "id": 74,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Quillon",
+     "prompt_tokens": 3167,
+     "ms": 17635,
+     "calls": null
+    },
+    {
+     "id": 75,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Mirevale",
+     "prompt_tokens": 3166,
+     "ms": 7286,
+     "calls": null
+    },
+    {
+     "id": 76,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 3169,
+     "ms": 8611,
+     "calls": null
+    },
+    {
+     "id": 77,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Brakka",
+     "prompt_tokens": 3169,
+     "ms": 24907,
+     "calls": null
+    },
+    {
+     "id": 78,
+     "type": "temporal",
+     "score": 0.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 3160,
+     "ms": 24665,
+     "calls": null
+    },
+    {
+     "id": 79,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Drisk",
+     "prompt_tokens": 3152,
+     "ms": 21238,
+     "calls": null
+    }
+   ]
+  },
+  "rag": {
+   "summary": {
+    "accuracy": 0.429,
+    "by_type": {
+     "current": 0.75,
+     "past": 0.625,
+     "history": 0.375,
+     "aggregate": 0.125,
+     "count": 0.25,
+     "multi_hop": 0.125,
+     "temporal": 0.75
+    },
+    "prompt_tokens_median": 396,
+    "latency_ms_median": 21154
+   },
+   "rows": [
+    {
+     "id": 0,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Redis",
+     "prompt_tokens": 396,
+     "ms": 13571,
+     "calls": null
+    },
+    {
+     "id": 1,
+     "type": "current",
+     "score": 1.0,
+     "gold": "7764",
+     "prompt_tokens": 394,
+     "ms": 13077,
+     "calls": null
+    },
+    {
+     "id": 2,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 388,
+     "ms": 19903,
+     "calls": null
+    },
+    {
+     "id": 3,
+     "type": "current",
+     "score": 0.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 387,
+     "ms": 8635,
+     "calls": null
+    },
+    {
+     "id": 4,
+     "type": "current",
+     "score": 0.0,
+     "gold": "ironbark",
+     "prompt_tokens": 483,
+     "ms": 13446,
+     "calls": null
+    },
+    {
+     "id": 5,
+     "type": "current",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 404,
+     "ms": 13615,
+     "calls": null
+    },
+    {
+     "id": 6,
+     "type": "current",
+     "score": 1.0,
+     "gold": "Python",
+     "prompt_tokens": 381,
+     "ms": 21154,
+     "calls": null
+    },
+    {
+     "id": 7,
+     "type": "current",
+     "score": 1.0,
+     "gold": "MongoDB",
+     "prompt_tokens": 383,
+     "ms": 8889,
+     "calls": null
+    },
+    {
+     "id": 12,
+     "type": "past",
+     "score": 1.0,
+     "gold": "wharf",
+     "prompt_tokens": 374,
+     "ms": 10345,
+     "calls": null
+    },
+    {
+     "id": 13,
+     "type": "past",
+     "score": 1.0,
+     "gold": "Go",
+     "prompt_tokens": 385,
+     "ms": 8855,
+     "calls": null
+    },
+    {
+     "id": 14,
+     "type": "past",
+     "score": 0.0,
+     "gold": "active",
+     "prompt_tokens": 385,
+     "ms": 23235,
+     "calls": null
+    },
+    {
+     "id": 15,
+     "type": "past",
+     "score": 0.0,
+     "gold": "pumice",
+     "prompt_tokens": 396,
+     "ms": 23366,
+     "calls": null
+    },
+    {
+     "id": 16,
+     "type": "past",
+     "score": 1.0,
+     "gold": "9367",
+     "prompt_tokens": 398,
+     "ms": 9803,
+     "calls": null
+    },
+    {
+     "id": 17,
+     "type": "past",
+     "score": 1.0,
+     "gold": "4539",
+     "prompt_tokens": 413,
+     "ms": 8786,
+     "calls": null
+    },
+    {
+     "id": 18,
+     "type": "past",
+     "score": 0.0,
+     "gold": "active",
+     "prompt_tokens": 366,
+     "ms": 22902,
+     "calls": null
+    },
+    {
+     "id": 19,
+     "type": "past",
+     "score": 1.0,
+     "gold": "7679",
+     "prompt_tokens": 422,
+     "ms": 17461,
+     "calls": null
+    },
+    {
+     "id": 24,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "kestrel",
+      "basalt",
+      "pumice"
+     ],
+     "prompt_tokens": 390,
+     "ms": 11071,
+     "calls": null
+    },
+    {
+     "id": 25,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "active",
+      "paused",
+      "active"
+     ],
+     "prompt_tokens": 383,
+     "ms": 24155,
+     "calls": null
+    },
+    {
+     "id": 26,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "5455",
+      "5962",
+      "6712",
+      "6814"
+     ],
+     "prompt_tokens": 413,
+     "ms": 25291,
+     "calls": null
+    },
+    {
+     "id": 27,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "pumice",
+      "wharf",
+      "pumice",
+      "quokka"
+     ],
+     "prompt_tokens": 372,
+     "ms": 14624,
+     "calls": null
+    },
+    {
+     "id": 28,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "8833",
+      "7487",
+      "3798",
+      "6050"
+     ],
+     "prompt_tokens": 384,
+     "ms": 23083,
+     "calls": null
+    },
+    {
+     "id": 29,
+     "type": "history",
+     "score": 1.0,
+     "gold": [
+      "7355",
+      "8573",
+      "7066"
+     ],
+     "prompt_tokens": 365,
+     "ms": 20010,
+     "calls": null
+    },
+    {
+     "id": 30,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "8070",
+      "3488",
+      "7623"
+     ],
+     "prompt_tokens": 396,
+     "ms": 23919,
+     "calls": null
+    },
+    {
+     "id": 31,
+     "type": "history",
+     "score": 0.0,
+     "gold": [
+      "ironbark",
+      "kestrel",
+      "quokka"
+     ],
+     "prompt_tokens": 359,
+     "ms": 17631,
+     "calls": null
+    },
+    {
+     "id": 36,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Ferrow",
+      "Pexwick",
+      "Umbrin",
+      "Venmire"
+     ],
+     "prompt_tokens": 414,
+     "ms": 21964,
+     "calls": null
+    },
+    {
+     "id": 37,
+     "type": "aggregate",
+     "score": 1.0,
+     "gold": [
+      "Halvane",
+      "Mirevale"
+     ],
+     "prompt_tokens": 384,
+     "ms": 22559,
+     "calls": null
+    },
+    {
+     "id": 38,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Brakka",
+      "Ostrel",
+      "Zephram"
+     ],
+     "prompt_tokens": 413,
+     "ms": 23697,
+     "calls": null
+    },
+    {
+     "id": 39,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Halvane",
+      "Lorrish",
+      "Umbrin",
+      "Zephram"
+     ],
+     "prompt_tokens": 477,
+     "ms": 24007,
+     "calls": null
+    },
+    {
+     "id": 40,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Kestova",
+      "Quillon"
+     ],
+     "prompt_tokens": 405,
+     "ms": 23832,
+     "calls": null
+    },
+    {
+     "id": 41,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Lorrish",
+      "Mirevale",
+      "Pexwick"
+     ],
+     "prompt_tokens": 390,
+     "ms": 23713,
+     "calls": null
+    },
+    {
+     "id": 42,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Ferrow",
+      "Lorrish",
+      "Pexwick"
+     ],
+     "prompt_tokens": 467,
+     "ms": 23994,
+     "calls": null
+    },
+    {
+     "id": 43,
+     "type": "aggregate",
+     "score": 0.0,
+     "gold": [
+      "Calyx",
+      "Drisk",
+      "Kestova",
+      "Mirevale",
+      "Pexwick",
+      "Quillon",
+      "Venmire"
+     ],
+     "prompt_tokens": 396,
+     "ms": 23567,
+     "calls": null
+    },
+    {
+     "id": 48,
+     "type": "count",
+     "score": 0.0,
+     "gold": 11,
+     "prompt_tokens": 521,
+     "ms": 22583,
+     "calls": null
+    },
+    {
+     "id": 49,
+     "type": "count",
+     "score": 0.0,
+     "gold": 2,
+     "prompt_tokens": 424,
+     "ms": 22389,
+     "calls": null
+    },
+    {
+     "id": 50,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 398,
+     "ms": 16798,
+     "calls": null
+    },
+    {
+     "id": 51,
+     "type": "count",
+     "score": 0.0,
+     "gold": 1,
+     "prompt_tokens": 404,
+     "ms": 14423,
+     "calls": null
+    },
+    {
+     "id": 52,
+     "type": "count",
+     "score": 0.0,
+     "gold": 4,
+     "prompt_tokens": 400,
+     "ms": 12451,
+     "calls": null
+    },
+    {
+     "id": 53,
+     "type": "count",
+     "score": 1.0,
+     "gold": 1,
+     "prompt_tokens": 380,
+     "ms": 23173,
+     "calls": null
+    },
+    {
+     "id": 54,
+     "type": "count",
+     "score": 0.0,
+     "gold": 0,
+     "prompt_tokens": 554,
+     "ms": 23791,
+     "calls": null
+    },
+    {
+     "id": 55,
+     "type": "count",
+     "score": 0.0,
+     "gold": 1,
+     "prompt_tokens": 400,
+     "ms": 13832,
+     "calls": null
+    },
+    {
+     "id": 60,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "Rust",
+     "prompt_tokens": 401,
+     "ms": 22042,
+     "calls": null
+    },
+    {
+     "id": 61,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "C++",
+     "prompt_tokens": 405,
+     "ms": 14336,
+     "calls": null
+    },
+    {
+     "id": 62,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 398,
+     "ms": 23413,
+     "calls": null
+    },
+    {
+     "id": 63,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "Kotlin",
+     "prompt_tokens": 400,
+     "ms": 13381,
+     "calls": null
+    },
+    {
+     "id": 64,
+     "type": "multi_hop",
+     "score": 1.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 395,
+     "ms": 23751,
+     "calls": null
+    },
+    {
+     "id": 65,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": [
+      "farrowdale"
+     ],
+     "prompt_tokens": 402,
+     "ms": 23545,
+     "calls": null
+    },
+    {
+     "id": 66,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "Redis",
+     "prompt_tokens": 389,
+     "ms": 14356,
+     "calls": null
+    },
+    {
+     "id": 67,
+     "type": "multi_hop",
+     "score": 0.0,
+     "gold": "MariaDB",
+     "prompt_tokens": 391,
+     "ms": 13596,
+     "calls": null
+    },
+    {
+     "id": 72,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Calyx",
+     "prompt_tokens": 373,
+     "ms": 22581,
+     "calls": null
+    },
+    {
+     "id": 73,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Umbrin",
+     "prompt_tokens": 386,
+     "ms": 30793,
+     "calls": null
+    },
+    {
+     "id": 74,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Quillon",
+     "prompt_tokens": 395,
+     "ms": 22675,
+     "calls": null
+    },
+    {
+     "id": 75,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Mirevale",
+     "prompt_tokens": 411,
+     "ms": 14122,
+     "calls": null
+    },
+    {
+     "id": 76,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 393,
+     "ms": 16314,
+     "calls": null
+    },
+    {
+     "id": 77,
+     "type": "temporal",
+     "score": 1.0,
+     "gold": "Brakka",
+     "prompt_tokens": 410,
+     "ms": 26356,
+     "calls": null
+    },
+    {
+     "id": 78,
+     "type": "temporal",
+     "score": 0.0,
+     "gold": "Ostrel",
+     "prompt_tokens": 384,
+     "ms": 10564,
+     "calls": null
+    },
+    {
+     "id": 79,
+     "type": "temporal",
+     "score": 0.0,
+     "gold": "Drisk",
+     "prompt_tokens": 377,
+     "ms": 15187,
+     "calls": null
+    }
+   ]
+  }
+ },
+ "extraction": {
+  "messages": 314,
+  "sent_to_extractor": 314,
+  "calls": 32,
+  "facts": 242,
+  "seconds": 266.3,
+  "prompt_tokens": 23761,
+  "dropped_unseen_entity": 4,
+  "vs_oracle": {
+   "current_value_acc": 0.875,
+   "history_exact": 0.833,
+   "n_values": 112,
+   "spurious_entities": [
+    "atlas_offline"
+   ]
+  }
+ }
+}

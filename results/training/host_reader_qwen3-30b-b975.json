@@ -1,0 +1,82 @@
+{
+  "host": "qwen3-30b-a3b-thinking-2507 Q4_K_M (thinking off)",
+  "ks": [
+    1,
+    5,
+    20,
+    50
+  ],
+  "note": "rebuilt from journal; per-error samples lost",
+  "bench975": {
+    "sweep": {
+      "1": {
+        "k": 1,
+        "n": 100,
+        "accuracy": 0.98,
+        "accuracy_shuffled": 0.98,
+        "gold_in_notes": 0.98,
+        "clarified": 0,
+        "prompt_tokens": {
+          "median": 129.5,
+          "p95": 134.1,
+          "max": 136
+        },
+        "host_latency_ms": {
+          "median": 3497.6,
+          "p95": 4004.5
+        }
+      },
+      "5": {
+        "k": 5,
+        "n": 100,
+        "accuracy": 0.99,
+        "accuracy_shuffled": 0.99,
+        "gold_in_notes": 0.99,
+        "clarified": 0,
+        "prompt_tokens": {
+          "median": 221.5,
+          "p95": 230.1,
+          "max": 239
+        },
+        "host_latency_ms": {
+          "median": 4461.3,
+          "p95": 4936.2
+        }
+      },
+      "20": {
+        "k": 20,
+        "n": 100,
+        "accuracy": 0.99,
+        "accuracy_shuffled": 0.98,
+        "gold_in_notes": 0.99,
+        "clarified": 0,
+        "prompt_tokens": {
+          "median": 580.0,
+          "p95": 599.0,
+          "max": 684
+        },
+        "host_latency_ms": {
+          "median": 7298.3,
+          "p95": 10127.0
+        }
+      },
+      "50": {
+        "k": 50,
+        "n": 100,
+        "accuracy": 1.0,
+        "accuracy_shuffled": 0.81,
+        "gold_in_notes": 1.0,
+        "clarified": 0,
+        "prompt_tokens": {
+          "median": 1310.5,
+          "p95": 1519.0,
+          "max": 2310
+        },
+        "host_latency_ms": {
+          "median": 9808.7,
+          "p95": 54008.6
+        }
+      }
+    }
+  }
+}
