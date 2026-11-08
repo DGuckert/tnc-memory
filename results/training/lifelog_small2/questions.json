@@ -1,0 +1,1185 @@
+[
+ {
+  "type": "current",
+  "q": "What database does Lorrish use now?",
+  "gold": "Redis",
+  "kind": "value",
+  "id": 0
+ },
+ {
+  "type": "current",
+  "q": "What port is Drisk on right now?",
+  "gold": "7764",
+  "kind": "value",
+  "id": 1
+ },
+ {
+  "type": "current",
+  "q": "What database does Mirevale use now?",
+  "gold": "MariaDB",
+  "kind": "value",
+  "id": 2
+ },
+ {
+  "type": "current",
+  "q": "What database does Venmire use now?",
+  "gold": "MariaDB",
+  "kind": "value",
+  "id": 3
+ },
+ {
+  "type": "current",
+  "q": "What host machine is Ostrel on right now?",
+  "gold": "ironbark",
+  "kind": "value",
+  "id": 4
+ },
+ {
+  "type": "current",
+  "q": "What host machine is Umbrin on right now?",
+  "gold": "wharf",
+  "kind": "value",
+  "id": 5
+ },
+ {
+  "type": "current",
+  "q": "What language does Sorrel use now?",
+  "gold": "Python",
+  "kind": "value",
+  "id": 6
+ },
+ {
+  "type": "current",
+  "q": "What database does Ferrow use now?",
+  "gold": "MongoDB",
+  "kind": "value",
+  "id": 7
+ },
+ {
+  "type": "current",
+  "q": "What port is Ostrel on right now?",
+  "gold": "6502",
+  "kind": "value",
+  "id": 8
+ },
+ {
+  "type": "current",
+  "q": "What port is Mirevale on right now?",
+  "gold": "7623",
+  "kind": "value",
+  "id": 9
+ },
+ {
+  "type": "current",
+  "q": "What's the status of Calyx now?",
+  "gold": "paused",
+  "kind": "value",
+  "id": 10
+ },
+ {
+  "type": "current",
+  "q": "What port is Sorrel on right now?",
+  "gold": "6050",
+  "kind": "value",
+  "id": 11
+ },
+ {
+  "type": "past",
+  "q": "Before Quillon's host machine was basalt, what was it?",
+  "gold": "wharf",
+  "kind": "value",
+  "id": 12
+ },
+ {
+  "type": "past",
+  "q": "Before Sorrel's language was Python, what was it?",
+  "gold": "Go",
+  "kind": "value",
+  "id": 13
+ },
+ {
+  "type": "past",
+  "q": "Before Ferrow's status was paused, what was it?",
+  "gold": "active",
+  "kind": "value",
+  "id": 14
+ },
+ {
+  "type": "past",
+  "q": "Before Drisk's host machine was quokka, what was it?",
+  "gold": "pumice",
+  "kind": "value",
+  "id": 15
+ },
+ {
+  "type": "past",
+  "q": "Before Ostrel's port was 6502, what was it?",
+  "gold": "9367",
+  "kind": "value",
+  "id": 16
+ },
+ {
+  "type": "past",
+  "q": "Before Halvane's port was 8233, what was it?",
+  "gold": "4539",
+  "kind": "value",
+  "id": 17
+ },
+ {
+  "type": "past",
+  "q": "Before Calyx's status was paused, what was it?",
+  "gold": "active",
+  "kind": "value",
+  "id": 18
+ },
+ {
+  "type": "past",
+  "q": "Before Drisk's port was 7764, what was it?",
+  "gold": "7679",
+  "kind": "value",
+  "id": 19
+ },
+ {
+  "type": "past",
+  "q": "Before Calyx's host machine was quokka, what was it?",
+  "gold": "kestrel",
+  "kind": "value",
+  "id": 20
+ },
+ {
+  "type": "past",
+  "q": "Before Zephram's host machine was ironbark, what was it?",
+  "gold": "kestrel",
+  "kind": "value",
+  "id": 21
+ },
+ {
+  "type": "past",
+  "q": "Before Umbrin's database was Redis, what was it?",
+  "gold": "Postgres",
+  "kind": "value",
+  "id": 22
+ },
+ {
+  "type": "past",
+  "q": "Before Brakka's language was Kotlin, what was it?",
+  "gold": "Rust",
+  "kind": "value",
+  "id": 23
+ },
+ {
+  "type": "history",
+  "q": "List every host machine Ferrow has had, oldest first.",
+  "gold": [
+   "kestrel",
+   "basalt",
+   "pumice"
+  ],
+  "kind": "sequence",
+  "id": 24
+ },
+ {
+  "type": "history",
+  "q": "List every status Kestova has had, oldest first.",
+  "gold": [
+   "active",
+   "paused",
+   "active"
+  ],
+  "kind": "sequence",
+  "id": 25
+ },
+ {
+  "type": "history",
+  "q": "List every port Brakka has had, oldest first.",
+  "gold": [
+   "5455",
+   "5962",
+   "6712",
+   "6814"
+  ],
+  "kind": "sequence",
+  "id": 26
+ },
+ {
+  "type": "history",
+  "q": "List every host machine Tundrel has had, oldest first.",
+  "gold": [
+   "pumice",
+   "wharf",
+   "pumice",
+   "quokka"
+  ],
+  "kind": "sequence",
+  "id": 27
+ },
+ {
+  "type": "history",
+  "q": "List every port Sorrel has had, oldest first.",
+  "gold": [
+   "8833",
+   "7487",
+   "3798",
+   "6050"
+  ],
+  "kind": "sequence",
+  "id": 28
+ },
+ {
+  "type": "history",
+  "q": "List every port Calyx has had, oldest first.",
+  "gold": [
+   "7355",
+   "8573",
+   "7066"
+  ],
+  "kind": "sequence",
+  "id": 29
+ },
+ {
+  "type": "history",
+  "q": "List every port Mirevale has had, oldest first.",
+  "gold": [
+   "8070",
+   "3488",
+   "7623"
+  ],
+  "kind": "sequence",
+  "id": 30
+ },
+ {
+  "type": "history",
+  "q": "List every host machine Calyx has had, oldest first.",
+  "gold": [
+   "ironbark",
+   "kestrel",
+   "quokka"
+  ],
+  "kind": "sequence",
+  "id": 31
+ },
+ {
+  "type": "history",
+  "q": "List every database Mirevale has had, oldest first.",
+  "gold": [
+   "Postgres",
+   "MariaDB"
+  ],
+  "kind": "sequence",
+  "id": 32
+ },
+ {
+  "type": "history",
+  "q": "List every host machine Venmire has had, oldest first.",
+  "gold": [
+   "quokka",
+   "pumice"
+  ],
+  "kind": "sequence",
+  "id": 33
+ },
+ {
+  "type": "history",
+  "q": "List every database Zephram has had, oldest first.",
+  "gold": [
+   "Postgres",
+   "Redis"
+  ],
+  "kind": "sequence",
+  "id": 34
+ },
+ {
+  "type": "history",
+  "q": "List every port Ostrel has had, oldest first.",
+  "gold": [
+   "9367",
+   "6502"
+  ],
+  "kind": "sequence",
+  "id": 35
+ },
+ {
+  "type": "aggregate",
+  "q": "Which projects is pickle_rick77 working on right now?",
+  "gold": [
+   "Ferrow",
+   "Pexwick",
+   "Umbrin",
+   "Venmire"
+  ],
+  "kind": "set",
+  "id": 36
+ },
+ {
+  "type": "aggregate",
+  "q": "Which projects is veyra working on right now?",
+  "gold": [
+   "Halvane",
+   "Mirevale"
+  ],
+  "kind": "set",
+  "id": 37
+ },
+ {
+  "type": "aggregate",
+  "q": "Which active or paused projects are running on ironbark?",
+  "gold": [
+   "Brakka",
+   "Ostrel",
+   "Zephram"
+  ],
+  "kind": "set",
+  "id": 38
+ },
+ {
+  "type": "aggregate",
+  "q": "Which projects use Redis right now?",
+  "gold": [
+   "Halvane",
+   "Lorrish",
+   "Umbrin",
+   "Zephram"
+  ],
+  "kind": "set",
+  "id": 39
+ },
+ {
+  "type": "aggregate",
+  "q": "Which active or paused projects are running on basalt?",
+  "gold": [
+   "Kestova",
+   "Quillon"
+  ],
+  "kind": "set",
+  "id": 40
+ },
+ {
+  "type": "aggregate",
+  "q": "Which active or paused projects are running on kestrel?",
+  "gold": [
+   "Lorrish",
+   "Mirevale",
+   "Pexwick"
+  ],
+  "kind": "set",
+  "id": 41
+ },
+ {
+  "type": "aggregate",
+  "q": "Which projects are paused right now?",
+  "gold": [
+   "Calyx",
+   "Drisk",
+   "Ferrow",
+   "Lorrish",
+   "Pexwick"
+  ],
+  "kind": "set",
+  "id": 42
+ },
+ {
+  "type": "aggregate",
+  "q": "Which projects use MariaDB right now?",
+  "gold": [
+   "Calyx",
+   "Drisk",
+   "Kestova",
+   "Mirevale",
+   "Pexwick",
+   "Quillon",
+   "Venmire"
+  ],
+  "kind": "set",
+  "id": 43
+ },
+ {
+  "type": "aggregate",
+  "q": "Which active or paused projects are running on pumice?",
+  "gold": [
+   "Ferrow",
+   "Halvane",
+   "Venmire"
+  ],
+  "kind": "set",
+  "id": 44
+ },
+ {
+  "type": "aggregate",
+  "q": "Which projects use SQLite right now?",
+  "gold": [
+   "Brakka",
+   "Ostrel",
+   "Sorrel"
+  ],
+  "kind": "set",
+  "id": 45
+ },
+ {
+  "type": "aggregate",
+  "q": "Which projects is farrowdale working on right now?",
+  "gold": [
+   "Kestova",
+   "Pexwick",
+   "Quillon",
+   "Tundrel"
+  ],
+  "kind": "set",
+  "id": 46
+ },
+ {
+  "type": "aggregate",
+  "q": "Which active or paused projects are running on quokka?",
+  "gold": [
+   "Calyx",
+   "Drisk",
+   "Sorrel",
+   "Tundrel"
+  ],
+  "kind": "set",
+  "id": 47
+ },
+ {
+  "type": "count",
+  "q": "How many of my projects are active right now?",
+  "gold": 11,
+  "kind": "count",
+  "id": 48
+ },
+ {
+  "type": "count",
+  "q": "How many new projects did I start in May?",
+  "gold": 2,
+  "kind": "count",
+  "id": 49
+ },
+ {
+  "type": "count",
+  "q": "How many projects are written in Python at the moment?",
+  "gold": 1,
+  "kind": "count",
+  "id": 50
+ },
+ {
+  "type": "count",
+  "q": "How many new projects did I start in June?",
+  "gold": 1,
+  "kind": "count",
+  "id": 51
+ },
+ {
+  "type": "count",
+  "q": "How many new projects did I start in April?",
+  "gold": 4,
+  "kind": "count",
+  "id": 52
+ },
+ {
+  "type": "count",
+  "q": "How many projects are written in TypeScript at the moment?",
+  "gold": 1,
+  "kind": "count",
+  "id": 53
+ },
+ {
+  "type": "count",
+  "q": "How many of my projects are shipped right now?",
+  "gold": 0,
+  "kind": "count",
+  "id": 54
+ },
+ {
+  "type": "count",
+  "q": "How many new projects did I start in March?",
+  "gold": 1,
+  "kind": "count",
+  "id": 55
+ },
+ {
+  "type": "count",
+  "q": "How many of my projects are abandoned right now?",
+  "gold": 0,
+  "kind": "count",
+  "id": 56
+ },
+ {
+  "type": "count",
+  "q": "How many new projects did I start in January?",
+  "gold": 6,
+  "kind": "count",
+  "id": 57
+ },
+ {
+  "type": "count",
+  "q": "How many projects are written in Go at the moment?",
+  "gold": 4,
+  "kind": "count",
+  "id": 58
+ },
+ {
+  "type": "count",
+  "q": "How many projects are written in Kotlin at the moment?",
+  "gold": 5,
+  "kind": "count",
+  "id": 59
+ },
+ {
+  "type": "multi_hop",
+  "q": "What language is the project currently on port 5035 written in?",
+  "gold": "Rust",
+  "kind": "value",
+  "id": 60
+ },
+ {
+  "type": "multi_hop",
+  "q": "What language is the project currently on port 4472 written in?",
+  "gold": "C++",
+  "kind": "value",
+  "id": 61
+ },
+ {
+  "type": "multi_hop",
+  "q": "What database does the project on port 7623 use?",
+  "gold": "MariaDB",
+  "kind": "value",
+  "id": 62
+ },
+ {
+  "type": "multi_hop",
+  "q": "What language is the project currently on port 3844 written in?",
+  "gold": "Kotlin",
+  "kind": "value",
+  "id": 63
+ },
+ {
+  "type": "multi_hop",
+  "q": "Who is working with me on the project I moved to wharf in March?",
+  "gold": [
+   "farrowdale"
+  ],
+  "kind": "set",
+  "id": 64
+ },
+ {
+  "type": "multi_hop",
+  "q": "Who is working with me on the project I moved to pumice in April?",
+  "gold": [
+   "farrowdale"
+  ],
+  "kind": "set",
+  "id": 65
+ },
+ {
+  "type": "multi_hop",
+  "q": "What database does the project on port 3844 use?",
+  "gold": "Redis",
+  "kind": "value",
+  "id": 66
+ },
+ {
+  "type": "multi_hop",
+  "q": "What database does the project on port 7066 use?",
+  "gold": "MariaDB",
+  "kind": "value",
+  "id": 67
+ },
+ {
+  "type": "multi_hop",
+  "q": "What language is the project currently on port 7764 written in?",
+  "gold": "Go",
+  "kind": "value",
+  "id": 68
+ },
+ {
+  "type": "multi_hop",
+  "q": "What language is the project currently on port 7589 written in?",
+  "gold": "Go",
+  "kind": "value",
+  "id": 69
+ },
+ {
+  "type": "multi_hop",
+  "q": "What language is the project currently on port 4480 written in?",
+  "gold": "TypeScript",
+  "kind": "value",
+  "id": 70
+ },
+ {
+  "type": "multi_hop",
+  "q": "What language is the project currently on port 6050 written in?",
+  "gold": "Python",
+  "kind": "value",
+  "id": 71
+ },
+ {
+  "type": "temporal",
+  "q": "What was the next project I started after Ostrel?",
+  "gold": "Calyx",
+  "kind": "value",
+  "id": 72
+ },
+ {
+  "type": "temporal",
+  "q": "Which did I start first, Umbrin or Zephram?",
+  "gold": "Umbrin",
+  "kind": "value",
+  "id": 73
+ },
+ {
+  "type": "temporal",
+  "q": "Which did I start first, Mirevale or Quillon?",
+  "gold": "Quillon",
+  "kind": "value",
+  "id": 74
+ },
+ {
+  "type": "temporal",
+  "q": "Which did I start first, Mirevale or Sorrel?",
+  "gold": "Mirevale",
+  "kind": "value",
+  "id": 75
+ },
+ {
+  "type": "temporal",
+  "q": "Which did I start first, Ostrel or Mirevale?",
+  "gold": "Ostrel",
+  "kind": "value",
+  "id": 76
+ },
+ {
+  "type": "temporal",
+  "q": "Which did I start first, Brakka or Drisk?",
+  "gold": "Brakka",
+  "kind": "value",
+  "id": 77
+ },
+ {
+  "type": "temporal",
+  "q": "What was the next project I started after Venmire?",
+  "gold": "Ostrel",
+  "kind": "value",
+  "id": 78
+ },
+ {
+  "type": "temporal",
+  "q": "Which did I start first, Drisk or Kestova?",
+  "gold": "Drisk",
+  "kind": "value",
+  "id": 79
+ },
+ {
+  "type": "temporal",
+  "q": "Which did I start first, Quillon or Drisk?",
+  "gold": "Quillon",
+  "kind": "value",
+  "id": 80
+ },
+ {
+  "type": "temporal",
+  "q": "Which did I start first, Halvane or Kestova?",
+  "gold": "Halvane",
+  "kind": "value",
+  "id": 81
+ },
+ {
+  "type": "temporal",
+  "q": "What was the next project I started after Halvane?",
+  "gold": "Drisk",
+  "kind": "value",
+  "id": 82
+ },
+ {
+  "type": "temporal",
+  "q": "What was the next project I started after Umbrin?",
+  "gold": "Kestova",
+  "kind": "value",
+  "id": 83
+ },
+ {
+  "type": "why",
+  "q": "Why did I pause Ferrow?",
+  "gold": [
+   [
+    "exam"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 84
+ },
+ {
+  "type": "why",
+  "q": "Why did I change Brakka's port from 5455?",
+  "gold": [
+   [
+    "Grafana"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 85
+ },
+ {
+  "type": "why",
+  "q": "Why did I move Ostrel off kestrel?",
+  "gold": [
+   [
+    "GPU",
+    "graphics"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 86
+ },
+ {
+  "type": "why",
+  "q": "Why did I change Halvane's port from 4539?",
+  "gold": [
+   [
+    "firewall"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 87
+ },
+ {
+  "type": "why",
+  "q": "Why did I move Ferrow off kestrel?",
+  "gold": [
+   [
+    "overheat",
+    "heat",
+    "hot",
+    "thermal"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 88
+ },
+ {
+  "type": "why",
+  "q": "Why did I rewrite Lorrish out of TypeScript?",
+  "gold": [
+   [
+    "build"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 89
+ },
+ {
+  "type": "why",
+  "q": "Why did I change Quillon's port from 9507?",
+  "gold": [
+   [
+    "firewall"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 90
+ },
+ {
+  "type": "why",
+  "q": "Why did I pause Drisk?",
+  "gold": [
+   [
+    "exam"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 91
+ },
+ {
+  "type": "why",
+  "q": "Why did I move Tundrel off wharf?",
+  "gold": [
+   [
+    "overheat",
+    "heat",
+    "hot",
+    "thermal"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 92
+ },
+ {
+  "type": "why",
+  "q": "Why did I change Sorrel's port from 3798?",
+  "gold": [
+   [
+    "firewall"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 93
+ },
+ {
+  "type": "why",
+  "q": "Why did I pause Lorrish?",
+  "gold": [
+   [
+    "exam"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 94
+ },
+ {
+  "type": "why",
+  "q": "Why did I move Umbrin off Postgres?",
+  "gold": [
+   [
+    "RAM",
+    "memory"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 95
+ },
+ {
+  "type": "person",
+  "q": "Where does mosswren live now?",
+  "gold": [
+   [
+    "Napier"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 96
+ },
+ {
+  "type": "person",
+  "q": "Where did mosswren live before Napier?",
+  "gold": [
+   [
+    "Dunedin"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 97
+ },
+ {
+  "type": "person",
+  "q": "What is the name of mosswren's dog?",
+  "gold": [
+   [
+    "Biscuit"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 98
+ },
+ {
+  "type": "person",
+  "q": "Where does tibbet work now?",
+  "gold": [
+   [
+    "Xero"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 99
+ },
+ {
+  "type": "person",
+  "q": "What is the name of tibbet's cat?",
+  "gold": [
+   [
+    "Pixel"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 100
+ },
+ {
+  "type": "person",
+  "q": "Where does juno_k live now?",
+  "gold": [
+   [
+    "Wellington"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 101
+ },
+ {
+  "type": "person",
+  "q": "Where did juno_k live before Wellington?",
+  "gold": [
+   [
+    "Timaru"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 102
+ },
+ {
+  "type": "person",
+  "q": "What is the name of juno_k's ferret?",
+  "gold": [
+   [
+    "Noodle"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 103
+ },
+ {
+  "type": "person",
+  "q": "What is the name of farrowdale's dog?",
+  "gold": [
+   [
+    "Kumara"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 104
+ },
+ {
+  "type": "person",
+  "q": "Where does pickle_rick77 live now?",
+  "gold": [
+   [
+    "Dunedin"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 105
+ },
+ {
+  "type": "person",
+  "q": "Where did pickle_rick77 live before Dunedin?",
+  "gold": [
+   [
+    "Invercargill"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 106
+ },
+ {
+  "type": "person",
+  "q": "Where does pickle_rick77 work now?",
+  "gold": [
+   [
+    "Fisher"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 107
+ },
+ {
+  "type": "preference",
+  "q": "What editor do I use now?",
+  "gold": [
+   [
+    "Helix"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 108
+ },
+ {
+  "type": "preference",
+  "q": "What editor did I use before Helix?",
+  "gold": [
+   [
+    "Neovim"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 109
+ },
+ {
+  "type": "preference",
+  "q": "What Linux distro on my laptop do I use now?",
+  "gold": [
+   [
+    "Debian"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 110
+ },
+ {
+  "type": "preference",
+  "q": "What Linux distro on my laptop did I use before Debian?",
+  "gold": [
+   [
+    "Arch"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 111
+ },
+ {
+  "type": "preference",
+  "q": "What's my coffee order now?",
+  "gold": [
+   [
+    "long black"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 112
+ },
+ {
+  "type": "preference",
+  "q": "What did I order before switching to long black?",
+  "gold": [
+   [
+    "flat white"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 113
+ },
+ {
+  "type": "preference",
+  "q": "What keyboard do I use now?",
+  "gold": [
+   [
+    "Corne"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 114
+ },
+ {
+  "type": "preference",
+  "q": "What keyboard did I use before Corne?",
+  "gold": [
+   [
+    "Moonlander"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 115
+ },
+ {
+  "type": "plan",
+  "q": "When do I want Calyx demo-ready by?",
+  "gold": [
+   [
+    "29"
+   ],
+   [
+    "Sep"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 116
+ },
+ {
+  "type": "plan",
+  "q": "What is the Calyx demo deadline for?",
+  "gold": [
+   [
+    "hackathon"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 117
+ },
+ {
+  "type": "plan",
+  "q": "When am I aiming to ship Brakka v1?",
+  "gold": [
+   [
+    "July",
+    "Jul"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 118
+ },
+ {
+  "type": "plan",
+  "q": "Who did I promise a Kestova beta to?",
+  "gold": [
+   [
+    "tibbet"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 119
+ },
+ {
+  "type": "plan",
+  "q": "By when do I plan to get everything off wharf?",
+  "gold": [
+   [
+    "Oct"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 120
+ },
+ {
+  "type": "incident",
+  "q": "What did I replace kestrel's PSU with?",
+  "gold": [
+   [
+    "Corsair",
+    "RM750"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 121
+ },
+ {
+  "type": "incident",
+  "q": "What happened to quokka's RAID array?",
+  "gold": [
+   [
+    "power"
+   ],
+   [
+    "lost",
+    "died",
+    "gone",
+    "failed",
+    "destroyed",
+    "wiped"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 122
+ },
+ {
+  "type": "incident",
+  "q": "What new hardware did basalt get?",
+  "gold": [
+   [
+    "4TB",
+    "4 TB"
+   ],
+   [
+    "NVMe",
+    "SSD"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 123
+ },
+ {
+  "type": "incident",
+  "q": "What happened to the wharf keyboard?",
+  "gold": [
+   [
+    "coffee"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 124
+ },
+ {
+  "type": "incident",
+  "q": "What fan did ironbark get?",
+  "gold": [
+   [
+    "Noctua"
+   ]
+  ],
+  "kind": "keywords",
+  "id": 125
+ }
+]

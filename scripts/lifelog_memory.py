@@ -61,6 +61,18 @@ class FactStore:
         all_ = sorted({e for e, _ in self.h} | set(self.collab))
         if include_provisional:
             return all_
+        # someone who works on a project is a person, not a project ('farrowdale is based in Dunedin' got
+        # forced into project attributes by the extractor and would otherwise become a project)
+        people = {p.lower() for h in self.collab.values() for _, _, p, _ in h}
+        # a machine, language or database is a value, not a project ('basalt got a new 4TB NVMe' read as an
+        # introduction made 'Basalt' a project); so is anything another store holds as a value (exclude)
+        values = {str(v).lower() for (e, a), h in self.h.items() if a in ("host", "language", "database")
+                  for _, v, _ in h}
+        bad = people | values | {x.lower() for x in getattr(self, "exclude", ())}
+
+        def strong(e):  # a real project has settings; evidence beats exclusion ('X works on Venmire' made
+            return sum((e, a) in self.h for a in ("language", "database", "host", "port")) >= 2  # Venmire a value)
+        all_ = [e for e in all_ if e.lower() not in bad or strong(e)]
         if any(a == "started" for _, a in self.h):
             # once introductions are being recorded, a project is something that was introduced; on the
             # 600K-token log, chatter attached 2+ facts to Qwen, vllm, OpenRouter and 27 other names
@@ -177,17 +189,28 @@ def llm(url, msgs, n_predict, grammar=None, prefix=""):
     return o["content"], o.get("tokens_evaluated"), (time.perf_counter() - t) * 1e3
 
 
-def fact_grammar(n):
+def fact_grammar(n, open_facts=False):
     """One line per message, in order: 'k: -' or 'k: Project attr=value; Project attr=value'.
-    A fixed line count makes repetition loops impossible and keeps decode short."""
+    A fixed line count makes repetition loops impossible and keeps decode short.
+    open_facts adds free-form facts: '+Subject | relation | value | state|note'."""
     lines = " ".join(f'"{k}: " body "\\n"' for k in range(n))
-    return (f"root ::= {lines}\n"
-            'body ::= "-" | fact ("; " fact){0,3}\n'
-            'fact ::= name " " attr op val\n'
-            "name ::= [A-Za-z0-9_]{1,30}\n"
-            "val  ::= [A-Za-z0-9_+.:#/-]{1,30}\n"
-            'attr ::= "started" | "language" | "database" | "host" | "port" | "status" | "collaborator"\n'
-            'op   ::= "=" | "+=" | "-="\n')
+    item = {False: "fact", True: "fact | ofact", "only": "ofact"}[open_facts]
+    g = (f"root ::= {lines}\n"
+         f'body ::= "-" | item ("; " item){{0,3}}\n'
+         f"item ::= {item}\n"
+         'fact ::= name " " attr op val\n'
+         "name ::= [A-Za-z0-9_]{1,30}\n"
+         "val  ::= [A-Za-z0-9_+.:#/-]{1,30}\n"
+         'attr ::= "started" | "language" | "database" | "host" | "port" | "status" | "collaborator"\n'
+         'op   ::= "=" | "+=" | "-="\n')
+    if open_facts:
+        # unbounded repeats: bounded ones ({1,80}) expand into huge nested rules and made sampling ~10x slower
+        g += ('ofact ::= "+" osubj " | " orel " | " oval " | " okind\n'
+              "osubj ::= [A-Za-z0-9_'-] [A-Za-z0-9_' -]*\n"
+              "orel  ::= [a-z] [a-z' -]*\n"
+              "oval  ::= [^|;\\n]+\n"
+              'okind ::= "state" | "note"\n')
+    return g
 
 
 # ---------------- LLM extraction ----------------
@@ -202,6 +225,52 @@ EXTRACT_SYS = (
     "context or earlier new messages. Resuming or picking a project back up means status=active. Only facts the "
     "message explicitly states: never guess, never write unknown values. Chatter unrelated to these projects gets '-'.")
 
+EXTRACT_OPEN_ADD = (
+    "\n\nThe attr=value form above is ONLY for the software projects' listed attributes. EVERY other durable fact "
+    "a message states, about people, the user, machines, plans, reasons or events, must be written as "
+    "'+<subject> | <relation> | <value> | <state or note>'. Subject: a name; the user (daniel) is 'me'; when "
+    "someone else says 'I', the subject is that speaker's name. Relation: a short lowercase phrase. Kind 'state' "
+    "means the relation has one current value that can change later (where someone lives or works, the user's "
+    "editor, coffee order or distro, a deadline): reuse the same relation wording every time it changes. Kind "
+    "'note' is for reasons, incidents, plans and one-off facts. Keep values short and in the message's words.\n"
+    # examples use names and values that appear nowhere in the eval (no leakage of gold facts)
+    "Examples:\n"
+    "  'kowhai is based in Gisborne' -> +kowhai | lives in | Gisborne | state\n"
+    "  (tane says) 'just moved to Rotorua!' -> +tane | lives in | Rotorua | state\n"
+    "  'Emacs is my editor these days' -> +me | editor | Emacs | state\n"
+    "  'ruru quit Spark and joined Datacom' -> +ruru | works at | Datacom | state\n"
+    "  'mostly because the disk kept filling up' (right after a Zorbit change) -> "
+    "+Zorbit | reason for the change | the disk kept filling up | note\n"
+    "  'granite got a new 2TB SSD today' -> +granite | hardware | new 2TB SSD | note\n"
+    "  'want Zorbit demo-ready by 3 March' -> +Zorbit | demo deadline | 3 March | state\n"
+    "A message can have both kinds, e.g. 'roped kowhai into working on Zorbit' -> Zorbit collaborator+=kowhai. "
+    "Chatter with nothing durable still gets '-'.")
+
+EXTRACT_OPEN_SYS = (
+    "You maintain a long-term memory of the user's life: people, the user's own preferences, plans and deadlines, "
+    "reasons behind decisions, and things that happened. For each NEW message, write one line '<number>: ' followed "
+    "by the durable facts it states, or '-' if it states none. A fact is "
+    "'+<subject> | <relation> | <value> | <state or note>'; several facts are separated by '; '. Subject: a name "
+    "(a person, a project, a machine); the user (daniel) is 'me'; when someone else says 'I', the subject is that "
+    "speaker's name; 'it' or 'that' means what the context was just discussing. Relation: a short lowercase phrase. "
+    "Kind 'state': the relation has one current value that can change later (where someone lives or works, the "
+    "user's editor or coffee order, a deadline); reuse the same relation wording every time it changes. Kind "
+    "'note': reasons, incidents, plans, events and one-off facts. Keep values short and in the message's words. "
+    "Project settings such as port numbers, hosts, databases, languages, status and collaborators are recorded "
+    "elsewhere: skip those, but DO record the reason when a message explains why something changed.\n"
+    # examples use names and values that appear nowhere in the eval (no leakage of gold facts)
+    "Examples:\n"
+    "  'kowhai is based in Gisborne' -> +kowhai | lives in | Gisborne | state\n"
+    "  (tane says) 'just moved to Rotorua!' -> +tane | lives in | Rotorua | state\n"
+    "  'Emacs is my editor these days' -> +me | editor | Emacs | state\n"
+    "  'ruru quit Spark and joined Datacom' -> +ruru | works at | Datacom | state\n"
+    "  'moved Zorbit off granite' then 'mostly because the disk kept filling up' -> on the second message: "
+    "+Zorbit | reason for moving off granite | the disk kept filling up | note\n"
+    "  'granite got a new 2TB SSD today' -> +granite | hardware | new 2TB SSD | note\n"
+    "  'want Zorbit demo-ready by 3 March' -> +Zorbit | demo deadline | 3 March | state\n"
+    "  'kowhai has a cat called Miso' -> +kowhai | pet | cat called Miso | note\n"
+    "Chatter with nothing durable gets '-'.")
+
 GATE = re.compile(r"\b(project|repo|port|:\d{4}\b|postgres|sqlite|redis|mongo|mariadb|rust|golang|go\b|python|"
                   r"typescript|kotlin|c\+\+|moved|migrat|deploy|host|box|server|paus|resum|ship|releas|abandon|"
                   r"dead end|on ice|on hold|helping|joined|left|dropped|rewrote|kicked off|spun up|side project|"
@@ -215,31 +284,97 @@ def gate(msg, known):
     return bool(GATE.search(t))
 
 
-FACT_RE = re.compile(r"([A-Za-z0-9_]+) (started|language|database|host|port|status|collaborator)(\+=|-=|=)([^;]+)")
+FACT_RE = re.compile(r"(?<![+|\w])([A-Za-z0-9_]+) (started|language|database|host|port|status|collaborator)(\+=|-=|=)([^;]+)")
+OFACT_RE = re.compile(r"\+([^|;]{1,30}) \| ([^|;]{2,30}) \| ([^|;]{1,80}) \| (state|note)")
 
 
 def parse_facts(text, batch):
+    """Typed facts -> {project, attr, op, value}; open facts -> {project: subject, attr: 'open', op: kind,
+    value: 'relation|value'} so both travel through the same raw-fact lists."""
     out = []
     for line in text.splitlines():
         m = re.match(r"\s*(\d+):\s*(.*)", line)
         if not m or not (0 <= int(m.group(1)) < len(batch)):
             continue
-        for f in FACT_RE.finditer(m.group(2)):
+        j = batch[int(m.group(1))]
+        body = m.group(2)
+        for f in OFACT_RE.finditer(body):
+            out.append((j, {"project": f.group(1).strip(), "attr": "open", "op": f.group(4),
+                            "value": f"{f.group(2).strip()}|{f.group(3).strip()}"}))
+        body = OFACT_RE.sub("", body)
+        for f in FACT_RE.finditer(body):
             op = {"=": "set", "+=": "add", "-=": "remove"}[f.group(3)]
-            out.append((batch[int(m.group(1))], {"project": f.group(1), "attr": f.group(2), "op": op,
-                                                  "value": f.group(4).strip()}))
+            out.append((j, {"project": f.group(1), "attr": f.group(2), "op": op, "value": f.group(4).strip()}))
     return out
 
 
-def extract(msgs, url, batch_size=10, ctx_n=4, use_gate=False, log=None):
-    """msgs: list of dicts with ch/a/t/date. Returns FactStore plus stats."""
+def open_targets(msgs, self_names=("daniel",)):
+    """Messages a personal memory reads for open facts: the user's own, and those of people the user has
+    named in their own messages (first-person news like 'just moved to Napier!'), plus the next message
+    when it continues the same author's thought."""
+    authors = {m["a"].lower() for m in msgs}
+    people, keep = set(), set()
+    for i, m in enumerate(msgs):
+        a = m["a"].lower()
+        if a in self_names:
+            low = m["t"].lower()
+            people |= {x for x in authors if len(x) >= 4 and x in low and x not in self_names}
+            keep.add(i)
+        elif a in people:
+            keep.add(i)
+    return sorted(keep)
+
+
+def extract_open(msgs, url, idx=None, batch_size=10, ctx_n=4, log=None):
+    """Second, open-only pass: raw entries [j, subject, 'open', kind, 'relation|value'].
+    A separate pass because the combined typed+open prompt made the model force everything into project
+    slots ('quokka lost its RAID array' -> Quokka database=RAID; reasons captured 1/12)."""
+    idx = list(range(len(msgs))) if idx is None else idx
+    raw, t0 = [], time.time()
+    stats = {"open_sent": len(idx), "open_calls": 0}
+    for s in range(0, len(idx), batch_size):
+        b = idx[s:s + batch_size]
+        ctx = [msgs[j] for j in range(max(0, b[0] - ctx_n), b[0])]
+        lines = ["Context (do not extract from these):"] + [f"  [{m['date']}] {m['a']}: {m['t']}" for m in ctx]
+        lines += ["NEW messages:"] + [f"  {k}. [{msgs[j]['date']}] {msgs[j]['a']}: {msgs[j]['t']}" for k, j in enumerate(b)]
+        from collections import Counter
+        rels = Counter(r[4].split("|", 1)[0].strip().lower() for r in raw if r[3] == "state")
+        head = ("State relations already in memory (reuse this wording when the same thing changes): " +
+                ", ".join(r for r, _ in rels.most_common(30)) + "\n\n") if rels else ""
+        text, _, _ = llm(url, [{"role": "system", "content": EXTRACT_OPEN_SYS},
+                               {"role": "user", "content": head + "\n".join(lines)}], 60 + 70 * len(b),
+                         grammar=fact_grammar(len(b), "only"))
+        stats["open_calls"] += 1
+        for j, o in parse_facts(text, b):
+            if o["attr"] == "open":
+                raw.append([j, o["project"], "open", o["op"], o["value"]])
+        if log and stats["open_calls"] % 10 == 0:
+            print(f"  open {s + len(b)}/{len(idx)} facts={len(raw)} {time.time() - t0:.0f}s", file=log, flush=True)
+    stats["open_facts"] = len(raw)
+    stats["open_seconds"] = round(time.time() - t0, 1)
+    return raw, stats
+
+
+def extract(msgs, url, batch_size=10, ctx_n=4, use_gate=False, log=None, open_facts=False, self_names=("daniel",)):
+    """msgs: list of dicts with ch/a/t/date. Returns FactStore plus stats.
+    open_facts: also extract free-form facts; then the user's own messages always pass the gate (they are
+    what a personal memory is for), and so do messages from people the user has mentioned by name."""
     fs = FactStore()
     known = set()
+    people = set()
     idx = list(range(len(msgs)))
+    sys_prompt = EXTRACT_SYS + (EXTRACT_OPEN_ADD if open_facts else "")
     if use_gate:
         keep = set()
+        authors = {m["a"].lower() for m in msgs}
         for i in idx:
-            if gate(msgs[i], known) or (i > 0 and (i - 1) in keep and msgs[i]["a"] == msgs[i - 1]["a"]):
+            a = msgs[i]["a"].lower()
+            own = open_facts and a in self_names
+            if own:
+                low = msgs[i]["t"].lower()
+                people |= {x for x in authors if len(x) >= 4 and x in low}
+            if own or (open_facts and a in people) or gate(msgs[i], known) or \
+                    (i > 0 and (i - 1) in keep and msgs[i]["a"] == msgs[i - 1]["a"]):
                 keep.add(i)
             # learn names introduced in gated messages cheaply: capitalised words after "called"/"thing:"
             for mm in re.finditer(r"(?:called|thing:|repo for|kicked off)\s+([A-Z][a-z]+)", msgs[i]["t"]):
@@ -255,14 +390,26 @@ def extract(msgs, url, batch_size=10, ctx_n=4, use_gate=False, log=None):
         lines = ["Context (do not extract from these):"] + [f"  [{m['date']}] {m['a']}: {m['t']}" for m in ctx]
         lines += ["NEW messages:"] + [f"  {k}. [{msgs[j]['date']}] {msgs[j]['a']}: {msgs[j]['t']}" for k, j in enumerate(b)]
         known_s = ", ".join(sorted(fs.entities())[-40:])
-        user = (f"Projects already in memory: {known_s or 'none yet'}\n\n" + "\n".join(lines))
-        text, pt, _ = llm(url, [{"role": "system", "content": EXTRACT_SYS},
-                                {"role": "user", "content": user}], 60 + 40 * len(b), grammar=fact_grammar(len(b)))
+        user = f"Projects already in memory: {known_s or 'none yet'}\n"
+        if open_facts:
+            from collections import Counter
+            rels = Counter(r[4].split("|", 1)[0].strip().lower() for r in raw if r[2] == "open" and r[3] == "state")
+            if rels:
+                user += ("State relations already in memory (reuse this wording when the same thing changes): " +
+                         ", ".join(r for r, _ in rels.most_common(30)) + "\n")
+        user += "\n" + "\n".join(lines)
+        text, pt, _ = llm(url, [{"role": "system", "content": sys_prompt},
+                                {"role": "user", "content": user}], 60 + (90 if open_facts else 40) * len(b),
+                          grammar=fact_grammar(len(b), open_facts))
         stats["calls"] += 1
         stats["prompt_tokens"] += pt or 0
         seen_text = " ".join(m["t"] for m in ctx).lower() + " " + " ".join(msgs[j]["t"] for j in b).lower()
         for j, o in parse_facts(text, b):
             name = str(o.get("project", ""))
+            if o["attr"] == "open":  # open facts get their own hygiene in consolidate_open
+                raw.append([j, name, "open", o["op"], o["value"]])
+                stats["open_facts"] = stats.get("open_facts", 0) + 1
+                continue
             # an entity must be named somewhere in what the extractor saw, or already be in memory
             if name.lower() not in seen_text and name.lower() not in fs.names:
                 stats["dropped_unseen_entity"] = stats.get("dropped_unseen_entity", 0) + 1
@@ -325,6 +472,7 @@ def recall_candidates(msgs, raw, fs, self_names=("daniel",), use_gate=False):
     # (later realigned or dropped) means this message's own facts were never read
     have = {src for h in fs.h.values() for _, _, src in h if src is not None}
     have |= {src for h in fs.collab.values() for _, _, _, src in h if src is not None}
+    have |= {r[0] for r in raw if r[2] == "open"}  # left open facts: it was read
     ents = [e.lower() for e in fs.entities()]
     out = []
     for j, m in enumerate(msgs):
@@ -340,9 +488,10 @@ def recall_candidates(msgs, raw, fs, self_names=("daniel",), use_gate=False):
     return out
 
 
-def recall_pass(msgs, raw, fs, url, self_names=("daniel",), use_gate=False, batch_size=3, log=None):
+def recall_pass(msgs, raw, fs, url, self_names=("daniel",), use_gate=False, batch_size=3, log=None, open_facts=False):
     """Re-read the recall candidates in small batches (3 messages, with context) and return extra raw facts."""
     cand = recall_candidates(msgs, raw, fs, self_names, use_gate)
+    sys_prompt = EXTRACT_SYS + (EXTRACT_OPEN_ADD if open_facts else "")
     extra, t0 = [], time.time()
     stats = {"recall_candidates": len(cand), "recall_calls": 0}
     for s in range(0, len(cand), batch_size):
@@ -351,8 +500,8 @@ def recall_pass(msgs, raw, fs, url, self_names=("daniel",), use_gate=False, batc
         lines = ["Context (do not extract from these):"] + [f"  [{m['date']}] {m['a']}: {m['t']}" for m in ctx]
         lines += ["NEW messages:"] + [f"  {k}. [{msgs[j]['date']}] {msgs[j]['a']}: {msgs[j]['t']}" for k, j in enumerate(b)]
         user = f"Projects already in memory: {', '.join(fs.entities()) or 'none yet'}\n\n" + "\n".join(lines)
-        text, _, _ = llm(url, [{"role": "system", "content": EXTRACT_SYS}, {"role": "user", "content": user}],
-                         60 + 40 * len(b), grammar=fact_grammar(len(b)))
+        text, _, _ = llm(url, [{"role": "system", "content": sys_prompt}, {"role": "user", "content": user}],
+                         60 + (90 if open_facts else 40) * len(b), grammar=fact_grammar(len(b), open_facts))
         stats["recall_calls"] += 1
         for j, o in parse_facts(text, b):
             attr = o["attr"]
@@ -432,7 +581,7 @@ def consolidate(raw, msgs, self_names=("daniel",), hygiene=True, stats=None):
     fs = FactStore()
     known = set()
     pre = {}
-    raw = sorted(raw, key=lambda r: r[0])
+    raw = sorted([r for r in raw if r[2] != "open"], key=lambda r: r[0])  # open facts: consolidate_open
     if hygiene:
         raw = _prepass(raw, msgs, st)
     for j, name, attr, op, val in raw:

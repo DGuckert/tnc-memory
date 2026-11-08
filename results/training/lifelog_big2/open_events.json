@@ -1,0 +1,363 @@
+[
+ {
+  "type": "reason",
+  "subject": "Ferrow",
+  "about": [
+   "status",
+   "paused",
+   "active"
+  ],
+  "text": "exams are coming up"
+ },
+ {
+  "type": "reason",
+  "subject": "Brakka",
+  "about": [
+   "port",
+   5962,
+   5455
+  ],
+  "text": "it clashed with Grafana"
+ },
+ {
+  "type": "reason",
+  "subject": "Ostrel",
+  "about": [
+   "host",
+   "ironbark",
+   "kestrel"
+  ],
+  "text": "it needs a GPU now"
+ },
+ {
+  "type": "reason",
+  "subject": "Halvane",
+  "about": [
+   "port",
+   8233,
+   4539
+  ],
+  "text": "the firewall only allows that range"
+ },
+ {
+  "type": "reason",
+  "subject": "Ferrow",
+  "about": [
+   "host",
+   "basalt",
+   "kestrel"
+  ],
+  "text": "kestrel kept overheating"
+ },
+ {
+  "type": "reason",
+  "subject": "Lorrish",
+  "about": [
+   "language",
+   "Rust",
+   "TypeScript"
+  ],
+  "text": "the TypeScript build times were killing me"
+ },
+ {
+  "type": "reason",
+  "subject": "Quillon",
+  "about": [
+   "port",
+   5035,
+   9507
+  ],
+  "text": "the firewall only allows that range"
+ },
+ {
+  "type": "reason",
+  "subject": "Drisk",
+  "about": [
+   "status",
+   "paused",
+   "active"
+  ],
+  "text": "exams are coming up"
+ },
+ {
+  "type": "reason",
+  "subject": "Tundrel",
+  "about": [
+   "host",
+   "pumice",
+   "wharf"
+  ],
+  "text": "wharf kept overheating"
+ },
+ {
+  "type": "reason",
+  "subject": "Sorrel",
+  "about": [
+   "port",
+   6050,
+   3798
+  ],
+  "text": "the firewall only allows that range"
+ },
+ {
+  "type": "reason",
+  "subject": "Lorrish",
+  "about": [
+   "status",
+   "paused",
+   "active"
+  ],
+  "text": "exams are coming up"
+ },
+ {
+  "type": "reason",
+  "subject": "Umbrin",
+  "about": [
+   "database",
+   "Redis",
+   "Postgres"
+  ],
+  "text": "Postgres was eating all the RAM"
+ },
+ {
+  "type": "person",
+  "subject": "mosswren",
+  "rel": "lives in",
+  "value": "Dunedin"
+ },
+ {
+  "type": "person",
+  "subject": "mosswren",
+  "rel": "lives in",
+  "value": "Napier",
+  "old": "Dunedin"
+ },
+ {
+  "type": "person",
+  "subject": "mosswren",
+  "rel": "works at",
+  "value": "Fisher & Paykel"
+ },
+ {
+  "type": "person",
+  "subject": "mosswren",
+  "rel": "pet",
+  "value": "dog Biscuit"
+ },
+ {
+  "type": "person",
+  "subject": "tibbet",
+  "rel": "lives in",
+  "value": "Invercargill"
+ },
+ {
+  "type": "person",
+  "subject": "tibbet",
+  "rel": "works at",
+  "value": "Trade Me"
+ },
+ {
+  "type": "person",
+  "subject": "tibbet",
+  "rel": "works at",
+  "value": "Xero",
+  "old": "Trade Me"
+ },
+ {
+  "type": "person",
+  "subject": "tibbet",
+  "rel": "pet",
+  "value": "cat Pixel"
+ },
+ {
+  "type": "person",
+  "subject": "juno_k",
+  "rel": "lives in",
+  "value": "Timaru"
+ },
+ {
+  "type": "person",
+  "subject": "juno_k",
+  "rel": "lives in",
+  "value": "Wellington",
+  "old": "Timaru"
+ },
+ {
+  "type": "person",
+  "subject": "juno_k",
+  "rel": "works at",
+  "value": "Trade Me"
+ },
+ {
+  "type": "person",
+  "subject": "juno_k",
+  "rel": "pet",
+  "value": "ferret Noodle"
+ },
+ {
+  "type": "person",
+  "subject": "farrowdale",
+  "rel": "lives in",
+  "value": "Dunedin"
+ },
+ {
+  "type": "person",
+  "subject": "farrowdale",
+  "rel": "works at",
+  "value": "Fisher & Paykel"
+ },
+ {
+  "type": "person",
+  "subject": "farrowdale",
+  "rel": "pet",
+  "value": "dog Kumara"
+ },
+ {
+  "type": "person",
+  "subject": "pickle_rick77",
+  "rel": "lives in",
+  "value": "Invercargill"
+ },
+ {
+  "type": "person",
+  "subject": "pickle_rick77",
+  "rel": "lives in",
+  "value": "Dunedin",
+  "old": "Invercargill"
+ },
+ {
+  "type": "person",
+  "subject": "pickle_rick77",
+  "rel": "works at",
+  "value": "Xero"
+ },
+ {
+  "type": "person",
+  "subject": "pickle_rick77",
+  "rel": "works at",
+  "value": "Fisher & Paykel",
+  "old": "Xero"
+ },
+ {
+  "type": "person",
+  "subject": "veyra",
+  "rel": "lives in",
+  "value": "Dunedin"
+ },
+ {
+  "type": "person",
+  "subject": "veyra",
+  "rel": "works at",
+  "value": "Tait"
+ },
+ {
+  "type": "pref",
+  "subject": "me",
+  "rel": "editor",
+  "value": "Neovim"
+ },
+ {
+  "type": "pref",
+  "subject": "me",
+  "rel": "editor",
+  "value": "Helix",
+  "old": "Neovim"
+ },
+ {
+  "type": "pref",
+  "subject": "me",
+  "rel": "laptop distro",
+  "value": "Arch"
+ },
+ {
+  "type": "pref",
+  "subject": "me",
+  "rel": "laptop distro",
+  "value": "Debian",
+  "old": "Arch"
+ },
+ {
+  "type": "pref",
+  "subject": "me",
+  "rel": "coffee order",
+  "value": "flat white"
+ },
+ {
+  "type": "pref",
+  "subject": "me",
+  "rel": "coffee order",
+  "value": "long black",
+  "old": "flat white"
+ },
+ {
+  "type": "pref",
+  "subject": "me",
+  "rel": "keyboard",
+  "value": "Corne"
+ },
+ {
+  "type": "pref",
+  "subject": "me",
+  "rel": "keyboard",
+  "value": "Moonlander",
+  "old": "Corne"
+ },
+ {
+  "type": "pref",
+  "subject": "me",
+  "rel": "keyboard",
+  "value": "Corne",
+  "old": "Moonlander"
+ },
+ {
+  "type": "plan",
+  "subject": "Calyx",
+  "text": "want Calyx demo-ready by 15 September for the Christchurch hackathon"
+ },
+ {
+  "type": "plan",
+  "subject": "Calyx",
+  "text": "pushed the Calyx demo to 29 September, hackathon moved",
+  "revises": "want Calyx demo-ready by 15 September for the Christchurch hackathon"
+ },
+ {
+  "type": "plan",
+  "subject": "Brakka",
+  "text": "aiming to ship Brakka v1 before the end of July"
+ },
+ {
+  "type": "plan",
+  "subject": "Kestova",
+  "text": "promised tibbet a Kestova beta by 20 August"
+ },
+ {
+  "type": "plan",
+  "subject": "wharf",
+  "text": "plan: get everything off wharf by October, it's dying"
+ },
+ {
+  "type": "incident",
+  "subject": "kestrel",
+  "text": "kestrel's PSU died, swapped in a Corsair RM750"
+ },
+ {
+  "type": "incident",
+  "subject": "quokka",
+  "text": "quokka got hit by a power cut and lost its RAID array"
+ },
+ {
+  "type": "incident",
+  "subject": "basalt",
+  "text": "basalt got a new 4TB NVMe today"
+ },
+ {
+  "type": "incident",
+  "subject": "spilled",
+  "text": "spilled coffee on the wharf keyboard, it's toast"
+ },
+ {
+  "type": "incident",
+  "subject": "ironbark",
+  "text": "ironbark's fan started grinding so I swapped it for a Noctua"
+ }
+]

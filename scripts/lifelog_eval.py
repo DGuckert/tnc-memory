@@ -18,7 +18,7 @@ import life_log as LL
 
 host_reader_sweep.RAW = "1"
 TODAY = "2026-10-31"
-ANS_SYS = (f"You are the user's assistant. Today is {TODAY}. Answer the user's question about their projects using "
+ANS_SYS = (f"You are the user's assistant. Today is {TODAY}. Answer the user's question about their life and projects using "
            "the memory below; later information overrides earlier information. Think briefly if you need to, then "
            "finish with one final line 'ANSWER: <answer>' where the answer is a single value, a comma-separated list "
            "of names, or a number. If the memory does not contain it, write 'ANSWER: I don't know'.")
@@ -80,6 +80,15 @@ def score(q, ans):
     if kind == "set":
         hits = {h[1].lower() for h in find_all(a, domain_of(g[0]))}
         return float(hits == {x.lower() for x in g})
+    if kind == "keywords":
+        # every group must match; any alternative in a group counts. Words match on a prefix boundary
+        # ('exam' matches 'exams'), numbers on full boundaries ('29' does not match '290').
+        def hit(alt):
+            pat = (r"(?<!\d)" + re.escape(alt) + r"(?!\d)") if alt.isdigit() else (r"(?<![A-Za-z])" + re.escape(alt))
+            return re.search(pat, a, re.I) is not None
+        if re.search(r"\bi don'?t know\b", a, re.I):
+            return 0.0
+        return float(all(any(hit(x) for x in grp) for grp in g))
     if kind == "sequence":
         if g[0].isdigit():
             seq = re.findall(r"\b\d{4}\b", a)
@@ -214,11 +223,15 @@ def main():
     ap.add_argument("--recall", action="store_true", help="second read of project messages that left no facts")
     ap.add_argument("--gate", action="store_true", help="keyword/entity gate before extraction (big log)")
     ap.add_argument("--tag", default="")
+    ap.add_argument("--open", action="store_true", help="extract open-ended facts too (life_log_open logs)")
+    ap.add_argument("--types", default="", help="comma list of question types to run (default: all)")
     a = ap.parse_args()
     URL = a.url
     msgs = [json.loads(l) for l in open(os.path.join(a.dir, "log.jsonl"), encoding="utf-8")]
     events = [tuple(e) for e in json.load(open(os.path.join(a.dir, "events.json")))]
     qs = json.load(open(os.path.join(a.dir, "questions.json")))
+    if a.types:
+        qs = [q for q in qs if q["type"] in a.types.split(",")]
     if a.limit:
         qs = qs[:a.limit]
     if a.per_type:
@@ -229,7 +242,7 @@ def main():
     oracle = oracle_store(events)
     fs = fs_raw = None
     raw_p = os.path.join(a.dir, "extracted_raw.json")
-    if any(c in ("cards", "cards_v2", "agent") for c in conds):
+    if any(c in ("cards", "cards_v2", "agent", "mem") for c in conds):
         if os.path.exists(raw_p):
             d = json.load(open(raw_p))
             stats, raw = d["stats"], d["raw"]
@@ -248,6 +261,16 @@ def main():
                 json.dump(d, open(raw_p, "w"))
             raw = raw + d["recall"]["raw"]
             stats = dict(stats, **d["recall"]["stats"])
+        if a.open:
+            # separate open-facts pass (a combined prompt pushed everything into project slots)
+            d = json.load(open(raw_p))
+            if "open" not in d:
+                from lifelog_memory import extract_open, open_targets
+                oraw, ost_ = extract_open(msgs, URL, idx=open_targets(msgs) if a.gate else None, log=sys.stdout)
+                d["open"] = {"stats": ost_, "raw": oraw}
+                json.dump(d, open(raw_p, "w"))
+            raw = raw + d["open"]["raw"]
+            stats = dict(stats, **d["open"]["stats"])
         hyg = {}
         fs = consolidate(raw, msgs, hygiene=True, stats=hyg)
         hyg.pop("reattach_log", None)
@@ -256,6 +279,44 @@ def main():
         print("extraction", json.dumps(out["extraction"]), flush=True)
     searcher = Searcher(msgs, a.dir) if any(c != "full" for c in conds) else None
     full_text = "\n".join(fmt_msg(m) for m in msgs)
+    open_store = open_oracle = None
+    if any(c in ("mem", "mem_oracle") for c in conds):
+        from open_memory import consolidate_open, oracle_open
+        emb_model = searcher.mi.emb
+        embed = lambda s: emb_model.encode([s], normalize_embeddings=True)[0]
+        open_oracle = oracle_open(json.load(open(os.path.join(a.dir, "open_events.json"))), msgs, embed)
+        if "mem" in conds:
+            ost = {}
+            open_store = consolidate_open(raw, msgs, embed=embed, stats=ost, typed_entities=fs.entities())
+            # something held as a value of a state elsewhere ('me | keyboard | Corne') is not a project
+            fs.exclude = {f["val"] for f in open_store.facts if f["kind"] == "state"}
+            out["extraction"]["vs_oracle_with_open_exclude"] = store_accuracy(fs, oracle)
+            out.setdefault("extraction", {})["open_hygiene"] = ost
+            out["extraction"]["open_subjects"] = len(open_store.subjects())
+            print("open store", json.dumps(ost), "subjects:", open_store.subjects()[:40], flush=True)
+        fact_search = {}
+        for name, st_ in (("mem", open_store), ("mem_oracle", open_oracle)):
+            if st_ is None:
+                continue
+            import message_index, glob
+            fdir = os.path.join(a.dir, f"factidx_{name}{a.tag}")
+            os.makedirs(fdir, exist_ok=True)
+            for f in glob.glob(os.path.join(fdir, "emb_*.npy")):  # facts change between runs: never reuse
+                os.remove(f)
+            sents = st_.sentences()
+            fmsgs = [{"ch": "facts", "a": st_.facts[i]["subj"], "t": t} for i, t in sents]
+            message_index.WORK = fdir
+            fact_search[name] = (message_index.MessageIndex(msgs=fmsgs, device="cuda", rerank=True), sents)
+            message_index.WORK = a.dir
+
+    def open_memory_text(store, name, question):
+        from open_memory import mentioned_subjects
+        subs = mentioned_subjects(question, store)
+        mi, sents = fact_search[name]
+        hits = [sents[i][1] for i, _ in mi.search(question, k=12, mode="hybrid", rerank=True)]
+        cards = "\n".join(store.card(s) for s in subs)
+        return (("\n\nPeople, preferences and other facts (cards for what the question mentions):\n" + cards
+                 if cards else "") + "\n\nRelated remembered facts:\n" + "\n".join(hits))
     for c in conds:
         rows = []
         for q in qs:
@@ -273,6 +334,16 @@ def main():
                 views = ("\n\nIndexes (precomputed from the cards, current as of today):\n" + store.views()
                          if "v2" in c else "")
                 mem = ("Project cards (consolidated, current as of today):\n" + store.cards() + views +
+                       "\n\nRelevant messages:\n" + "\n".join(fmt_msg(msgs[i]) for i in ids))
+                ans, pt, _, _ = ask(mem, q["q"])
+            elif c in ("mem", "mem_oracle"):
+                # v4: typed project cards + indexes (v3) + open-fact cards for mentioned subjects + fact search
+                store = fs if c == "mem" else oracle
+                ostore = open_store if c == "mem" else open_oracle
+                ids = searcher.search(q["q"], 5)
+                mem = ("Project cards (consolidated, current as of today):\n" + store.cards() +
+                       "\n\nIndexes (precomputed from the cards, current as of today):\n" + store.views() +
+                       open_memory_text(ostore, c, q["q"]) +
                        "\n\nRelevant messages:\n" + "\n".join(fmt_msg(msgs[i]) for i in ids))
                 ans, pt, _, _ = ask(mem, q["q"])
             elif c == "agent":

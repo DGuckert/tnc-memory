@@ -20,7 +20,18 @@ It's tested on a synthetic 10-month project log buried in real chatter, with 56 
 
 **On these questions the memory beats real full context**, and it holds up at 60× the size. The remaining gap is extraction: 91% of stored values are right on the 600K log, up from 66% for raw extraction. Agent mode (tool calls) doesn't work with this host.
 
-The caveat: this is a typed domain (7 project attributes), and the hygiene rules were developed on the same logs; there's no held-out log yet. Write-up: `results/training/lifelog_report.md`.
+The caveat: the events are synthetic, and the hygiene rules were developed on the same logs; there's no held-out log yet. Write-up: `results/training/lifelog_report.md`.
+
+**v4 (2026-11-09): open-ended facts.** Reasons, people (including first-person news), your own preferences, plans and incidents now get a second, open-only extraction pass, stored as dated facts with history. On 42 open questions:
+
+| | small log | 600K-token log |
+|---|---:|---:|
+| full context | 0.86 | can't fit |
+| RAG | 0.74 | 0.76 (0.25 on "why") |
+| **memory v4** | **0.90** | **0.93** |
+| perfect extraction | 0.98 | 0.98 |
+
+Extracting the 600K-token log took about 53 min on this PC. Mixing your own non-project messages into the log costs the project questions some accuracy (0.82 → 0.79 at 600K tokens).
 
 Also new: **Qwen3-30B-A3B as the host reader scores 0.98–1.00 at k = 1–50 and reads every note it is given.** The "5 notes" ceiling was a limit of the small readers.
 

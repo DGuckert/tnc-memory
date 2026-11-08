@@ -126,11 +126,77 @@ By question type, v3:
   - A host that fits in memory should be about 10× faster. A small fine-tuned extractor would be faster still: the output format is fixed and the hygiene rules catch its mistakes.
 - **Reading memory:** about 3.8K prompt tokens per question, flat in log size, against 10K for the small log's full context and 600K+ for the big log's.
 
+## v4: open-ended facts (2026-11-09)
+
+The typed store only knows 7 project attributes. v4 adds memory for anything else: reasons behind decisions, facts about people (including people speaking in first person), the user's own preferences, plans and deadlines, and incidents.
+
+![open facts](lifelog_open.png)
+
+**Test world.** `scripts/life_log_open.py` adds 52 open events to the same project world (same seed, same 84 project questions), on two logs:
+- **small2:** 466 messages, about 15K tokens;
+- **big2:** 30,216 messages, about 600K tokens.
+
+That adds 42 questions, gold = keyword groups that must all appear in the answer:
+
+| type | example |
+|---|---|
+| why | "Why did I move Ostrel off kestrel?" (the reason message never names the project) |
+| person | "Where does mosswren live now?", "…before Napier?", "What's juno_k's ferret called?" |
+| preference | "What editor do I use now?", "…before Helix?" (one goes Corne → Moonlander → Corne) |
+| plan | "When do I want Calyx demo-ready by?" (the deadline was pushed back once) |
+| incident | "What did I replace kestrel's PSU with?" |
+
+**Design** (`scripts/open_memory.py`):
+- **Facts:** each is (subject, relation, value, state or note, date, source). The user is `me`, and "I" from anyone else resolves to that speaker.
+- **States** (where someone lives, your editor, a deadline) keep their history, and the newest is current. **Notes** (reasons, incidents, plans) accumulate with dates.
+- **Hygiene:**
+  - at least half of a value's content words must appear in the message window;
+  - the subject must be the speaker, `me` from the user, or named nearby;
+  - open facts that restate a project's typed settings are dropped (104 on small2).
+- **Relation names:** same-subject relations merge when their bge similarity is at least 0.80. Measured on paraphrases, the worst wrong pair scores 0.78, so a lower threshold would cause wrong merges. The extractor is also shown the relation names already in memory, so it reuses them.
+- **Retrieval:** cards for the subjects a question names, plus hybrid + rerank search over one sentence per fact. Superseded states are marked "no longer current".
+
+**Two passes, because one doesn't work.**
+- A single combined prompt (typed + open) made the model force everything into project slots: "quokka lost its RAID array" became `Quokka database=RAID`. It captured reasons 1/12, plans 1/5 and incidents 2/5.
+- v4 therefore runs the proven typed pass, then a **separate open-only pass** with its own grammar. On the big log the open pass reads only the user's messages and those of people the user mentions: 988 of 30,216 messages, 99 calls, 12.5 min.
+- Total extraction for the 600K-token log: **about 53 min** (typed 39, recall 1.3, open 12.5).
+
+**Results** (Qwen3-30B-A3B host, 42 open questions):
+
+| | small2 (~15K tok) | 600K-token log | prompt tokens |
+|---|---:|---:|---:|
+| full context | 0.86 | can't fit | 14,549 |
+| RAG (top-10 messages) | 0.74 | 0.76 | ~400 |
+| **memory v4** | **0.90** | **0.93** | ~4,700 |
+| memory v4, perfect extraction | 0.98 | 0.98 | ~4,200 |
+
+| by type, memory v4 | why | person | preference | plan | incident |
+|---|---:|---:|---:|---:|---:|
+| small2 | 0.67 | 1.00 | 1.00 | 1.00 | 1.00 |
+| 600K log | 0.75 | 1.00 | 1.00 | 1.00 | 1.00 |
+| full context, small2 | 0.83 | 1.00 | 0.88 | 0.60 | 0.80 |
+| RAG, 600K log | 0.25 | 1.00 | 1.00 | 0.80 | 1.00 |
+
+**Project questions on the same logs** (the cost of mixing in open facts):
+
+| | project-only log (v3) | log with open facts (v4) |
+|---|---:|---:|
+| small | 0.89 | 0.77 |
+| 600K tokens | 0.82 | 0.79 |
+| typed store, current values right (small / 600K) | 0.96 / 0.91 | 0.87 / 0.88 |
+
+**What it means:**
+- **Open facts work and scale.** Memory beats full context (0.90 vs 0.86) at a third of the tokens, holds on the 600K log (0.93), and is 0.98 with perfect extraction on both logs.
+- **RAG is fine for single open facts, not reasons.** It scores 1.00 on people and incidents because those messages name what they are about. It gets 0.25 on "why": "mostly because exams are coming up" doesn't name the project, so search can't find it. Write-time extraction attaches the reason to the project as it reads.
+- **Full context beats memory only on "why"** (0.83 vs 0.67). That's an extraction error: reasons sometimes go to the wrong project. With perfect extraction "why" is 1.00. Full context loses on plans (0.60), because it doesn't reliably notice that the deadline was revised.
+- **Mixing in the user's own non-project messages costs the typed store.** On the small log it drops from 96% to 87% of values right, and the project questions from 0.89 to 0.77. Messages like "Corne is my keyboard" and "basalt got a new 4TB NVMe" look like project introductions. Two general rules fixed the junk entities: a host, language or database value is not a project, and neither is a value of an open state, unless the name has real project settings. Some value errors remain. On the 600K log the drop is small (0.82 → 0.79).
+- **A bug found along the way:** the first version of the open-state exclusion removed real projects ("pickle_rick77 works on Venmire" made Venmire a value), and project accuracy fell to 0.43. That run is not in the tables. The fixed rule lets real project evidence (two or more settings) override the exclusion.
+
 ## Caveats
 
 - **Synthetic events.** The event messages are templated (varied, casual, with pronoun follow-ups); the filler is real Discord chatter.
   - The gate's keywords and the extractor's schema (7 project attributes) were written knowing the domain.
-  - **This tests memory for a typed domain.** Open-ended facts (decisions, reasons, preferences) still fall back to message search, which is what RAG scored here.
+  - v1–v3 test a typed domain. v4 adds open-ended facts, but those event types are also generated from templates, and the open extractor's prompt examples use invented names that appear nowhere in the eval.
 - **The hygiene rules were developed on the same two logs** they are scored on, from failures seen there. They are general rules, but there is no held-out third log yet, so treat the v3 extraction numbers as optimistic until one exists.
 - **8 questions per type,** so one question is 12.5 points within a type.
 - **The host is a reasoning checkpoint used without its think block.** It reasons out loud anyway, so every condition reads its final `ANSWER:` line, with a forced continuation if it runs out of tokens. Every condition gets the same treatment.

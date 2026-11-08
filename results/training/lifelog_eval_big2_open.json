@@ -1,0 +1,1838 @@
+{
+ "dir": "/home/daniel/tnc/work/lifelog/big2",
+ "n_messages": 30216,
+ "n_questions": 42,
+ "conditions": {
+  "mem": {
+   "summary": {
+    "accuracy": 0.929,
+    "by_type": {
+     "why": 0.75,
+     "person": 1.0,
+     "preference": 1.0,
+     "plan": 1.0,
+     "incident": 1.0
+    },
+    "prompt_tokens_median": 4711,
+    "latency_ms_median": 23362
+   },
+   "rows": [
+    {
+     "id": 84,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "exam"
+      ]
+     ],
+     "prompt_tokens": 4842,
+     "ms": 35822,
+     "calls": null
+    },
+    {
+     "id": 85,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "Grafana"
+      ]
+     ],
+     "prompt_tokens": 4915,
+     "ms": 29689,
+     "calls": null
+    },
+    {
+     "id": 86,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "GPU",
+       "graphics"
+      ]
+     ],
+     "prompt_tokens": 4842,
+     "ms": 29718,
+     "calls": null
+    },
+    {
+     "id": 87,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "firewall"
+      ]
+     ],
+     "prompt_tokens": 4828,
+     "ms": 21857,
+     "calls": null
+    },
+    {
+     "id": 88,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "overheat",
+       "heat",
+       "hot",
+       "thermal"
+      ]
+     ],
+     "prompt_tokens": 4890,
+     "ms": 29467,
+     "calls": null
+    },
+    {
+     "id": 89,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "build"
+      ]
+     ],
+     "prompt_tokens": 4759,
+     "ms": 22406,
+     "calls": null
+    },
+    {
+     "id": 90,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "firewall"
+      ]
+     ],
+     "prompt_tokens": 4846,
+     "ms": 29020,
+     "calls": null
+    },
+    {
+     "id": 91,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "exam"
+      ]
+     ],
+     "prompt_tokens": 4762,
+     "ms": 29044,
+     "calls": null
+    },
+    {
+     "id": 92,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "overheat",
+       "heat",
+       "hot",
+       "thermal"
+      ]
+     ],
+     "prompt_tokens": 4781,
+     "ms": 26336,
+     "calls": null
+    },
+    {
+     "id": 93,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "firewall"
+      ]
+     ],
+     "prompt_tokens": 4888,
+     "ms": 25982,
+     "calls": null
+    },
+    {
+     "id": 94,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "exam"
+      ]
+     ],
+     "prompt_tokens": 4765,
+     "ms": 23521,
+     "calls": null
+    },
+    {
+     "id": 95,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "RAM",
+       "memory"
+      ]
+     ],
+     "prompt_tokens": 4823,
+     "ms": 24190,
+     "calls": null
+    },
+    {
+     "id": 96,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Napier"
+      ]
+     ],
+     "prompt_tokens": 4415,
+     "ms": 22932,
+     "calls": null
+    },
+    {
+     "id": 97,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Dunedin"
+      ]
+     ],
+     "prompt_tokens": 4412,
+     "ms": 23015,
+     "calls": null
+    },
+    {
+     "id": 98,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Biscuit"
+      ]
+     ],
+     "prompt_tokens": 4420,
+     "ms": 21977,
+     "calls": null
+    },
+    {
+     "id": 99,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Xero"
+      ]
+     ],
+     "prompt_tokens": 4464,
+     "ms": 27938,
+     "calls": null
+    },
+    {
+     "id": 100,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Pixel"
+      ]
+     ],
+     "prompt_tokens": 4464,
+     "ms": 23362,
+     "calls": null
+    },
+    {
+     "id": 101,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Wellington"
+      ]
+     ],
+     "prompt_tokens": 4338,
+     "ms": 18716,
+     "calls": null
+    },
+    {
+     "id": 102,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Timaru"
+      ]
+     ],
+     "prompt_tokens": 4324,
+     "ms": 26271,
+     "calls": null
+    },
+    {
+     "id": 103,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Noodle"
+      ]
+     ],
+     "prompt_tokens": 4344,
+     "ms": 15205,
+     "calls": null
+    },
+    {
+     "id": 104,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Kumara"
+      ]
+     ],
+     "prompt_tokens": 4396,
+     "ms": 20603,
+     "calls": null
+    },
+    {
+     "id": 105,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Dunedin"
+      ]
+     ],
+     "prompt_tokens": 4455,
+     "ms": 28283,
+     "calls": null
+    },
+    {
+     "id": 106,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Invercargill"
+      ]
+     ],
+     "prompt_tokens": 4463,
+     "ms": 23528,
+     "calls": null
+    },
+    {
+     "id": 107,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Fisher"
+      ]
+     ],
+     "prompt_tokens": 4477,
+     "ms": 23990,
+     "calls": null
+    },
+    {
+     "id": 108,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Helix"
+      ]
+     ],
+     "prompt_tokens": 4711,
+     "ms": 15805,
+     "calls": null
+    },
+    {
+     "id": 109,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Neovim"
+      ]
+     ],
+     "prompt_tokens": 4723,
+     "ms": 15829,
+     "calls": null
+    },
+    {
+     "id": 110,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Debian"
+      ]
+     ],
+     "prompt_tokens": 4766,
+     "ms": 11533,
+     "calls": null
+    },
+    {
+     "id": 111,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Arch"
+      ]
+     ],
+     "prompt_tokens": 4755,
+     "ms": 11370,
+     "calls": null
+    },
+    {
+     "id": 112,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "long black"
+      ]
+     ],
+     "prompt_tokens": 4696,
+     "ms": 13433,
+     "calls": null
+    },
+    {
+     "id": 113,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "flat white"
+      ]
+     ],
+     "prompt_tokens": 4700,
+     "ms": 13384,
+     "calls": null
+    },
+    {
+     "id": 114,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Corne"
+      ]
+     ],
+     "prompt_tokens": 4696,
+     "ms": 17929,
+     "calls": null
+    },
+    {
+     "id": 115,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Moonlander"
+      ]
+     ],
+     "prompt_tokens": 4685,
+     "ms": 26307,
+     "calls": null
+    },
+    {
+     "id": 116,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "29"
+      ],
+      [
+       "Sep"
+      ]
+     ],
+     "prompt_tokens": 5072,
+     "ms": 31616,
+     "calls": null
+    },
+    {
+     "id": 117,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "hackathon"
+      ]
+     ],
+     "prompt_tokens": 4657,
+     "ms": 28690,
+     "calls": null
+    },
+    {
+     "id": 118,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "July",
+       "Jul"
+      ]
+     ],
+     "prompt_tokens": 4895,
+     "ms": 29286,
+     "calls": null
+    },
+    {
+     "id": 119,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "tibbet"
+      ]
+     ],
+     "prompt_tokens": 4787,
+     "ms": 14108,
+     "calls": null
+    },
+    {
+     "id": 120,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "Oct"
+      ]
+     ],
+     "prompt_tokens": 4727,
+     "ms": 21960,
+     "calls": null
+    },
+    {
+     "id": 121,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "Corsair",
+       "RM750"
+      ]
+     ],
+     "prompt_tokens": 4760,
+     "ms": 13051,
+     "calls": null
+    },
+    {
+     "id": 122,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "power"
+      ],
+      [
+       "lost",
+       "died",
+       "gone",
+       "failed",
+       "destroyed",
+       "wiped"
+      ]
+     ],
+     "prompt_tokens": 4350,
+     "ms": 25294,
+     "calls": null
+    },
+    {
+     "id": 123,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "4TB",
+       "4 TB"
+      ],
+      [
+       "NVMe",
+       "SSD"
+      ]
+     ],
+     "prompt_tokens": 4488,
+     "ms": 13535,
+     "calls": null
+    },
+    {
+     "id": 124,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "coffee"
+      ]
+     ],
+     "prompt_tokens": 4318,
+     "ms": 21812,
+     "calls": null
+    },
+    {
+     "id": 125,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "Noctua"
+      ]
+     ],
+     "prompt_tokens": 4331,
+     "ms": 12836,
+     "calls": null
+    }
+   ]
+  },
+  "rag": {
+   "summary": {
+    "accuracy": 0.762,
+    "by_type": {
+     "why": 0.25,
+     "person": 1.0,
+     "preference": 1.0,
+     "plan": 0.8,
+     "incident": 1.0
+    },
+    "prompt_tokens_median": 405,
+    "latency_ms_median": 16370
+   },
+   "rows": [
+    {
+     "id": 84,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "exam"
+      ]
+     ],
+     "prompt_tokens": 382,
+     "ms": 25258,
+     "calls": null
+    },
+    {
+     "id": 85,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "Grafana"
+      ]
+     ],
+     "prompt_tokens": 459,
+     "ms": 25758,
+     "calls": null
+    },
+    {
+     "id": 86,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "GPU",
+       "graphics"
+      ]
+     ],
+     "prompt_tokens": 414,
+     "ms": 25329,
+     "calls": null
+    },
+    {
+     "id": 87,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "firewall"
+      ]
+     ],
+     "prompt_tokens": 447,
+     "ms": 17010,
+     "calls": null
+    },
+    {
+     "id": 88,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "overheat",
+       "heat",
+       "hot",
+       "thermal"
+      ]
+     ],
+     "prompt_tokens": 395,
+     "ms": 25654,
+     "calls": null
+    },
+    {
+     "id": 89,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "build"
+      ]
+     ],
+     "prompt_tokens": 397,
+     "ms": 10822,
+     "calls": null
+    },
+    {
+     "id": 90,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "firewall"
+      ]
+     ],
+     "prompt_tokens": 450,
+     "ms": 23318,
+     "calls": null
+    },
+    {
+     "id": 91,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "exam"
+      ]
+     ],
+     "prompt_tokens": 382,
+     "ms": 24774,
+     "calls": null
+    },
+    {
+     "id": 92,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "overheat",
+       "heat",
+       "hot",
+       "thermal"
+      ]
+     ],
+     "prompt_tokens": 378,
+     "ms": 11027,
+     "calls": null
+    },
+    {
+     "id": 93,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "firewall"
+      ]
+     ],
+     "prompt_tokens": 462,
+     "ms": 16370,
+     "calls": null
+    },
+    {
+     "id": 94,
+     "type": "why",
+     "score": 0.0,
+     "gold": [
+      [
+       "exam"
+      ]
+     ],
+     "prompt_tokens": 397,
+     "ms": 20014,
+     "calls": null
+    },
+    {
+     "id": 95,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "RAM",
+       "memory"
+      ]
+     ],
+     "prompt_tokens": 396,
+     "ms": 16368,
+     "calls": null
+    },
+    {
+     "id": 96,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Napier"
+      ]
+     ],
+     "prompt_tokens": 395,
+     "ms": 25057,
+     "calls": null
+    },
+    {
+     "id": 97,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Dunedin"
+      ]
+     ],
+     "prompt_tokens": 405,
+     "ms": 10206,
+     "calls": null
+    },
+    {
+     "id": 98,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Biscuit"
+      ]
+     ],
+     "prompt_tokens": 388,
+     "ms": 12035,
+     "calls": null
+    },
+    {
+     "id": 99,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Xero"
+      ]
+     ],
+     "prompt_tokens": 382,
+     "ms": 25162,
+     "calls": null
+    },
+    {
+     "id": 100,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Pixel"
+      ]
+     ],
+     "prompt_tokens": 374,
+     "ms": 12013,
+     "calls": null
+    },
+    {
+     "id": 101,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Wellington"
+      ]
+     ],
+     "prompt_tokens": 404,
+     "ms": 17710,
+     "calls": null
+    },
+    {
+     "id": 102,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Timaru"
+      ]
+     ],
+     "prompt_tokens": 397,
+     "ms": 11205,
+     "calls": null
+    },
+    {
+     "id": 103,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Noodle"
+      ]
+     ],
+     "prompt_tokens": 372,
+     "ms": 8395,
+     "calls": null
+    },
+    {
+     "id": 104,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Kumara"
+      ]
+     ],
+     "prompt_tokens": 384,
+     "ms": 14005,
+     "calls": null
+    },
+    {
+     "id": 105,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Dunedin"
+      ]
+     ],
+     "prompt_tokens": 426,
+     "ms": 11920,
+     "calls": null
+    },
+    {
+     "id": 106,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Invercargill"
+      ]
+     ],
+     "prompt_tokens": 414,
+     "ms": 12183,
+     "calls": null
+    },
+    {
+     "id": 107,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Fisher"
+      ]
+     ],
+     "prompt_tokens": 413,
+     "ms": 24981,
+     "calls": null
+    },
+    {
+     "id": 108,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Helix"
+      ]
+     ],
+     "prompt_tokens": 481,
+     "ms": 14364,
+     "calls": null
+    },
+    {
+     "id": 109,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Neovim"
+      ]
+     ],
+     "prompt_tokens": 469,
+     "ms": 11755,
+     "calls": null
+    },
+    {
+     "id": 110,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Debian"
+      ]
+     ],
+     "prompt_tokens": 479,
+     "ms": 22784,
+     "calls": null
+    },
+    {
+     "id": 111,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Arch"
+      ]
+     ],
+     "prompt_tokens": 483,
+     "ms": 13070,
+     "calls": null
+    },
+    {
+     "id": 112,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "long black"
+      ]
+     ],
+     "prompt_tokens": 472,
+     "ms": 26318,
+     "calls": null
+    },
+    {
+     "id": 113,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "flat white"
+      ]
+     ],
+     "prompt_tokens": 503,
+     "ms": 16430,
+     "calls": null
+    },
+    {
+     "id": 114,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Corne"
+      ]
+     ],
+     "prompt_tokens": 442,
+     "ms": 21070,
+     "calls": null
+    },
+    {
+     "id": 115,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Moonlander"
+      ]
+     ],
+     "prompt_tokens": 404,
+     "ms": 25682,
+     "calls": null
+    },
+    {
+     "id": 116,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "29"
+      ],
+      [
+       "Sep"
+      ]
+     ],
+     "prompt_tokens": 374,
+     "ms": 12384,
+     "calls": null
+    },
+    {
+     "id": 117,
+     "type": "plan",
+     "score": 0.0,
+     "gold": [
+      [
+       "hackathon"
+      ]
+     ],
+     "prompt_tokens": 352,
+     "ms": 18802,
+     "calls": null
+    },
+    {
+     "id": 118,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "July",
+       "Jul"
+      ]
+     ],
+     "prompt_tokens": 417,
+     "ms": 11600,
+     "calls": null
+    },
+    {
+     "id": 119,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "tibbet"
+      ]
+     ],
+     "prompt_tokens": 387,
+     "ms": 8967,
+     "calls": null
+    },
+    {
+     "id": 120,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "Oct"
+      ]
+     ],
+     "prompt_tokens": 390,
+     "ms": 13636,
+     "calls": null
+    },
+    {
+     "id": 121,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "Corsair",
+       "RM750"
+      ]
+     ],
+     "prompt_tokens": 420,
+     "ms": 18024,
+     "calls": null
+    },
+    {
+     "id": 122,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "power"
+      ],
+      [
+       "lost",
+       "died",
+       "gone",
+       "failed",
+       "destroyed",
+       "wiped"
+      ]
+     ],
+     "prompt_tokens": 411,
+     "ms": 10726,
+     "calls": null
+    },
+    {
+     "id": 123,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "4TB",
+       "4 TB"
+      ],
+      [
+       "NVMe",
+       "SSD"
+      ]
+     ],
+     "prompt_tokens": 549,
+     "ms": 15023,
+     "calls": null
+    },
+    {
+     "id": 124,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "coffee"
+      ]
+     ],
+     "prompt_tokens": 374,
+     "ms": 9744,
+     "calls": null
+    },
+    {
+     "id": 125,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "Noctua"
+      ]
+     ],
+     "prompt_tokens": 439,
+     "ms": 25542,
+     "calls": null
+    }
+   ]
+  },
+  "mem_oracle": {
+   "summary": {
+    "accuracy": 0.976,
+    "by_type": {
+     "why": 1.0,
+     "person": 1.0,
+     "preference": 1.0,
+     "plan": 0.8,
+     "incident": 1.0
+    },
+    "prompt_tokens_median": 4214,
+    "latency_ms_median": 21248
+   },
+   "rows": [
+    {
+     "id": 84,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "exam"
+      ]
+     ],
+     "prompt_tokens": 4270,
+     "ms": 25785,
+     "calls": null
+    },
+    {
+     "id": 85,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "Grafana"
+      ]
+     ],
+     "prompt_tokens": 4377,
+     "ms": 26727,
+     "calls": null
+    },
+    {
+     "id": 86,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "GPU",
+       "graphics"
+      ]
+     ],
+     "prompt_tokens": 4333,
+     "ms": 27319,
+     "calls": null
+    },
+    {
+     "id": 87,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "firewall"
+      ]
+     ],
+     "prompt_tokens": 4330,
+     "ms": 25786,
+     "calls": null
+    },
+    {
+     "id": 88,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "overheat",
+       "heat",
+       "hot",
+       "thermal"
+      ]
+     ],
+     "prompt_tokens": 4354,
+     "ms": 28186,
+     "calls": null
+    },
+    {
+     "id": 89,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "build"
+      ]
+     ],
+     "prompt_tokens": 4253,
+     "ms": 19174,
+     "calls": null
+    },
+    {
+     "id": 90,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "firewall"
+      ]
+     ],
+     "prompt_tokens": 4315,
+     "ms": 25642,
+     "calls": null
+    },
+    {
+     "id": 91,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "exam"
+      ]
+     ],
+     "prompt_tokens": 4255,
+     "ms": 20851,
+     "calls": null
+    },
+    {
+     "id": 92,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "overheat",
+       "heat",
+       "hot",
+       "thermal"
+      ]
+     ],
+     "prompt_tokens": 4326,
+     "ms": 28437,
+     "calls": null
+    },
+    {
+     "id": 93,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "firewall"
+      ]
+     ],
+     "prompt_tokens": 4329,
+     "ms": 28712,
+     "calls": null
+    },
+    {
+     "id": 94,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "exam"
+      ]
+     ],
+     "prompt_tokens": 4277,
+     "ms": 25723,
+     "calls": null
+    },
+    {
+     "id": 95,
+     "type": "why",
+     "score": 1.0,
+     "gold": [
+      [
+       "RAM",
+       "memory"
+      ]
+     ],
+     "prompt_tokens": 4294,
+     "ms": 26340,
+     "calls": null
+    },
+    {
+     "id": 96,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Napier"
+      ]
+     ],
+     "prompt_tokens": 4096,
+     "ms": 16817,
+     "calls": null
+    },
+    {
+     "id": 97,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Dunedin"
+      ]
+     ],
+     "prompt_tokens": 4091,
+     "ms": 17217,
+     "calls": null
+    },
+    {
+     "id": 98,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Biscuit"
+      ]
+     ],
+     "prompt_tokens": 4071,
+     "ms": 18275,
+     "calls": null
+    },
+    {
+     "id": 99,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Xero"
+      ]
+     ],
+     "prompt_tokens": 4096,
+     "ms": 17061,
+     "calls": null
+    },
+    {
+     "id": 100,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Pixel"
+      ]
+     ],
+     "prompt_tokens": 4087,
+     "ms": 17025,
+     "calls": null
+    },
+    {
+     "id": 101,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Wellington"
+      ]
+     ],
+     "prompt_tokens": 4086,
+     "ms": 21776,
+     "calls": null
+    },
+    {
+     "id": 102,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Timaru"
+      ]
+     ],
+     "prompt_tokens": 4076,
+     "ms": 17103,
+     "calls": null
+    },
+    {
+     "id": 103,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Noodle"
+      ]
+     ],
+     "prompt_tokens": 4088,
+     "ms": 17563,
+     "calls": null
+    },
+    {
+     "id": 104,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Kumara"
+      ]
+     ],
+     "prompt_tokens": 4054,
+     "ms": 16395,
+     "calls": null
+    },
+    {
+     "id": 105,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Dunedin"
+      ]
+     ],
+     "prompt_tokens": 4112,
+     "ms": 20353,
+     "calls": null
+    },
+    {
+     "id": 106,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Invercargill"
+      ]
+     ],
+     "prompt_tokens": 4117,
+     "ms": 19388,
+     "calls": null
+    },
+    {
+     "id": 107,
+     "type": "person",
+     "score": 1.0,
+     "gold": [
+      [
+       "Fisher"
+      ]
+     ],
+     "prompt_tokens": 4122,
+     "ms": 21879,
+     "calls": null
+    },
+    {
+     "id": 108,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Helix"
+      ]
+     ],
+     "prompt_tokens": 4214,
+     "ms": 24858,
+     "calls": null
+    },
+    {
+     "id": 109,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Neovim"
+      ]
+     ],
+     "prompt_tokens": 4201,
+     "ms": 21248,
+     "calls": null
+    },
+    {
+     "id": 110,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Debian"
+      ]
+     ],
+     "prompt_tokens": 4229,
+     "ms": 22479,
+     "calls": null
+    },
+    {
+     "id": 111,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Arch"
+      ]
+     ],
+     "prompt_tokens": 4223,
+     "ms": 21860,
+     "calls": null
+    },
+    {
+     "id": 112,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "long black"
+      ]
+     ],
+     "prompt_tokens": 4202,
+     "ms": 12817,
+     "calls": null
+    },
+    {
+     "id": 113,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "flat white"
+      ]
+     ],
+     "prompt_tokens": 4261,
+     "ms": 14093,
+     "calls": null
+    },
+    {
+     "id": 114,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Corne"
+      ]
+     ],
+     "prompt_tokens": 4188,
+     "ms": 18962,
+     "calls": null
+    },
+    {
+     "id": 115,
+     "type": "preference",
+     "score": 1.0,
+     "gold": [
+      [
+       "Moonlander"
+      ]
+     ],
+     "prompt_tokens": 4182,
+     "ms": 28110,
+     "calls": null
+    },
+    {
+     "id": 116,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "29"
+      ],
+      [
+       "Sep"
+      ]
+     ],
+     "prompt_tokens": 4283,
+     "ms": 22736,
+     "calls": null
+    },
+    {
+     "id": 117,
+     "type": "plan",
+     "score": 0.0,
+     "gold": [
+      [
+       "hackathon"
+      ]
+     ],
+     "prompt_tokens": 4099,
+     "ms": 24490,
+     "calls": null
+    },
+    {
+     "id": 118,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "July",
+       "Jul"
+      ]
+     ],
+     "prompt_tokens": 4337,
+     "ms": 29107,
+     "calls": null
+    },
+    {
+     "id": 119,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "tibbet"
+      ]
+     ],
+     "prompt_tokens": 4229,
+     "ms": 16092,
+     "calls": null
+    },
+    {
+     "id": 120,
+     "type": "plan",
+     "score": 1.0,
+     "gold": [
+      [
+       "Oct"
+      ]
+     ],
+     "prompt_tokens": 4259,
+     "ms": 21605,
+     "calls": null
+    },
+    {
+     "id": 121,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "Corsair",
+       "RM750"
+      ]
+     ],
+     "prompt_tokens": 4260,
+     "ms": 13226,
+     "calls": null
+    },
+    {
+     "id": 122,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "power"
+      ],
+      [
+       "lost",
+       "died",
+       "gone",
+       "failed",
+       "destroyed",
+       "wiped"
+      ]
+     ],
+     "prompt_tokens": 4103,
+     "ms": 13668,
+     "calls": null
+    },
+    {
+     "id": 123,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "4TB",
+       "4 TB"
+      ],
+      [
+       "NVMe",
+       "SSD"
+      ]
+     ],
+     "prompt_tokens": 4197,
+     "ms": 16256,
+     "calls": null
+    },
+    {
+     "id": 124,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "coffee"
+      ]
+     ],
+     "prompt_tokens": 4077,
+     "ms": 12888,
+     "calls": null
+    },
+    {
+     "id": 125,
+     "type": "incident",
+     "score": 1.0,
+     "gold": [
+      [
+       "Noctua"
+      ]
+     ],
+     "prompt_tokens": 4095,
+     "ms": 12349,
+     "calls": null
+    }
+   ]
+  }
+ },
+ "extraction": {
+  "messages": 30216,
+  "sent_to_extractor": 3455,
+  "calls": 346,
+  "facts": 1836,
+  "seconds": 2335.2,
+  "prompt_tokens": 324425,
+  "dropped_unseen_entity": 623,
+  "recall_candidates": 37,
+  "recall_calls": 13,
+  "recall_facts": 82,
+  "recall_seconds": 77.4,
+  "open_sent": 988,
+  "open_calls": 99,
+  "open_facts": 541,
+  "open_seconds": 747.7,
+  "hygiene": {
+   "realigned": 60,
+   "ungrounded_dropped": 299,
+   "reattached": 69,
+   "restart_dropped": 35,
+   "self_collab_dropped": 5,
+   "other_author_start_dropped": 30,
+   "snapped": 28,
+   "restated_dropped": 20
+  },
+  "vs_oracle_raw": {
+   "current_value_acc": 0.661,
+   "history_exact": 0.583,
+   "n_values": 112,
+   "spurious_entities": [
+    "Cheesemark",
+    "Decypher",
+    "Lithium",
+    "OpenClaw",
+    "OpenLumara",
+    "REM",
+    "Yui",
+    "it",
+    "ling",
+    "mythos",
+    "ninfer",
+    "trtlllm",
+    "vllm"
+   ]
+  },
+  "vs_oracle": {
+   "current_value_acc": 0.884,
+   "history_exact": 0.875,
+   "n_values": 112,
+   "spurious_entities": []
+  },
+  "vs_oracle_with_open_exclude": {
+   "current_value_acc": 0.884,
+   "history_exact": 0.875,
+   "n_values": 112,
+   "spurious_entities": []
+  },
+  "open_hygiene": {
+   "open_kept": 384,
+   "open_typed_dupe": 92,
+   "open_ungrounded": 40,
+   "open_unseen_subject": 15,
+   "open_dupe": 10
+  },
+  "open_subjects": 55
+ }
+}

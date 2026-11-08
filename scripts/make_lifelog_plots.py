@@ -78,7 +78,42 @@ def overall(small, big):
     fig.tight_layout(); fig.savefig(os.path.join(OUT, "lifelog_overall.png"), dpi=130); plt.close(fig)
 
 
+OTYPES = ["why", "person", "preference", "plan", "incident"]
+OLABEL = {"full": "full context", "rag": "RAG (top-10 messages)", "mem": "memory v4 (typed + open facts)",
+          "mem_oracle": "memory v4, perfect extraction"}
+OCOLOR = {"full": "#555555", "rag": "#c2571a", "mem": "#1f5aa6", "mem_oracle": "#0b2f63"}
+
+
+def open_plot():
+    """Open-ended questions (reasons, people, preferences, plans, incidents) on both open-fact logs."""
+    small = os.path.join(W, "lifelog_eval_small2_open.json")
+    big = os.path.join(W, "lifelog_eval_big2_open.json")
+    if not os.path.exists(small):
+        return
+    fig, ax = plt.subplots(1, 2, figsize=(13, 5.6), sharey=True)
+    for k, (p, title) in enumerate(((small, "small log (~15K tokens): full context fits"),
+                                    (big, "600K-token log: full context can't fit"))):
+        if not os.path.exists(p):
+            continue
+        d = json.load(open(p))
+        conds = [c for c in ("full", "rag", "mem", "mem_oracle") if c in d["conditions"]]
+        w = 0.8 / len(conds)
+        for j, c in enumerate(conds):
+            s = d["conditions"][c]["summary"]
+            xs = [i + (j - (len(conds) - 1) / 2) * w for i in range(len(OTYPES))]
+            ax[k].bar(xs, [s["by_type"].get(t, 0) for t in OTYPES], w * 0.92, color=OCOLOR[c],
+                      label=f"{OLABEL[c]}: {s['accuracy']:.0%} ({s['prompt_tokens_median']:,} tok)")
+        ax[k].set_xticks(range(len(OTYPES)))
+        ax[k].set_xticklabels(["why did I…", "people", "my preferences", "plans", "incidents"], fontsize=9)
+        ax[k].set_ylim(0, 1.05); ax[k].grid(axis="y", alpha=.3); ax[k].set_title(title, fontsize=10)
+        ax[k].legend(fontsize=7, loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=2, frameon=False)
+    ax[0].set_ylabel("accuracy")
+    fig.suptitle(f"Open-ended facts: {json.load(open(small))['n_questions']} questions, Qwen3-30B host", fontsize=11)
+    fig.tight_layout(); fig.savefig(os.path.join(OUT, "lifelog_open.png"), dpi=130); plt.close(fig)
+
+
 if __name__ == "__main__":
+    open_plot()
     small, big = load("small"), load("big")
     if small:
         by_type(small, f"Life-log questions by type — small log ({small['n_messages']} msgs), "
